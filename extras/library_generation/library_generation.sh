@@ -58,5 +58,5 @@ echo "" > /arduino_project/built_packages
 for f in $(find $(pwd) -name .git -type d); do pushd $f > /dev/null; echo $(git config --get remote.origin.url) $(git rev-parse HEAD) >> /arduino_project/built_packages; popd > /dev/null; done;
 
 ######## Fix permissions ########
-sudo chmod -R 777 /arduino_project
-sudo chmod -R -x+X /arduino_project
+sudo chmod -R 777 /arduino_project/extras
+sudo chmod -R -x+X /arduino_project/extras
