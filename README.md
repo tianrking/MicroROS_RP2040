@@ -63,7 +63,7 @@ docker pull microros/micro_ros_static_library_builder:rolling
 docker run -it --rm -v $(pwd):/project microros/micro_ros_static_library_builder:rolling
 ```
 
-Note that folders added to `extras/library_generation/extra_packages` and entries added to `extras/library_generation/extra_packages/extra_packages.repos` will be taken into account by this build system.
+Note that folders added to `microros_static_library/library_generation/extra_packages` and entries added to `microros_static_library/library_generation/extra_packages/extra_packages.repos` will be taken into account by this build system.
 ## How to use Pico SDK?
 
 Here is a Raspberry Pi Pico C/C++ SDK documentation:  

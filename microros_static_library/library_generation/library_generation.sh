@@ -28,7 +28,7 @@ pushd firmware/mcu_ws > /dev/null
     # Import user defined packages
     mkdir extra_packages
     pushd extra_packages > /dev/null
-        cp -R /project/extras/library_generation/extra_packages/* .
+        cp -R /project/microros_static_library/library_generation/extra_packages/* .
         vcs import --input extra_packages.repos
     popd > /dev/null
 
@@ -41,7 +41,7 @@ find /project/src/ ! -name micro_ros_arduino.h ! -name *.c ! -name *.cpp ! -name
 rm -rf firmware/build
 
 export PICO_SDK_PATH=/pico-sdk
-ros2 run micro_ros_setup build_firmware.sh /project/extras/library_generation/toolchain.cmake /project/extras/library_generation/colcon.meta
+ros2 run micro_ros_setup build_firmware.sh /project/microros_static_library/library_generation/toolchain.cmake /project/microros_static_library/library_generation/colcon.meta
 
 find firmware/build/include/ -name "*.c"  -delete
 mkdir -p /project/libmicroros/include 
@@ -58,5 +58,5 @@ echo "" > /project/built_packages
 for f in $(find $(pwd) -name .git -type d); do pushd $f > /dev/null; echo $(git config --get remote.origin.url) $(git rev-parse HEAD) >> /project/built_packages; popd > /dev/null; done;
 
 ######## Fix permissions ########
-sudo chmod -R 777 /project/extras
-sudo chmod -R -x+X /project/extras
+sudo chmod -R 777 /project/microros_static_library
+sudo chmod -R -x+X /project/microros_static_library
