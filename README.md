@@ -58,15 +58,9 @@ docker run -it --rm -v /dev:/dev --privileged --net=host microros/micro-ros-agen
 Micro-ROS is precompiled for Raspberry Pi Pico in [`libmicroros`](libmicroros).
 If you want to compile it by yourself:
 
-<!-- 
-pushd extras/library_generation
-docker build . -t microros/micro_ros_arduino_builder:foxy
-popd
- -->
-
 ```bash
-docker pull microros/micro_ros_arduino_builder:foxy
-docker run -it --rm -v $(pwd):/arduino_project microros/micro_ros_arduino_builder:foxy
+docker pull microros/micro_ros_static_library_builder:foxy
+docker run -it --rm -v $(pwd):/project microros/micro_ros_static_library_builder:foxy
 ```
 
 Note that folders added to `extras/library_generation/extra_packages` and entries added to `extras/library_generation/extra_packages/extra_packages.repos` will be taken into account by this build system.

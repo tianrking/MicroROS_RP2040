@@ -28,35 +28,35 @@ pushd firmware/mcu_ws > /dev/null
     # Import user defined packages
     mkdir extra_packages
     pushd extra_packages > /dev/null
-        cp -R /arduino_project/extras/library_generation/extra_packages/* .
+        cp -R /project/extras/library_generation/extra_packages/* .
         vcs import --input extra_packages.repos
     popd > /dev/null
 
 popd > /dev/null
 
 ######## Clean and source ########
-find /arduino_project/src/ ! -name micro_ros_arduino.h ! -name *.c ! -name *.cpp ! -name *.c.in -delete
+find /project/src/ ! -name micro_ros_arduino.h ! -name *.c ! -name *.cpp ! -name *.c.in -delete
 
 ######## Build for Raspberry Pi Pico SDK  ########
 rm -rf firmware/build
 
 export PICO_SDK_PATH=/pico-sdk
-ros2 run micro_ros_setup build_firmware.sh /arduino_project/extras/library_generation/toolchain.cmake /arduino_project/extras/library_generation/colcon.meta
+ros2 run micro_ros_setup build_firmware.sh /project/extras/library_generation/toolchain.cmake /project/extras/library_generation/colcon.meta
 
 find firmware/build/include/ -name "*.c"  -delete
-mkdir -p /arduino_project/libmicroros/include 
-cp -R firmware/build/include/* /arduino_project/libmicroros/include 
+mkdir -p /project/libmicroros/include 
+cp -R firmware/build/include/* /project/libmicroros/include 
 
-cp -R firmware/build/libmicroros.a /arduino_project/libmicroros/libmicroros.a
+cp -R firmware/build/libmicroros.a /project/libmicroros/libmicroros.a
 
 ######## Generate extra files ########
-find firmware/mcu_ws/ros2 \( -name "*.srv" -o -name "*.msg" -o -name "*.action" \) | awk -F"/" '{print $(NF-2)"/"$NF}' > /arduino_project/available_ros2_types
-find firmware/mcu_ws/extra_packages \( -name "*.srv" -o -name "*.msg" -o -name "*.action" \) | awk -F"/" '{print $(NF-2)"/"$NF}' >> /arduino_project/available_ros2_types
+find firmware/mcu_ws/ros2 \( -name "*.srv" -o -name "*.msg" -o -name "*.action" \) | awk -F"/" '{print $(NF-2)"/"$NF}' > /project/available_ros2_types
+find firmware/mcu_ws/extra_packages \( -name "*.srv" -o -name "*.msg" -o -name "*.action" \) | awk -F"/" '{print $(NF-2)"/"$NF}' >> /project/available_ros2_types
 
 cd firmware
-echo "" > /arduino_project/built_packages
-for f in $(find $(pwd) -name .git -type d); do pushd $f > /dev/null; echo $(git config --get remote.origin.url) $(git rev-parse HEAD) >> /arduino_project/built_packages; popd > /dev/null; done;
+echo "" > /project/built_packages
+for f in $(find $(pwd) -name .git -type d); do pushd $f > /dev/null; echo $(git config --get remote.origin.url) $(git rev-parse HEAD) >> /project/built_packages; popd > /dev/null; done;
 
 ######## Fix permissions ########
-sudo chmod -R 777 /arduino_project/extras
-sudo chmod -R -x+X /arduino_project/extras
+sudo chmod -R 777 /project/extras
+sudo chmod -R -x+X /project/extras
