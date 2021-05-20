@@ -2,7 +2,7 @@
 
 ######## Configure Raspberry Pi Pico SDK  ########
 
-apt update 
+apt update
 
 apt install -y gcc-arm-none-eabi
 
@@ -21,7 +21,7 @@ ros2 run micro_ros_setup create_firmware_ws.sh generate_lib
 pushd firmware/mcu_ws > /dev/null
 
     # Workaround: Copy just tf2_msgs
-    git clone -b foxy https://github.com/ros2/geometry2
+    git clone -b galactic https://github.com/ros2/geometry2
     cp -R geometry2/tf2_msgs ros2/tf2_msgs
     rm -rf geometry2
 
@@ -44,8 +44,8 @@ export PICO_SDK_PATH=/pico-sdk
 ros2 run micro_ros_setup build_firmware.sh /project/microros_static_library/library_generation/toolchain.cmake /project/microros_static_library/library_generation/colcon.meta
 
 find firmware/build/include/ -name "*.c"  -delete
-mkdir -p /project/libmicroros/include 
-cp -R firmware/build/include/* /project/libmicroros/include 
+mkdir -p /project/libmicroros/include
+cp -R firmware/build/include/* /project/libmicroros/include
 
 cp -R firmware/build/libmicroros.a /project/libmicroros/libmicroros.a
 
