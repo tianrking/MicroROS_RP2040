@@ -32,7 +32,7 @@ source ~/.bashrc
 
 ### 2. Compile Example
 
-Once the Pico SDK is ready compile the example: 
+Once the Pico SDK is ready compile the example:
 
 ```bash
 mkdir build
@@ -56,7 +56,7 @@ micro-ros-agent serial --dev /dev/ttyACM0 -b 115200
 
 or using the [micro-ros-agent Docker](https://hub.docker.com/r/microros/micro-ros-agent):
 ```bash
-docker run -it --rm -v /dev:/dev --privileged --net=host microros/micro-ros-agent:foxy serial --dev /dev/ttyACM0 -b 115200
+docker run -it --rm -v /dev:/dev --privileged --net=host microros/micro-ros-agent:rolling serial --dev /dev/ttyACM0 -b 115200
 ```
 
 ## What files are relevant?
@@ -77,7 +77,7 @@ docker run -it --rm -v $(pwd):/project microros/micro_ros_static_library_builder
 Note that folders added to `microros_static_library/library_generation/extra_packages` and entries added to `microros_static_library/library_generation/extra_packages/extra_packages.repos` will be taken into account by this build system.
 ## How to use Pico SDK?
 
-Here is a Raspberry Pi Pico C/C++ SDK documentation:  
+Here is a Raspberry Pi Pico C/C++ SDK documentation:
 https://datasheets.raspberrypi.org/pico/raspberry-pi-pico-c-sdk.pdf
 ## Purpose of the Project
 
