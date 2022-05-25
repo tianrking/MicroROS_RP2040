@@ -2,8 +2,8 @@
 Changelog for package micro_ros_raspberrypicosdk
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+3.0.0 (2022-05-25)
+------------------
 * micro-ROS humble Library auto-update 24-05-2022 07:54 (`#535 <https://github.com/micro-ROS/micro_ros_raspberrypi_pico_sdk/issues/535>`_)
 * Update to humble (`#531 <https://github.com/micro-ROS/micro_ros_raspberrypi_pico_sdk/issues/531>`_)
 * micro-ROS rolling Library auto-update 23-05-2022 06:12 (`#530 <https://github.com/micro-ROS/micro_ros_raspberrypi_pico_sdk/issues/530>`_)
