@@ -27,10 +27,6 @@ target_include_directories(pico_micro_ros_motor_control PUBLIC
     libmicroros/include
 )
 
-target_include_directories(pico_micro_ros_motor_control PUBLIC
-    Motor/
-)
-
 SET(CMAKE_C_FLAGS  "${CMAKE_C_FLAGS} -ffunction-sections -fdata-sections")
 SET(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -ffunction-sections -fdata-sections")
 
