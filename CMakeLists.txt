@@ -16,10 +16,19 @@ add_executable(pico_micro_ros_motor_control
 target_link_libraries(pico_micro_ros_motor_control
     pico_stdlib
     microros
+    pico_multicore
+    hardware_pio
+    hardware_pwm
 )
+
+pico_generate_pio_header(pico_micro_ros_motor_control ${CMAKE_CURRENT_LIST_DIR}/quadrature_encoder.pio)
 
 target_include_directories(pico_micro_ros_motor_control PUBLIC
     libmicroros/include
+)
+
+target_include_directories(pico_micro_ros_motor_control PUBLIC
+    Motor/
 )
 
 SET(CMAKE_C_FLAGS  "${CMAKE_C_FLAGS} -ffunction-sections -fdata-sections")
