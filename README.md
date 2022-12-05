@@ -78,8 +78,8 @@ source install/setup.bash
 #### RUN
 
 ```bash
-ros2 run example_topic_rclpy change_speed
-ros2 run example_topic_rclpy get_speed
+ros2 run motor_control_rclpy change_speed
+ros2 run motor_control_rclpy get_speed
 ```
 
 ### RCLCPP
