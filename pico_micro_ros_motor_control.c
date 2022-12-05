@@ -11,6 +11,7 @@
 #include <rclc/rclc.h>
 #include <rclc/executor.h>
 #include <std_msgs/msg/int32.h>
+#include <std_msgs/msg/string.h>
 #include <rmw_microros/rmw_microros.h>
 
 #include "pico/stdlib.h"
@@ -30,6 +31,7 @@ std_msgs__msg__Int32 msg;
 
 rcl_publisher_t publisher_encoder;
 std_msgs__msg__Int32 msg_publisher_encoder;
+std_msgs__msg__String msg_publisher_encoder_String;
 
 rcl_subscription_t subscriber_speed_change;
 std_msgs__msg__Int32 msg_subscriber_speed_change;
@@ -65,8 +67,12 @@ void timer_callback(rcl_timer_t *timer, int64_t last_call_time)
     
     msg.data++;
     msg_publisher_encoder.data = delta ;
+
+    sprintf(msg_publisher_encoder_String.data.data, "%d", delta); /////
+    msg_publisher_encoder_String.data.size = strlen(msg_publisher_encoder_String.data.data); ////
     rcl_ret_t ret = rcl_publish(&publisher, &msg, NULL);
-    ret = rcl_publish(&publisher_encoder, &msg_publisher_encoder, NULL);
+    ret = rcl_publish(&publisher_encoder, &msg_publisher_encoder, NULL); // https://github.com/micro-ROS/micro-ROS-demos/blob/humble/rclc/string_publisher/main.c#L28
+
 }
 
 float speed_value;
@@ -127,7 +133,7 @@ int main()
     rclc_publisher_init_default(
         &publisher_encoder,
         &node,
-        ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Int32),
+        ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Int32), /////
         "pico_publisher_encoder");
 
     rclc_subscription_init_default(

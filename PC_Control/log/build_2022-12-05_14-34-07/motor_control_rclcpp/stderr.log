@@ -1,0 +1,7 @@
+[01m[K/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclcpp/src/get_speed.cpp:3:10:[m[K [01;31m[Kfatal error: [m[Kstd_msgs/msg/Int32.hpp: No such file or directory
+    3 | #include [01;31m[K"std_msgs/msg/Int32.hpp"[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/get_speed.dir/build.make:76: CMakeFiles/get_speed.dir/src/get_speed.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:87: CMakeFiles/get_speed.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

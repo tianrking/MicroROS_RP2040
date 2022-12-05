@@ -1,0 +1,24 @@
+[01m[K/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclcpp/src/get_speed.cpp:[m[K In member function ‘[01m[Kvoid TopicSubscribe01::command_callback(std_msgs::msg::Int32_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclcpp/src/get_speed.cpp:22:22:[m[K [01;35m[Kwarning: [m[Kcomparison with string literal results in unspecified behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Waddress-Waddress]8;;[m[K]
+   22 |         if([01;35m[Kmsg->data == "forward"[m[K)
+      |            [01;35m[K~~~~~~~~~~^~~~~~~~~~~~[m[K
+[01m[K/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclcpp/src/get_speed.cpp:22:22:[m[K [01;31m[Kerror: [m[KISO C++ forbids comparison between pointer and integer [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive-fpermissive]8;;[m[K]
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:23[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclcpp/src/get_speed.cpp:1[m[K:
+[01m[K/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclcpp/src/get_speed.cpp:26:80:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kc_str[m[K’ in ‘[01m[K((const std::__shared_ptr_access<std_msgs::msg::Int32_<std::allocator<void> >, __gnu_cxx::_S_atomic, false, false>*)(& msg))->std::__shared_ptr_access<std_msgs::msg::Int32_<std::allocator<void> >, __gnu_cxx::_S_atomic, false, false>::operator->()->std_msgs::msg::Int32_<std::allocator<void> >::data[m[K’, which is of non-class type ‘[01m[Kstd_msgs::msg::Int32_<std::allocator<void> >::_data_type[m[K’ {aka ‘[01m[Kint[m[K’}
+   26 | logger(), "收到[%s]指令，发送速度 %f", msg->data.[01;31m[Kc_str[m[K(),speed);
+      |                                                  [01;31m[K^~~~~[m[K
+
+gmake[2]: *** [CMakeFiles/get_speed.dir/build.make:76: CMakeFiles/get_speed.dir/src/get_speed.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:87: CMakeFiles/get_speed.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

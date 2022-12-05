@@ -1,0 +1,12 @@
+[0.030s] Invoking command in '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --build /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp -- -j4 -l4
+[0.065s] [35m[1mConsolidate compiler generated dependencies of target get_speed[0m
+[0.076s] [ 50%] Built target change_speed
+[0.081s] [ 75%] [32mBuilding CXX object CMakeFiles/get_speed.dir/src/get_speed.cpp.o[0m
+[0.297s] [01m[K/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclcpp/src/get_speed.cpp:3:10:[m[K [01;31m[Kfatal error: [m[Kstd_msgs/msg/Int32.hpp: No such file or directory
+[0.297s]     3 | #include [01;31m[K"std_msgs/msg/Int32.hpp"[m[K
+[0.297s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[0.297s] compilation terminated.
+[0.300s] gmake[2]: *** [CMakeFiles/get_speed.dir/build.make:76: CMakeFiles/get_speed.dir/src/get_speed.cpp.o] Error 1
+[0.300s] gmake[1]: *** [CMakeFiles/Makefile2:87: CMakeFiles/get_speed.dir/all] Error 2
+[0.301s] gmake: *** [Makefile:146: all] Error 2
+[0.302s] Invoked command in '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --build /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp -- -j4 -l4

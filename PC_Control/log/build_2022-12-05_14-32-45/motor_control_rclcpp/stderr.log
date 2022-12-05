@@ -1,0 +1,68 @@
+[01m[K/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclcpp/src/get_speed.cpp:16:41:[m[K [01;31m[Kerror: [m[K‘[01m[KInt32[m[K’ is not a member of ‘[01m[Kstd_msgs::msg[m[K’
+   16 |     rclcpp::Subscription<std_msgs::msg::[01;31m[KInt32[m[K>::SharedPtr command_subscribe_;
+      |                                         [01;31m[K^~~~~[m[K
+[01m[K/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclcpp/src/get_speed.cpp:16:46:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   16 |     rclcpp::Subscription<std_msgs::msg::Int32[01;31m[K>[m[K::SharedPtr command_subscribe_;
+      |                                              [01;31m[K^[m[K
+[01m[K/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclcpp/src/get_speed.cpp:16:46:[m[K [01;31m[Kerror: [m[Ktemplate argument 3 is invalid
+[01m[K/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclcpp/src/get_speed.cpp:16:46:[m[K [01;31m[Kerror: [m[Ktemplate argument 4 is invalid
+[01m[K/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclcpp/src/get_speed.cpp:16:46:[m[K [01;31m[Kerror: [m[Ktemplate argument 5 is invalid
+[01m[K/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclcpp/src/get_speed.cpp:16:49:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+   16 |     rclcpp::Subscription<std_msgs::msg::Int32>::[01;31m[KSharedPtr[m[K command_subscribe_;
+      |                                                 [01;31m[K^~~~~~~~~[m[K
+      |                                                          [32m[K;[m[K
+[01m[K/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclcpp/src/get_speed.cpp:16:59:[m[K [01;31m[Kerror: [m[K‘[01m[Kcommand_subscribe_[m[K’ does not name a type
+   16 | p::Subscription<std_msgs::msg::Int32>::SharedPtr [01;31m[Kcommand_subscribe_[m[K;
+      |                                                  [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+
+[01m[K/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclcpp/src/get_speed.cpp:18:48:[m[K [01;31m[Kerror: [m[K‘[01m[KInt32[m[K’ in namespace ‘[01m[Kstd_msgs::msg[m[K’ does not name a type
+   18 |     void command_callback(const std_msgs::msg::[01;31m[KInt32[m[K::SharedPtr msg)
+      |                                                [01;31m[K^~~~~[m[K
+[01m[K/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclcpp/src/get_speed.cpp:18:65:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[Kmsg[m[K’
+   18 |  command_callback(const std_msgs::msg::Int32::SharedPtr [01;31m[Kmsg[m[K)
+      |                                                         [01;31m[K^~~[m[K
+
+[01m[K/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclcpp/src/get_speed.cpp:18:64:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[Kmsg[m[K’
+   18 |  command_callback[34m[K([m[Kconst std_msgs::msg::Int32::SharedPtr[01;31m[K [m[K[32m[Kmsg[m[K)
+      |                  [34m[K~[m[K                                     [01;31m[K^[m[K[32m[K~~~[m[K
+      |                                                        [32m[K)[m[K
+[01m[K/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclcpp/src/get_speed.cpp:18:55:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+   18 | oid command_callback(const std_msgs::msg::Int32::[01;31m[KSharedPtr[m[K msg)
+      |                                                  [01;31m[K^~~~~~~~~[m[K
+      |                                                           [32m[K;[m[K
+[01m[K/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclcpp/src/get_speed.cpp:18:65:[m[K [01;31m[Kerror: [m[K‘[01m[Kmsg[m[K’ does not name a type
+   18 |  command_callback(const std_msgs::msg::Int32::SharedPtr [01;31m[Kmsg[m[K)
+      |                                                         [01;31m[K^~~[m[K
+
+[01m[K/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclcpp/src/get_speed.cpp:26:6:[m[K [01;35m[Kwarning: [m[Kextra ‘[01m[K;[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic-Wpedantic]8;;[m[K]
+   26 |     }[01;35m[K;[m[K
+      |      [01;35m[K^[m[K
+      |      [31m[K-[m[K
+[01m[K/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclcpp/src/get_speed.cpp:[m[K In constructor ‘[01m[KTopicSubscribe01::TopicSubscribe01(std::string)[m[K’:
+[01m[K/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclcpp/src/get_speed.cpp:11:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kcommand_subscribe_[m[K’ was not declared in this scope; did you mean ‘[01m[Kcount_subscribers[m[K’?
+   11 |         [01;31m[Kcommand_subscribe_[m[K = this->create_subscription<std_msgs::msg::Int32>("pico_publisher_encoder", 10, std::bind(&TopicSubscribe01::command_callback, this, std::placeholders::_1));
+      |         [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+      |         [32m[Kcount_subscribers[m[K
+[01m[K/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclcpp/src/get_speed.cpp:11:71:[m[K [01;31m[Kerror: [m[K‘[01m[KInt32[m[K’ is not a member of ‘[01m[Kstd_msgs::msg[m[K’
+   11 | ribe_ = this->create_subscription<std_msgs::msg::[01;31m[KInt32[m[K>("pico_publisher_encoder", 10, std::bind(&TopicSubscribe01::command_callback, this, std::placeholders::_1));
+      |                                                  [01;31m[K^~~~~[m[K
+
+[01m[K/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclcpp/src/get_speed.cpp:11:77:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KTopicSubscribe01::create_subscription<<expression error> >(const char [23], int, std::_Bind_helper<false, void (TopicSubscribe01::*)(...), TopicSubscribe01*, const std::_Placeholder<1>&>::type)[m[K’
+   11 | = [01;31m[Kthis->create_subscription<std_msgs::msg::Int32>("pico_publisher_encoder", 10, std::bind(&TopicSubscribe01::command_callback, this, std::placeholders::_1))[m[K;
+      |   [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclcpp/src/get_speed.cpp:1[m[K:
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:219:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class CallbackT, class AllocatorT, class SubscriptionT, class MessageMemoryStrategyT> std::shared_ptr<ROSMessageT> rclcpp::Node::create_subscription(const string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr)[m[K’
+  219 |   [01;36m[Kcreate_subscription[m[K(
+      |   [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:219:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclcpp/src/get_speed.cpp:11:77:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   11 | = [01;31m[Kthis->create_subscription<std_msgs::msg::Int32>("pico_publisher_encoder", 10, std::bind(&TopicSubscribe01::command_callback, this, std::placeholders::_1))[m[K;
+      |   [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+
+gmake[2]: *** [CMakeFiles/get_speed.dir/build.make:76: CMakeFiles/get_speed.dir/src/get_speed.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:87: CMakeFiles/get_speed.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2
