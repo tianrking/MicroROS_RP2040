@@ -62,7 +62,7 @@ docker run -it --rm -v /dev:/dev --privileged --net=host microros/micro-ros-agen
 
 ```bash
 cd ~/1_ros/PC_Control/src
-ros2 pkg create example_topic_rclpy  --build-type ament_python --dependencies rclpy
+ros2 pkg create motor_control_rclcpp  --build-type ament_python --dependencies rclpy
 ```
 
 ```bash
