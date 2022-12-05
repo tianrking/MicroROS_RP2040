@@ -2,6 +2,8 @@
 
 ## Getting Started
 
+[Detailed Tutorial](https://me.w0x7ce.eu/rp2040/micro-ROS-on-RP2040)
+
 ```bash
 git clone https://github.com/tianrking/1_ros ~/1_ros
 ```
