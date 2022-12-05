@@ -1,0 +1,25 @@
+[0.580s] Invoking command in '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclpy': PYTHONPATH=/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/build/motor_control_rclpy/prefix_override:/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/install/motor_control_rclpy/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/motor_control_rclpy build --build-base /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/build/motor_control_rclpy/build install --record /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/build/motor_control_rclpy/install.log --single-version-externally-managed
+[0.805s] running egg_info
+[0.806s] writing ../build/motor_control_rclpy/motor_control_rclpy.egg-info/PKG-INFO
+[0.806s] writing dependency_links to ../build/motor_control_rclpy/motor_control_rclpy.egg-info/dependency_links.txt
+[0.806s] writing entry points to ../build/motor_control_rclpy/motor_control_rclpy.egg-info/entry_points.txt
+[0.806s] writing requirements to ../build/motor_control_rclpy/motor_control_rclpy.egg-info/requires.txt
+[0.807s] writing top-level names to ../build/motor_control_rclpy/motor_control_rclpy.egg-info/top_level.txt
+[0.809s] reading manifest file '../build/motor_control_rclpy/motor_control_rclpy.egg-info/SOURCES.txt'
+[0.809s] writing manifest file '../build/motor_control_rclpy/motor_control_rclpy.egg-info/SOURCES.txt'
+[0.810s] running build
+[0.810s] running build_py
+[0.810s] running install
+[0.810s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[0.810s]   warnings.warn(
+[0.810s] running install_lib
+[0.812s] running install_data
+[0.812s] copying resource/motor_control_rclpy -> /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/install/motor_control_rclpy/share/ament_index/resource_index/packages
+[0.812s] copying package.xml -> /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/install/motor_control_rclpy/share/motor_control_rclpy
+[0.812s] running install_egg_info
+[0.814s] Copying ../build/motor_control_rclpy/motor_control_rclpy.egg-info to /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/install/motor_control_rclpy/lib/python3.10/site-packages/motor_control_rclpy-0.0.0-py3.10.egg-info
+[0.815s] running install_scripts
+[0.835s] Installing change_speed script to /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/install/motor_control_rclpy/lib/motor_control_rclpy
+[0.835s] Installing get_speed script to /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/install/motor_control_rclpy/lib/motor_control_rclpy
+[0.835s] writing list of installed files to '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/build/motor_control_rclpy/install.log'
+[0.862s] Invoked command in '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclpy' returned '0': PYTHONPATH=/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/build/motor_control_rclpy/prefix_override:/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/install/motor_control_rclpy/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/motor_control_rclpy build --build-base /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/build/motor_control_rclpy/build install --record /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/build/motor_control_rclpy/install.log --single-version-externally-managed

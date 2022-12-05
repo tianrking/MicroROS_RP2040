@@ -1,26 +1,13 @@
-![banner](.images/banner-dark-theme.png#gh-dark-mode-only)
-![banner](.images/banner-light-theme.png#gh-light-mode-only)
-
-# micro-ROS module for Raspberry Pi Pico SDK
-
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+# PICO(rp2040) motor control via micro-ROS
 
 ## Getting Started
 
-Here is a quick way to compile the example given in this repository.
-
-### Dependencies
-
-micro-ROS precompiled library is compiled using `arm-none-eabi-gcc` 9.2.1, a compatible version is expected when building the micro-ROS project.
-You can specify a compiler path with the following command:
-
 ```bash
-# Configure environment
-echo "export PICO_TOOLCHAIN_PATH=..." >> ~/.bashrc
-source ~/.bashrc
+git clone https://github.com/tianrking/1_ros ~/1_ros
 ```
 
-### 1. Install Pico SDK
+## Dependencies
+
 First, make sure the Pico SDK is properly installed and configured:
 
 ```bash
@@ -31,26 +18,29 @@ git clone --recurse-submodules https://github.com/raspberrypi/pico-sdk.git $HOME
 # Configure environment
 echo "export PICO_SDK_PATH=$HOME/pico-sdk" >> ~/.bashrc
 source ~/.bashrc
+
 ```
 
-### 2. Compile Example
-
-Once the Pico SDK is ready compile the example:
+## Build
 
 ```bash
-cd micro_ros_raspberrypi_pico_sdk
+cd ~/1_ros
 mkdir build
 cd build
 cmake ..
 make
 ```
 
+## Flash 
+
 To flash, hold the boot button, plug the USB and run:
-```
+
+```bash
 cp pico_micro_ros_example.uf2 /media/$USER/RPI-RP2
 ```
 
-### 3. Start Micro-ROS Agent
+## Start Micro-ROS Agent
+
 Micro-ROS follows the client-server architecture, so you need to start the Micro-ROS Agent.
 You can do so using the [micro-ros-agent Docker](https://hub.docker.com/r/microros/micro-ros-agent):
 ```bash
@@ -60,39 +50,38 @@ docker run -it --rm -v /dev:/dev --privileged --net=host microros/micro-ros-agen
 ## What files are relevant?
 - `pico_uart_transport.c`: Contains the board specific implementation of the serial transport (no change needed).
 - `CMakeLists.txt`: CMake file.
-- `pico_micro_ros_example.c`: The actual ROS 2 publisher.
+- `pico_micro_ros_motor_control.c`: Our code .
 
-## How to build the precompiled library
+## Remote Control
 
-Micro-ROS is precompiled for Raspberry Pi Pico in [`libmicroros`](libmicroros).
-If you want to compile it by yourself:
+### RCLPY
+
+#### Configure
 
 ```bash
-docker pull microros/micro_ros_static_library_builder:humble
-docker run -it --rm -v $(pwd):/project microros/micro_ros_static_library_builder:humble
+cd ~/1_ros/PC_Control/src
+ros2 pkg create example_topic_rclpy  --build-type ament_python --dependencies rclpy
 ```
 
-Note that folders added to `microros_static_library/library_generation/extra_packages` and entries added to `microros_static_library/library_generation/extra_packages/extra_packages.repos` will be taken into account by this build system.
-## How to use Pico SDK?
+```bash
+cd example_topic_rclpy/example_topic_rclpy
+touch topic_subscribe_02.py
+touch topic_publisher_02.py
+```
 
-Here is a Raspberry Pi Pico C/C++ SDK documentation:
-https://datasheets.raspberrypi.org/pico/raspberry-pi-pico-c-sdk.pdf
-## Purpose of the Project
+```bash
+cd ~/1_ros/PC_Control/
+colcon build
+source install/setup.bash
+```
 
-This software is not ready for production use. It has neither been developed nor
-tested for a specific use case. However, the license conditions of the
-applicable Open Source licenses allow you to adapt the software to your needs.
-Before using it in a safety relevant setting, make sure that the software
-fulfills your requirements and adjust it according to any applicable safety
-standards, e.g., ISO 26262.
+#### RUN
 
-## License
+```bash
+ros2 run example_topic_rclpy change_speed
+ros2 run example_topic_rclpy get_speed
+```
 
-This repository is open-sourced under the Apache-2.0 license. See the [LICENSE](LICENSE) file for details.
+### RCLCPP
 
-For a list of other open-source components included in this repository,
-see the file [3rd-party-licenses.txt](3rd-party-licenses.txt).
-
-## Known Issues/Limitations
-
-There are no known limitations.
+Todo

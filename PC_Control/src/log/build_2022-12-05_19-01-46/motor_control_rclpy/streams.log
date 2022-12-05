@@ -1,0 +1,36 @@
+[0.627s] Invoking command in '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclpy': PYTHONPATH=/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/build/motor_control_rclpy/prefix_override:/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/install/motor_control_rclpy/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/motor_control_rclpy build --build-base /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/build/motor_control_rclpy/build install --record /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/build/motor_control_rclpy/install.log --single-version-externally-managed
+[0.871s] running egg_info
+[0.872s] creating ../build/motor_control_rclpy/motor_control_rclpy.egg-info
+[0.873s] writing ../build/motor_control_rclpy/motor_control_rclpy.egg-info/PKG-INFO
+[0.873s] writing dependency_links to ../build/motor_control_rclpy/motor_control_rclpy.egg-info/dependency_links.txt
+[0.874s] writing entry points to ../build/motor_control_rclpy/motor_control_rclpy.egg-info/entry_points.txt
+[0.874s] writing requirements to ../build/motor_control_rclpy/motor_control_rclpy.egg-info/requires.txt
+[0.874s] writing top-level names to ../build/motor_control_rclpy/motor_control_rclpy.egg-info/top_level.txt
+[0.875s] writing manifest file '../build/motor_control_rclpy/motor_control_rclpy.egg-info/SOURCES.txt'
+[0.877s] reading manifest file '../build/motor_control_rclpy/motor_control_rclpy.egg-info/SOURCES.txt'
+[0.878s] writing manifest file '../build/motor_control_rclpy/motor_control_rclpy.egg-info/SOURCES.txt'
+[0.879s] running build
+[0.879s] running build_py
+[0.879s] creating /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/build/motor_control_rclpy/build
+[0.879s] creating /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/build/motor_control_rclpy/build/lib
+[0.879s] creating /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/build/motor_control_rclpy/build/lib/motor_control_rclpy
+[0.880s] copying motor_control_rclpy/get_speed.py -> /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/build/motor_control_rclpy/build/lib/motor_control_rclpy
+[0.880s] copying motor_control_rclpy/change_speed.py -> /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/build/motor_control_rclpy/build/lib/motor_control_rclpy
+[0.880s] copying motor_control_rclpy/__init__.py -> /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/build/motor_control_rclpy/build/lib/motor_control_rclpy
+[0.881s] running install
+[0.881s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[0.881s]   warnings.warn(
+[0.882s] running install_lib
+[0.883s] creating /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/install/motor_control_rclpy/lib/python3.10/site-packages/motor_control_rclpy
+[0.883s] copying /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/build/motor_control_rclpy/build/lib/motor_control_rclpy/get_speed.py -> /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/install/motor_control_rclpy/lib/python3.10/site-packages/motor_control_rclpy
+[0.883s] copying /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/build/motor_control_rclpy/build/lib/motor_control_rclpy/change_speed.py -> /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/install/motor_control_rclpy/lib/python3.10/site-packages/motor_control_rclpy
+[0.883s] copying /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/build/motor_control_rclpy/build/lib/motor_control_rclpy/__init__.py -> /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/install/motor_control_rclpy/lib/python3.10/site-packages/motor_control_rclpy
+[0.885s] byte-compiling /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/install/motor_control_rclpy/lib/python3.10/site-packages/motor_control_rclpy/get_speed.py to get_speed.cpython-310.pyc
+[0.885s] byte-compiling /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/install/motor_control_rclpy/lib/python3.10/site-packages/motor_control_rclpy/change_speed.py to change_speed.cpython-310.pyc
+[0.886s] byte-compiling /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/install/motor_control_rclpy/lib/python3.10/site-packages/motor_control_rclpy/__init__.py to __init__.cpython-310.pyc
+[0.886s] running install_data
+[0.887s] creating /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/install/motor_control_rclpy/share/ament_index
+[0.887s] creating /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/install/motor_control_rclpy/share/ament_index/resource_index
+[0.887s] creating /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/install/motor_control_rclpy/share/ament_index/resource_index/packages
+[0.888s] error: can't copy 'resource/motor_control_rclpy': doesn't exist or not a regular file
+[0.919s] Invoked command in '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclpy' returned '1': PYTHONPATH=/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/build/motor_control_rclpy/prefix_override:/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/install/motor_control_rclpy/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/motor_control_rclpy build --build-base /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/build/motor_control_rclpy/build install --record /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/build/motor_control_rclpy/install.log --single-version-externally-managed

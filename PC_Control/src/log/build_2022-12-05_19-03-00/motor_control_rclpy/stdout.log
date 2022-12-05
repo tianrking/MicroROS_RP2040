@@ -1,0 +1,21 @@
+running egg_info
+writing ../build/motor_control_rclpy/motor_control_rclpy.egg-info/PKG-INFO
+writing dependency_links to ../build/motor_control_rclpy/motor_control_rclpy.egg-info/dependency_links.txt
+writing entry points to ../build/motor_control_rclpy/motor_control_rclpy.egg-info/entry_points.txt
+writing requirements to ../build/motor_control_rclpy/motor_control_rclpy.egg-info/requires.txt
+writing top-level names to ../build/motor_control_rclpy/motor_control_rclpy.egg-info/top_level.txt
+reading manifest file '../build/motor_control_rclpy/motor_control_rclpy.egg-info/SOURCES.txt'
+writing manifest file '../build/motor_control_rclpy/motor_control_rclpy.egg-info/SOURCES.txt'
+running build
+running build_py
+running install
+running install_lib
+running install_data
+copying resource/motor_control_rclpy -> /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/install/motor_control_rclpy/share/ament_index/resource_index/packages
+copying package.xml -> /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/install/motor_control_rclpy/share/motor_control_rclpy
+running install_egg_info
+Copying ../build/motor_control_rclpy/motor_control_rclpy.egg-info to /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/install/motor_control_rclpy/lib/python3.10/site-packages/motor_control_rclpy-0.0.0-py3.10.egg-info
+running install_scripts
+Installing change_speed script to /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/install/motor_control_rclpy/lib/motor_control_rclpy
+Installing get_speed script to /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/install/motor_control_rclpy/lib/motor_control_rclpy
+writing list of installed files to '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/build/motor_control_rclpy/install.log'

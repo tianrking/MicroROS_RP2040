@@ -1,0 +1,7 @@
+[0.021s] Invoking command in '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/build/motor_control_rclcpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/example_topic_rclpy:/home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/py_pubsub:/opt/ros/humble /usr/bin/cmake --build /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/build/motor_control_rclcpp -- -j4 -l4
+[0.069s] [ 25%] [32mBuilding CXX object CMakeFiles/get_speed.dir/src/get_speed.cpp.o[0m
+[0.073s] [ 50%] [32mBuilding CXX object CMakeFiles/change_speed.dir/src/change_speed.cpp.o[0m
+[4.516s] [ 75%] [32m[1mLinking CXX executable change_speed[0m
+[4.740s] [ 75%] Built target change_speed
+[8.590s] [100%] [32m[1mLinking CXX executable get_speed[0m
+[9.007s] [100%] Built target get_speed

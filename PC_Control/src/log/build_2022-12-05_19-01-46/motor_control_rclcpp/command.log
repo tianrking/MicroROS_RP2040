@@ -1,0 +1,1 @@
+Invoking command in '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/build/motor_control_rclcpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/example_topic_rclpy:/home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/py_pubsub:/opt/ros/humble /usr/bin/cmake --build /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/build/motor_control_rclcpp -- -j4 -l4

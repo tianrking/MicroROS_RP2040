@@ -1,0 +1,6 @@
+[ 25%] [32mBuilding CXX object CMakeFiles/get_speed.dir/src/get_speed.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/change_speed.dir/src/change_speed.cpp.o[0m
+[ 75%] [32m[1mLinking CXX executable change_speed[0m
+[ 75%] Built target change_speed
+[100%] [32m[1mLinking CXX executable get_speed[0m
+[100%] Built target get_speed

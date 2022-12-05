@@ -1,0 +1,28 @@
+[0.022s] Invoking command in '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/build/motor_control_rclcpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/example_topic_rclpy:/home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/py_pubsub:/opt/ros/humble /usr/bin/cmake --build /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/build/motor_control_rclcpp -- -j4 -l4
+[0.059s] [35m[1mConsolidate compiler generated dependencies of target change_speed[0m
+[0.062s] [35m[1mConsolidate compiler generated dependencies of target get_speed[0m
+[0.076s] [ 50%] Built target change_speed
+[0.079s] [100%] Built target get_speed
+[0.272s] Invoked command in '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/build/motor_control_rclcpp' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/example_topic_rclpy:/home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/py_pubsub:/opt/ros/humble /usr/bin/cmake --build /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/build/motor_control_rclcpp -- -j4 -l4
+[0.307s] Invoking command in '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/build/motor_control_rclcpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/example_topic_rclpy:/home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/py_pubsub:/opt/ros/humble /usr/bin/cmake --install /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/build/motor_control_rclcpp
+[0.314s] -- Install configuration: ""
+[0.314s] -- Installing: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/install/motor_control_rclcpp/lib/motor_control_rclcpp/get_speed
+[0.318s] -- Set runtime path of "/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/install/motor_control_rclcpp/lib/motor_control_rclcpp/get_speed" to ""
+[0.318s] -- Installing: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/install/motor_control_rclcpp/lib/motor_control_rclcpp/change_speed
+[0.319s] -- Set runtime path of "/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/install/motor_control_rclcpp/lib/motor_control_rclcpp/change_speed" to ""
+[0.319s] -- Installing: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/install/motor_control_rclcpp/share/ament_index/resource_index/package_run_dependencies/motor_control_rclcpp
+[0.319s] -- Installing: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/install/motor_control_rclcpp/share/ament_index/resource_index/parent_prefix_path/motor_control_rclcpp
+[0.320s] -- Installing: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/install/motor_control_rclcpp/share/motor_control_rclcpp/environment/ament_prefix_path.sh
+[0.320s] -- Installing: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/install/motor_control_rclcpp/share/motor_control_rclcpp/environment/ament_prefix_path.dsv
+[0.320s] -- Installing: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/install/motor_control_rclcpp/share/motor_control_rclcpp/environment/path.sh
+[0.320s] -- Installing: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/install/motor_control_rclcpp/share/motor_control_rclcpp/environment/path.dsv
+[0.320s] -- Installing: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/install/motor_control_rclcpp/share/motor_control_rclcpp/local_setup.bash
+[0.320s] -- Installing: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/install/motor_control_rclcpp/share/motor_control_rclcpp/local_setup.sh
+[0.320s] -- Installing: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/install/motor_control_rclcpp/share/motor_control_rclcpp/local_setup.zsh
+[0.320s] -- Installing: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/install/motor_control_rclcpp/share/motor_control_rclcpp/local_setup.dsv
+[0.320s] -- Installing: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/install/motor_control_rclcpp/share/motor_control_rclcpp/package.dsv
+[0.321s] -- Installing: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/install/motor_control_rclcpp/share/ament_index/resource_index/packages/motor_control_rclcpp
+[0.321s] -- Installing: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/install/motor_control_rclcpp/share/motor_control_rclcpp/cmake/motor_control_rclcppConfig.cmake
+[0.321s] -- Installing: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/install/motor_control_rclcpp/share/motor_control_rclcpp/cmake/motor_control_rclcppConfig-version.cmake
+[0.321s] -- Installing: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/install/motor_control_rclcpp/share/motor_control_rclcpp/package.xml
+[0.326s] Invoked command in '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/build/motor_control_rclcpp' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/example_topic_rclpy:/home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/py_pubsub:/opt/ros/humble /usr/bin/cmake --install /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/build/motor_control_rclcpp
