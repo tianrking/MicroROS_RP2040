@@ -1,0 +1,16 @@
+package.xml
+setup.cfg
+setup.py
+../../build/example_topic_rclpy/example_topic_rclpy.egg-info/PKG-INFO
+../../build/example_topic_rclpy/example_topic_rclpy.egg-info/SOURCES.txt
+../../build/example_topic_rclpy/example_topic_rclpy.egg-info/dependency_links.txt
+../../build/example_topic_rclpy/example_topic_rclpy.egg-info/entry_points.txt
+../../build/example_topic_rclpy/example_topic_rclpy.egg-info/requires.txt
+../../build/example_topic_rclpy/example_topic_rclpy.egg-info/top_level.txt
+../../build/example_topic_rclpy/example_topic_rclpy.egg-info/zip-safe
+example_topic_rclpy/__init__.py
+example_topic_rclpy/get_speed.py
+resource/example_topic_rclpy
+test/test_copyright.py
+test/test_flake8.py
+test/test_pep257.py

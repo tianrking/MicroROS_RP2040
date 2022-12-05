@@ -1,0 +1,196 @@
+[0.000000] (-) TimerEvent: {}
+[0.000197] (motor_control_rclcpp) JobQueued: {'identifier': 'motor_control_rclcpp', 'dependencies': OrderedDict()}
+[0.000260] (py_pubsub) JobQueued: {'identifier': 'py_pubsub', 'dependencies': OrderedDict()}
+[0.000297] (motor_control_rclcpp) JobStarted: {'identifier': 'motor_control_rclcpp'}
+[0.031391] (py_pubsub) JobStarted: {'identifier': 'py_pubsub'}
+[0.059978] (motor_control_rclcpp) JobProgress: {'identifier': 'motor_control_rclcpp', 'progress': 'cmake'}
+[0.060404] (motor_control_rclcpp) JobProgress: {'identifier': 'motor_control_rclcpp', 'progress': 'build'}
+[0.061219] (motor_control_rclcpp) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp', '--', '-j4', '-l4'], 'cwd': '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('CONDA_PROMPT_MODIFIER', '(base)'), ('USER', 'w0x7ce'), ('SSH_CLIENT', '192.168.7.170 60233 22'), ('LC_TIME', 'zh_TW.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/w0x7ce/.vscode-server/bin/6261075646f055b99068d3688932416f2346dd3b/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/w0x7ce/.vscode-server/bin/6261075646f055b99068d3688932416f2346dd3b/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/w0x7ce'), ('CONDA_SHLVL', '1'), ('OLDPWD', '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src'), ('TERM_PROGRAM_VERSION', '1.73.1'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-5b040ee9-ecf6-4cd9-b6d5-10bfc70eca9b.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/w0x7ce/.vscode-server/bin/6261075646f055b99068d3688932416f2346dd3b/extensions/git/dist/askpass-main.js'), ('LC_MONETARY', 'zh_TW.UTF-8'), ('VSCODE_GIT_ASKPASS_NODE', '/home/w0x7ce/.vscode-server/bin/6261075646f055b99068d3688932416f2346dd3b/node'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('COLCON_PREFIX_PATH', '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'w0x7ce'), ('_', '/home/w0x7ce/anaconda3/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '158'), ('_CE_CONDA', ''), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/w0x7ce/.local/share/pnpm:/home/w0x7ce/.cargo/bin:/home/w0x7ce/anaconda3/bin:/home/w0x7ce/anaconda3/condabin:/home/w0x7ce/.vscode-server/bin/6261075646f055b99068d3688932416f2346dd3b/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('LC_ADDRESS', 'zh_TW.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LC_TELEPHONE', 'zh_TW.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-414cb7fe8a.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp:/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/w0x7ce/anaconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_TW.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CONDA_DEFAULT_ENV', 'base'), ('LC_MEASUREMENT', 'zh_TW.UTF-8'), ('LC_IDENTIFICATION', 'zh_TW.UTF-8'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp'), ('LC_ALL', 'en_US.UTF-8'), ('CONDA_EXE', '/home/w0x7ce/anaconda3/bin/conda'), ('PICO_SDK_PATH', '/home/w0x7ce/pico-sdk'), ('SSH_CONNECTION', '192.168.7.170 60233 192.168.7.84 22'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'zh_TW.UTF-8'), ('CONDA_PREFIX', '/home/w0x7ce/anaconda3'), ('LC_PAPER', 'zh_TW.UTF-8'), ('COLCON', '1'), ('PNPM_HOME', '/home/w0x7ce/.local/share/pnpm'), ('CMAKE_PREFIX_PATH', '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp:/opt/ros/humble')]), 'shell': False}
+[0.085749] (motor_control_rclcpp) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.3 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.097862] (-) TimerEvent: {}
+[0.198161] (-) TimerEvent: {}
+[0.221420] (motor_control_rclcpp) StdoutLine: {'line': b'-- Found rclcpp: 16.0.2 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.255252] (motor_control_rclcpp) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.4 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.257879] (motor_control_rclcpp) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.4 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.263883] (motor_control_rclcpp) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.4 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.274817] (motor_control_rclcpp) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.291021] (motor_control_rclcpp) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.298260] (-) TimerEvent: {}
+[0.352784] (motor_control_rclcpp) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.354137] (motor_control_rclcpp) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.2 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.398353] (-) TimerEvent: {}
+[0.475883] (motor_control_rclcpp) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.498459] (-) TimerEvent: {}
+[0.598701] (-) TimerEvent: {}
+[0.638494] (motor_control_rclcpp) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.4 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[0.698818] (-) TimerEvent: {}
+[0.704138] (motor_control_rclcpp) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[0.704375] (motor_control_rclcpp) StdoutLine: {'line': b'-- Configured cppcheck include dirs: \n'}
+[0.704469] (motor_control_rclcpp) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[0.704842] (motor_control_rclcpp) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[0.705580] (motor_control_rclcpp) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[0.705679] (motor_control_rclcpp) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[0.705946] (motor_control_rclcpp) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[0.706670] (motor_control_rclcpp) StdoutLine: {'line': b'-- Configuring done\n'}
+[0.719815] (motor_control_rclcpp) StdoutLine: {'line': b'-- Generating done\n'}
+[0.721585] (motor_control_rclcpp) StdoutLine: {'line': b'-- Build files have been written to: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp\n'}
+[0.744733] (motor_control_rclcpp) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target get_speed\x1b[0m\n'}
+[0.744886] (motor_control_rclcpp) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target change_speed\x1b[0m\n'}
+[0.761222] (motor_control_rclcpp) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/change_speed.dir/src/change_speed.cpp.o\x1b[0m\n'}
+[0.761391] (motor_control_rclcpp) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/get_speed.dir/src/get_speed.cpp.o\x1b[0m\n'}
+[0.798932] (-) TimerEvent: {}
+[0.899534] (-) TimerEvent: {}
+[0.999818] (-) TimerEvent: {}
+[1.100852] (-) TimerEvent: {}
+[1.201495] (-) TimerEvent: {}
+[1.302085] (-) TimerEvent: {}
+[1.402874] (-) TimerEvent: {}
+[1.503133] (-) TimerEvent: {}
+[1.603416] (-) TimerEvent: {}
+[1.703708] (-) TimerEvent: {}
+[1.803995] (-) TimerEvent: {}
+[1.904252] (-) TimerEvent: {}
+[2.004523] (-) TimerEvent: {}
+[2.104823] (-) TimerEvent: {}
+[2.205241] (-) TimerEvent: {}
+[2.305947] (-) TimerEvent: {}
+[2.406238] (-) TimerEvent: {}
+[2.506534] (-) TimerEvent: {}
+[2.606863] (-) TimerEvent: {}
+[2.707161] (-) TimerEvent: {}
+[2.807488] (-) TimerEvent: {}
+[2.907800] (-) TimerEvent: {}
+[3.008108] (-) TimerEvent: {}
+[3.108400] (-) TimerEvent: {}
+[3.208673] (-) TimerEvent: {}
+[3.309358] (-) TimerEvent: {}
+[3.409989] (-) TimerEvent: {}
+[3.510629] (-) TimerEvent: {}
+[3.611240] (-) TimerEvent: {}
+[3.711867] (-) TimerEvent: {}
+[3.812565] (-) TimerEvent: {}
+[3.913601] (-) TimerEvent: {}
+[4.013898] (-) TimerEvent: {}
+[4.114193] (-) TimerEvent: {}
+[4.214453] (-) TimerEvent: {}
+[4.315210] (-) TimerEvent: {}
+[4.415528] (-) TimerEvent: {}
+[4.516129] (-) TimerEvent: {}
+[4.616417] (-) TimerEvent: {}
+[4.716717] (-) TimerEvent: {}
+[4.817734] (-) TimerEvent: {}
+[4.871625] (motor_control_rclcpp) StdoutLine: {'line': b'[ 75%] \x1b[32m\x1b[1mLinking CXX executable change_speed\x1b[0m\n'}
+[4.917834] (-) TimerEvent: {}
+[5.018120] (-) TimerEvent: {}
+[5.067787] (motor_control_rclcpp) StdoutLine: {'line': b'[ 75%] Built target change_speed\n'}
+[5.118351] (-) TimerEvent: {}
+[5.218609] (-) TimerEvent: {}
+[5.318858] (-) TimerEvent: {}
+[5.419491] (-) TimerEvent: {}
+[5.456307] (py_pubsub) Command: {'cmd': ['/home/w0x7ce/anaconda3/bin/python', 'setup.py', 'egg_info', '--egg-base', '../../build/py_pubsub', 'build', '--build-base', '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/py_pubsub/build', 'install', '--prefix', '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/py_pubsub', '--record', '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/py_pubsub/install.log', '--single-version-externally-managed'], 'cwd': '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/py_pubsub', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'CONDA_PROMPT_MODIFIER': '(base)', 'USER': 'w0x7ce', 'SSH_CLIENT': '192.168.7.170 60233 22', 'LC_TIME': 'zh_TW.UTF-8', 'XDG_SESSION_TYPE': 'tty', 'GIT_ASKPASS': '/home/w0x7ce/.vscode-server/bin/6261075646f055b99068d3688932416f2346dd3b/extensions/git/dist/askpass.sh', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'BROWSER': '/home/w0x7ce/.vscode-server/bin/6261075646f055b99068d3688932416f2346dd3b/bin/helpers/browser.sh', 'MOTD_SHOWN': 'pam', 'HOME': '/home/w0x7ce', 'CONDA_SHLVL': '1', 'OLDPWD': '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src', 'TERM_PROGRAM_VERSION': '1.73.1', 'VSCODE_IPC_HOOK_CLI': '/run/user/1000/vscode-ipc-5b040ee9-ecf6-4cd9-b6d5-10bfc70eca9b.sock', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/home/w0x7ce/.vscode-server/bin/6261075646f055b99068d3688932416f2346dd3b/extensions/git/dist/askpass-main.js', 'LC_MONETARY': 'zh_TW.UTF-8', 'VSCODE_GIT_ASKPASS_NODE': '/home/w0x7ce/.vscode-server/bin/6261075646f055b99068d3688932416f2346dd3b/node', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', '_CE_M': '', 'COLCON_PREFIX_PATH': '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'w0x7ce', '_': '/home/w0x7ce/anaconda3/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '158', '_CE_CONDA': '', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/home/w0x7ce/.local/share/pnpm:/home/w0x7ce/.cargo/bin:/home/w0x7ce/anaconda3/bin:/home/w0x7ce/anaconda3/condabin:/home/w0x7ce/.vscode-server/bin/6261075646f055b99068d3688932416f2346dd3b/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'LC_ADDRESS': 'zh_TW.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'LC_TELEPHONE': 'zh_TW.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-414cb7fe8a.sock', 'TERM_PROGRAM': 'vscode', 'AMENT_PREFIX_PATH': '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp:/opt/ros/humble', 'CONDA_PYTHON_EXE': '/home/w0x7ce/anaconda3/bin/python', 'SHELL': '/bin/bash', 'LC_NAME': 'zh_TW.UTF-8', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'CONDA_DEFAULT_ENV': 'base', 'LC_MEASUREMENT': 'zh_TW.UTF-8', 'LC_IDENTIFICATION': 'zh_TW.UTF-8', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/py_pubsub', 'LC_ALL': 'en_US.UTF-8', 'CONDA_EXE': '/home/w0x7ce/anaconda3/bin/conda', 'PICO_SDK_PATH': '/home/w0x7ce/pico-sdk', 'SSH_CONNECTION': '192.168.7.170 60233 192.168.7.84 22', 'PYTHONPATH': '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/py_pubsub/lib/python3.9/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'LC_NUMERIC': 'zh_TW.UTF-8', 'CONDA_PREFIX': '/home/w0x7ce/anaconda3', 'LC_PAPER': 'zh_TW.UTF-8', 'COLCON': '1', 'PNPM_HOME': '/home/w0x7ce/.local/share/pnpm', 'CMAKE_PREFIX_PATH': '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp'}, 'shell': False}
+[5.519633] (-) TimerEvent: {}
+[5.619963] (-) TimerEvent: {}
+[5.720480] (-) TimerEvent: {}
+[5.820755] (-) TimerEvent: {}
+[5.921053] (-) TimerEvent: {}
+[6.021342] (-) TimerEvent: {}
+[6.121585] (-) TimerEvent: {}
+[6.221965] (-) TimerEvent: {}
+[6.322445] (-) TimerEvent: {}
+[6.422909] (-) TimerEvent: {}
+[6.425711] (py_pubsub) StdoutLine: {'line': b'running egg_info\n'}
+[6.426237] (py_pubsub) StdoutLine: {'line': b'creating ../../build/py_pubsub/py_pubsub.egg-info\n'}
+[6.496222] (py_pubsub) StdoutLine: {'line': b'writing ../../build/py_pubsub/py_pubsub.egg-info/PKG-INFO\n'}
+[6.523026] (-) TimerEvent: {}
+[6.545325] (py_pubsub) StdoutLine: {'line': b'writing dependency_links to ../../build/py_pubsub/py_pubsub.egg-info/dependency_links.txt\n'}
+[6.623143] (-) TimerEvent: {}
+[6.699590] (py_pubsub) StdoutLine: {'line': b'writing entry points to ../../build/py_pubsub/py_pubsub.egg-info/entry_points.txt\n'}
+[6.723249] (-) TimerEvent: {}
+[6.795799] (py_pubsub) StdoutLine: {'line': b'writing requirements to ../../build/py_pubsub/py_pubsub.egg-info/requires.txt\n'}
+[6.823353] (-) TimerEvent: {}
+[6.844934] (py_pubsub) StdoutLine: {'line': b'writing top-level names to ../../build/py_pubsub/py_pubsub.egg-info/top_level.txt\n'}
+[6.845221] (py_pubsub) StdoutLine: {'line': b"writing manifest file '../../build/py_pubsub/py_pubsub.egg-info/SOURCES.txt'\n"}
+[6.923471] (-) TimerEvent: {}
+[6.938069] (py_pubsub) StdoutLine: {'line': b"reading manifest file '../../build/py_pubsub/py_pubsub.egg-info/SOURCES.txt'\n"}
+[6.938759] (py_pubsub) StdoutLine: {'line': b"writing manifest file '../../build/py_pubsub/py_pubsub.egg-info/SOURCES.txt'\n"}
+[6.938914] (py_pubsub) StdoutLine: {'line': b'running build\n'}
+[6.938984] (py_pubsub) StdoutLine: {'line': b'running build_py\n'}
+[6.939187] (py_pubsub) StdoutLine: {'line': b'creating /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/py_pubsub/build\n'}
+[6.939298] (py_pubsub) StdoutLine: {'line': b'creating /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/py_pubsub/build/lib\n'}
+[6.939386] (py_pubsub) StdoutLine: {'line': b'creating /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/py_pubsub/build/lib/py_pubsub\n'}
+[6.939452] (py_pubsub) StdoutLine: {'line': b'copying py_pubsub/publisher_member_function.py -> /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/py_pubsub/build/lib/py_pubsub\n'}
+[6.939534] (py_pubsub) StdoutLine: {'line': b'copying py_pubsub/__init__.py -> /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/py_pubsub/build/lib/py_pubsub\n'}
+[6.939598] (py_pubsub) StdoutLine: {'line': b'running install\n'}
+[6.977193] (py_pubsub) StderrLine: {'line': b'/home/w0x7ce/anaconda3/lib/python3.9/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.\n'}
+[6.977388] (py_pubsub) StderrLine: {'line': b'  warnings.warn(\n'}
+[6.982586] (py_pubsub) StdoutLine: {'line': b'running install_lib\n'}
+[7.023560] (-) TimerEvent: {}
+[7.052938] (py_pubsub) StdoutLine: {'line': b'creating /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/py_pubsub/lib/python3.9/site-packages/py_pubsub\n'}
+[7.053339] (py_pubsub) StdoutLine: {'line': b'copying /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/py_pubsub/build/lib/py_pubsub/publisher_member_function.py -> /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/py_pubsub/lib/python3.9/site-packages/py_pubsub\n'}
+[7.053448] (py_pubsub) StdoutLine: {'line': b'copying /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/py_pubsub/build/lib/py_pubsub/__init__.py -> /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/py_pubsub/lib/python3.9/site-packages/py_pubsub\n'}
+[7.053721] (py_pubsub) StdoutLine: {'line': b'byte-compiling /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/py_pubsub/lib/python3.9/site-packages/py_pubsub/publisher_member_function.py to publisher_member_function.cpython-39.pyc\n'}
+[7.054226] (py_pubsub) StdoutLine: {'line': b'byte-compiling /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/py_pubsub/lib/python3.9/site-packages/py_pubsub/__init__.py to __init__.cpython-39.pyc\n'}
+[7.054491] (py_pubsub) StdoutLine: {'line': b'running install_data\n'}
+[7.075406] (py_pubsub) StdoutLine: {'line': b'creating /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/py_pubsub/share/ament_index\n'}
+[7.075805] (py_pubsub) StdoutLine: {'line': b'creating /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/py_pubsub/share/ament_index/resource_index\n'}
+[7.075990] (py_pubsub) StdoutLine: {'line': b'creating /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/py_pubsub/share/ament_index/resource_index/packages\n'}
+[7.076071] (py_pubsub) StdoutLine: {'line': b'copying resource/py_pubsub -> /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/py_pubsub/share/ament_index/resource_index/packages\n'}
+[7.076137] (py_pubsub) StdoutLine: {'line': b'copying package.xml -> /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/py_pubsub/share/py_pubsub\n'}
+[7.076201] (py_pubsub) StdoutLine: {'line': b'running install_egg_info\n'}
+[7.123704] (-) TimerEvent: {}
+[7.147890] (py_pubsub) StdoutLine: {'line': b'Copying ../../build/py_pubsub/py_pubsub.egg-info to /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/py_pubsub/lib/python3.9/site-packages/py_pubsub-0.0.0-py3.9.egg-info\n'}
+[7.148748] (py_pubsub) StdoutLine: {'line': b'running install_scripts\n'}
+[7.223806] (-) TimerEvent: {}
+[7.309407] (py_pubsub) StdoutLine: {'line': b'Installing listener script to /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/py_pubsub/lib/py_pubsub\n'}
+[7.309604] (py_pubsub) StdoutLine: {'line': b'Installing talker script to /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/py_pubsub/lib/py_pubsub\n'}
+[7.309807] (py_pubsub) StdoutLine: {'line': b"writing list of installed files to '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/py_pubsub/install.log'\n"}
+[7.323946] (-) TimerEvent: {}
+[7.347795] (py_pubsub) CommandEnded: {'returncode': 0}
+[7.378613] (py_pubsub) JobEnded: {'identifier': 'py_pubsub', 'rc': 0}
+[7.424065] (-) TimerEvent: {}
+[7.524325] (-) TimerEvent: {}
+[7.624587] (-) TimerEvent: {}
+[7.724851] (-) TimerEvent: {}
+[7.825051] (-) TimerEvent: {}
+[7.925312] (-) TimerEvent: {}
+[8.025579] (-) TimerEvent: {}
+[8.125838] (-) TimerEvent: {}
+[8.226145] (-) TimerEvent: {}
+[8.326570] (-) TimerEvent: {}
+[8.426818] (-) TimerEvent: {}
+[8.527095] (-) TimerEvent: {}
+[8.627367] (-) TimerEvent: {}
+[8.727648] (-) TimerEvent: {}
+[8.791018] (motor_control_rclcpp) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable get_speed\x1b[0m\n'}
+[8.827776] (-) TimerEvent: {}
+[8.928102] (-) TimerEvent: {}
+[9.028406] (-) TimerEvent: {}
+[9.128718] (-) TimerEvent: {}
+[9.157772] (motor_control_rclcpp) StdoutLine: {'line': b'[100%] Built target get_speed\n'}
+[9.167146] (motor_control_rclcpp) CommandEnded: {'returncode': 0}
+[9.193058] (motor_control_rclcpp) JobProgress: {'identifier': 'motor_control_rclcpp', 'progress': 'install'}
+[9.202357] (motor_control_rclcpp) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp'], 'cwd': '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('CONDA_PROMPT_MODIFIER', '(base)'), ('USER', 'w0x7ce'), ('SSH_CLIENT', '192.168.7.170 60233 22'), ('LC_TIME', 'zh_TW.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/w0x7ce/.vscode-server/bin/6261075646f055b99068d3688932416f2346dd3b/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/w0x7ce/.vscode-server/bin/6261075646f055b99068d3688932416f2346dd3b/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/w0x7ce'), ('CONDA_SHLVL', '1'), ('OLDPWD', '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src'), ('TERM_PROGRAM_VERSION', '1.73.1'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-5b040ee9-ecf6-4cd9-b6d5-10bfc70eca9b.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/w0x7ce/.vscode-server/bin/6261075646f055b99068d3688932416f2346dd3b/extensions/git/dist/askpass-main.js'), ('LC_MONETARY', 'zh_TW.UTF-8'), ('VSCODE_GIT_ASKPASS_NODE', '/home/w0x7ce/.vscode-server/bin/6261075646f055b99068d3688932416f2346dd3b/node'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('COLCON_PREFIX_PATH', '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'w0x7ce'), ('_', '/home/w0x7ce/anaconda3/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '158'), ('_CE_CONDA', ''), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/w0x7ce/.local/share/pnpm:/home/w0x7ce/.cargo/bin:/home/w0x7ce/anaconda3/bin:/home/w0x7ce/anaconda3/condabin:/home/w0x7ce/.vscode-server/bin/6261075646f055b99068d3688932416f2346dd3b/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('LC_ADDRESS', 'zh_TW.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LC_TELEPHONE', 'zh_TW.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-414cb7fe8a.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp:/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/w0x7ce/anaconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_TW.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CONDA_DEFAULT_ENV', 'base'), ('LC_MEASUREMENT', 'zh_TW.UTF-8'), ('LC_IDENTIFICATION', 'zh_TW.UTF-8'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp'), ('LC_ALL', 'en_US.UTF-8'), ('CONDA_EXE', '/home/w0x7ce/anaconda3/bin/conda'), ('PICO_SDK_PATH', '/home/w0x7ce/pico-sdk'), ('SSH_CONNECTION', '192.168.7.170 60233 192.168.7.84 22'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'zh_TW.UTF-8'), ('CONDA_PREFIX', '/home/w0x7ce/anaconda3'), ('LC_PAPER', 'zh_TW.UTF-8'), ('COLCON', '1'), ('PNPM_HOME', '/home/w0x7ce/.local/share/pnpm'), ('CMAKE_PREFIX_PATH', '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp:/opt/ros/humble')]), 'shell': False}
+[9.211209] (motor_control_rclcpp) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[9.211642] (motor_control_rclcpp) StdoutLine: {'line': b'-- Installing: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp/lib/motor_control_rclcpp/get_speed\n'}
+[9.215207] (motor_control_rclcpp) StdoutLine: {'line': b'-- Set runtime path of "/home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp/lib/motor_control_rclcpp/get_speed" to ""\n'}
+[9.215424] (motor_control_rclcpp) StdoutLine: {'line': b'-- Installing: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp/lib/motor_control_rclcpp/change_speed\n'}
+[9.216725] (motor_control_rclcpp) StdoutLine: {'line': b'-- Set runtime path of "/home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp/lib/motor_control_rclcpp/change_speed" to ""\n'}
+[9.216835] (motor_control_rclcpp) StdoutLine: {'line': b'-- Up-to-date: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp/share/ament_index/resource_index/package_run_dependencies/motor_control_rclcpp\n'}
+[9.216956] (motor_control_rclcpp) StdoutLine: {'line': b'-- Up-to-date: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp/share/ament_index/resource_index/parent_prefix_path/motor_control_rclcpp\n'}
+[9.217082] (motor_control_rclcpp) StdoutLine: {'line': b'-- Installing: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp/share/motor_control_rclcpp/environment/ament_prefix_path.sh\n'}
+[9.217189] (motor_control_rclcpp) StdoutLine: {'line': b'-- Installing: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp/share/motor_control_rclcpp/environment/ament_prefix_path.dsv\n'}
+[9.217379] (motor_control_rclcpp) StdoutLine: {'line': b'-- Installing: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp/share/motor_control_rclcpp/environment/path.sh\n'}
+[9.217534] (motor_control_rclcpp) StdoutLine: {'line': b'-- Installing: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp/share/motor_control_rclcpp/environment/path.dsv\n'}
+[9.217648] (motor_control_rclcpp) StdoutLine: {'line': b'-- Up-to-date: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp/share/motor_control_rclcpp/local_setup.bash\n'}
+[9.217736] (motor_control_rclcpp) StdoutLine: {'line': b'-- Up-to-date: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp/share/motor_control_rclcpp/local_setup.sh\n'}
+[9.217806] (motor_control_rclcpp) StdoutLine: {'line': b'-- Up-to-date: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp/share/motor_control_rclcpp/local_setup.zsh\n'}
+[9.217914] (motor_control_rclcpp) StdoutLine: {'line': b'-- Installing: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp/share/motor_control_rclcpp/local_setup.dsv\n'}
+[9.218035] (motor_control_rclcpp) StdoutLine: {'line': b'-- Installing: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp/share/motor_control_rclcpp/package.dsv\n'}
+[9.218097] (motor_control_rclcpp) StdoutLine: {'line': b'-- Up-to-date: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp/share/ament_index/resource_index/packages/motor_control_rclcpp\n'}
+[9.218203] (motor_control_rclcpp) StdoutLine: {'line': b'-- Up-to-date: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp/share/motor_control_rclcpp/cmake/motor_control_rclcppConfig.cmake\n'}
+[9.218265] (motor_control_rclcpp) StdoutLine: {'line': b'-- Up-to-date: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp/share/motor_control_rclcpp/cmake/motor_control_rclcppConfig-version.cmake\n'}
+[9.218325] (motor_control_rclcpp) StdoutLine: {'line': b'-- Up-to-date: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp/share/motor_control_rclcpp/package.xml\n'}
+[9.219658] (motor_control_rclcpp) CommandEnded: {'returncode': 0}
+[9.228806] (-) TimerEvent: {}
+[9.303153] (motor_control_rclcpp) JobEnded: {'identifier': 'motor_control_rclcpp', 'rc': 0}
+[9.304185] (-) EventReactorShutdown: {}

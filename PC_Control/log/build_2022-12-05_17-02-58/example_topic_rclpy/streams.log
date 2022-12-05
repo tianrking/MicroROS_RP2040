@@ -1,0 +1,38 @@
+[0.974s] Invoking command in '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/example_topic_rclpy': PYTHONPATH=/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/example_topic_rclpy/prefix_override:/home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/example_topic_rclpy/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/example_topic_rclpy build --build-base /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/example_topic_rclpy/build install --record /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/example_topic_rclpy/install.log --single-version-externally-managed
+[1.185s] running egg_info
+[1.186s] creating ../../build/example_topic_rclpy/example_topic_rclpy.egg-info
+[1.186s] writing ../../build/example_topic_rclpy/example_topic_rclpy.egg-info/PKG-INFO
+[1.186s] writing dependency_links to ../../build/example_topic_rclpy/example_topic_rclpy.egg-info/dependency_links.txt
+[1.186s] writing entry points to ../../build/example_topic_rclpy/example_topic_rclpy.egg-info/entry_points.txt
+[1.186s] writing requirements to ../../build/example_topic_rclpy/example_topic_rclpy.egg-info/requires.txt
+[1.186s] writing top-level names to ../../build/example_topic_rclpy/example_topic_rclpy.egg-info/top_level.txt
+[1.186s] writing manifest file '../../build/example_topic_rclpy/example_topic_rclpy.egg-info/SOURCES.txt'
+[1.188s] reading manifest file '../../build/example_topic_rclpy/example_topic_rclpy.egg-info/SOURCES.txt'
+[1.189s] writing manifest file '../../build/example_topic_rclpy/example_topic_rclpy.egg-info/SOURCES.txt'
+[1.189s] running build
+[1.189s] running build_py
+[1.189s] creating /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/example_topic_rclpy/build
+[1.189s] creating /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/example_topic_rclpy/build/lib
+[1.189s] creating /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/example_topic_rclpy/build/lib/example_topic_rclpy
+[1.189s] copying example_topic_rclpy/topic_subscribe_02.py -> /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/example_topic_rclpy/build/lib/example_topic_rclpy
+[1.189s] copying example_topic_rclpy/__init__.py -> /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/example_topic_rclpy/build/lib/example_topic_rclpy
+[1.189s] running install
+[1.225s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[1.226s]   warnings.warn(
+[1.226s] running install_lib
+[1.227s] creating /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/example_topic_rclpy/lib/python3.10/site-packages/example_topic_rclpy
+[1.227s] copying /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/example_topic_rclpy/build/lib/example_topic_rclpy/topic_subscribe_02.py -> /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/example_topic_rclpy/lib/python3.10/site-packages/example_topic_rclpy
+[1.227s] copying /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/example_topic_rclpy/build/lib/example_topic_rclpy/__init__.py -> /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/example_topic_rclpy/lib/python3.10/site-packages/example_topic_rclpy
+[1.227s] byte-compiling /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/example_topic_rclpy/lib/python3.10/site-packages/example_topic_rclpy/topic_subscribe_02.py to topic_subscribe_02.cpython-310.pyc
+[1.228s] byte-compiling /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/example_topic_rclpy/lib/python3.10/site-packages/example_topic_rclpy/__init__.py to __init__.cpython-310.pyc
+[1.228s] running install_data
+[1.228s] creating /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/example_topic_rclpy/share/ament_index
+[1.228s] creating /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/example_topic_rclpy/share/ament_index/resource_index
+[1.229s] creating /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/example_topic_rclpy/share/ament_index/resource_index/packages
+[1.229s] copying resource/example_topic_rclpy -> /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/example_topic_rclpy/share/ament_index/resource_index/packages
+[1.229s] copying package.xml -> /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/example_topic_rclpy/share/example_topic_rclpy
+[1.229s] running install_egg_info
+[1.230s] Copying ../../build/example_topic_rclpy/example_topic_rclpy.egg-info to /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/example_topic_rclpy/lib/python3.10/site-packages/example_topic_rclpy-0.0.0-py3.10.egg-info
+[1.231s] running install_scripts
+[1.251s] writing list of installed files to '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/example_topic_rclpy/install.log'
+[1.274s] Invoked command in '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/example_topic_rclpy' returned '0': PYTHONPATH=/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/example_topic_rclpy/prefix_override:/home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/example_topic_rclpy/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/example_topic_rclpy build --build-base /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/example_topic_rclpy/build install --record /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/example_topic_rclpy/install.log --single-version-externally-managed
