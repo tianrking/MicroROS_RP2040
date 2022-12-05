@@ -1,0 +1,28 @@
+[0.030s] Invoking command in '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --build /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp -- -j4 -l4
+[0.067s] [35m[1mConsolidate compiler generated dependencies of target get_speed[0m
+[0.083s] [ 50%] [32mBuilding CXX object CMakeFiles/get_speed.dir/src/get_speed.cpp.o[0m
+[2.141s] [01m[K/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclcpp/src/get_speed.cpp:[m[K In constructor ‘[01m[KTopicSubscribe01::TopicSubscribe01(std::string)[m[K’:
+[2.141s] [01m[K/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclcpp/src/get_speed.cpp:11:66:[m[K [01;31m[Kerror: [m[K‘[01m[KInt32[m[K’ is not a member of ‘[01m[Kstd_msgs[m[K’
+[2.141s]    11 | subscribe_ = this->create_subscription<std_msgs::[01;31m[KInt32[m[K>("pico_publisher_encoder", 10, std::bind(&TopicSubscribe01::command_callback, this, std::placeholders::_1));
+[2.141s]       |                                                  [01;31m[K^~~~~[m[K
+[2.141s] 
+[2.145s] [01m[K/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclcpp/src/get_speed.cpp:11:72:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KTopicSubscribe01::create_subscription<<expression error> >(const char [23], int, std::_Bind_helper<false, void (TopicSubscribe01::*)(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >), TopicSubscribe01*, const std::_Placeholder<1>&>::type)[m[K’
+[2.145s]    11 | ibe_ = [01;31m[Kthis->create_subscription<std_msgs::Int32>("pico_publisher_encoder", 10, std::bind(&TopicSubscribe01::command_callback, this, std::placeholders::_1))[m[K;
+[2.145s]       |        [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.145s] 
+[2.145s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+[2.145s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+[2.145s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[2.145s]                  from [01m[K/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclcpp/src/get_speed.cpp:1[m[K:
+[2.145s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:219:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class CallbackT, class AllocatorT, class SubscriptionT, class MessageMemoryStrategyT> std::shared_ptr<ROSMessageT> rclcpp::Node::create_subscription(const string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr)[m[K’
+[2.145s]   219 |   [01;36m[Kcreate_subscription[m[K(
+[2.145s]       |   [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[2.146s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:219:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[2.146s] [01m[K/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclcpp/src/get_speed.cpp:11:72:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[2.146s]    11 | ibe_ = [01;31m[Kthis->create_subscription<std_msgs::Int32>("pico_publisher_encoder", 10, std::bind(&TopicSubscribe01::command_callback, this, std::placeholders::_1))[m[K;
+[2.146s]       |        [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.146s] 
+[2.548s] gmake[2]: *** [CMakeFiles/get_speed.dir/build.make:76: CMakeFiles/get_speed.dir/src/get_speed.cpp.o] Error 1
+[2.548s] gmake[1]: *** [CMakeFiles/Makefile2:85: CMakeFiles/get_speed.dir/all] Error 2
+[2.549s] gmake: *** [Makefile:146: all] Error 2
+[2.550s] Invoked command in '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --build /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp -- -j4 -l4

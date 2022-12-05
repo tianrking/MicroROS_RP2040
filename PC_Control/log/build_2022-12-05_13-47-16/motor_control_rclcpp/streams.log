@@ -1,0 +1,26 @@
+[0.035s] Invoking command in '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --build /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp -- -j4 -l4
+[0.070s] [35m[1mConsolidate compiler generated dependencies of target get_speed[0m
+[0.085s] [ 50%] [32mBuilding CXX object CMakeFiles/get_speed.dir/src/get_speed.cpp.o[0m
+[7.719s] [100%] [32m[1mLinking CXX executable get_speed[0m
+[8.078s] [100%] Built target get_speed
+[8.088s] Invoked command in '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --build /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp -- -j4 -l4
+[8.122s] Invoking command in '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --install /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp
+[8.129s] -- Install configuration: ""
+[8.129s] -- Installing: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp/lib/motor_control_rclcpp/get_speed
+[8.133s] -- Set runtime path of "/home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp/lib/motor_control_rclcpp/get_speed" to ""
+[8.133s] -- Up-to-date: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp/share/ament_index/resource_index/package_run_dependencies/motor_control_rclcpp
+[8.133s] -- Up-to-date: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp/share/ament_index/resource_index/parent_prefix_path/motor_control_rclcpp
+[8.134s] -- Up-to-date: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp/share/motor_control_rclcpp/environment/ament_prefix_path.sh
+[8.134s] -- Up-to-date: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp/share/motor_control_rclcpp/environment/ament_prefix_path.dsv
+[8.134s] -- Up-to-date: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp/share/motor_control_rclcpp/environment/path.sh
+[8.134s] -- Up-to-date: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp/share/motor_control_rclcpp/environment/path.dsv
+[8.134s] -- Up-to-date: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp/share/motor_control_rclcpp/local_setup.bash
+[8.134s] -- Up-to-date: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp/share/motor_control_rclcpp/local_setup.sh
+[8.134s] -- Up-to-date: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp/share/motor_control_rclcpp/local_setup.zsh
+[8.134s] -- Up-to-date: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp/share/motor_control_rclcpp/local_setup.dsv
+[8.134s] -- Installing: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp/share/motor_control_rclcpp/package.dsv
+[8.134s] -- Up-to-date: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp/share/ament_index/resource_index/packages/motor_control_rclcpp
+[8.134s] -- Up-to-date: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp/share/motor_control_rclcpp/cmake/motor_control_rclcppConfig.cmake
+[8.134s] -- Up-to-date: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp/share/motor_control_rclcpp/cmake/motor_control_rclcppConfig-version.cmake
+[8.134s] -- Up-to-date: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp/share/motor_control_rclcpp/package.xml
+[8.138s] Invoked command in '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --install /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp

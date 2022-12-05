@@ -1,0 +1,20 @@
+[0.043s] Invoking command in '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp': CMAKE_PREFIX_PATH=/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclcpp -DCMAKE_INSTALL_PREFIX=/home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp
+[0.164s] -- The C compiler identification is GNU 11.3.0
+[0.216s] -- The CXX compiler identification is GNU 11.3.0
+[0.223s] -- Detecting C compiler ABI info
+[0.282s] -- Detecting C compiler ABI info - done
+[0.290s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.290s] -- Detecting C compile features
+[0.290s] -- Detecting C compile features - done
+[0.293s] -- Detecting CXX compiler ABI info
+[0.364s] -- Detecting CXX compiler ABI info - done
+[0.372s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.372s] -- Detecting CXX compile features
+[0.373s] -- Detecting CXX compile features - done
+[0.373s] [31mCMake Error at CMakeLists.txt:9 (ament_target_dependencies):
+[0.373s]   Unknown CMake command "ament_target_dependencies".
+[0.374s] 
+[0.374s] [0m
+[0.374s] -- Configuring incomplete, errors occurred!
+[0.374s] See also "/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp/CMakeFiles/CMakeOutput.log".
+[0.379s] Invoked command in '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp' returned '1': CMAKE_PREFIX_PATH=/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclcpp -DCMAKE_INSTALL_PREFIX=/home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp

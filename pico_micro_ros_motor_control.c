@@ -31,6 +31,9 @@ std_msgs__msg__Int32 msg;
 rcl_publisher_t publisher_encoder;
 std_msgs__msg__Int32 msg_publisher_encoder;
 
+rcl_subscription_t subscriber_speed_change;
+std_msgs__msg__Int32 msg_subscriber_speed_change;
+
 float output_pwm = 0; // 12000
 float kp=5, ki=0.4, kd=0;
 float err, last_err;
@@ -64,6 +67,17 @@ void timer_callback(rcl_timer_t *timer, int64_t last_call_time)
     msg_publisher_encoder.data = delta ;
     rcl_ret_t ret = rcl_publish(&publisher, &msg, NULL);
     ret = rcl_publish(&publisher_encoder, &msg_publisher_encoder, NULL);
+}
+
+float speed_value;
+void subscription_callback_speed_change(const void *msgin_diy)
+{
+    // Cast received message to used type
+    const std_msgs__msg__Int32 *msg_diy = (const std_msgs__msg__Int32 *)msgin_diy;
+
+    speed_value = (float)msg_diy->data / 100 ;
+    // pwm_set_chan_level(slice_num, PWM_CHAN_A, _value * 62500);
+
 }
 
 int main()
@@ -116,6 +130,12 @@ int main()
         ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Int32),
         "pico_publisher_encoder");
 
+    rclc_subscription_init_default(
+        &subscriber_speed_change,
+        &node,
+        ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Int32),
+        "speed_change");
+
     rclc_timer_init_default(
         &timer,
         &support,
@@ -124,6 +144,9 @@ int main()
 
     rclc_executor_init(&executor, &support.context, 5, &allocator);
     rclc_executor_add_timer(&executor, &timer);
+
+    rclc_executor_add_subscription(&executor, &subscriber_speed_change, &msg_subscriber_speed_change, &subscription_callback_speed_change, ON_NEW_DATA);
+
 
     gpio_put(LED_PIN, 1);
 
@@ -158,7 +181,7 @@ int main()
         delta = new_value - old_value; //获取反应速度的相对数值
         old_value = new_value;
 
-        output_pwm += caculate(delta, 23);
+        output_pwm += caculate(delta, 25);
 
         if (output_pwm > 65000)
         {
@@ -170,7 +193,8 @@ int main()
             output_pwm = 0;
         }
 
-        pwm_set_chan_level(slice_num, PWM_CHAN_A, output_pwm);
+        pwm_set_chan_level(slice_num, PWM_CHAN_A, speed_value * 62500);
+        // pwm_set_chan_level(slice_num, PWM_CHAN_A, output_pwm);
         
         sleep_ms(20);
 
