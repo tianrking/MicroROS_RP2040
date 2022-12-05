@@ -1,0 +1,27 @@
+[0.590s] Invoking command in '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/example_topic_rclpy': PYTHONPATH=/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/example_topic_rclpy/prefix_override:/home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/example_topic_rclpy/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/example_topic_rclpy build --build-base /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/example_topic_rclpy/build install --record /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/example_topic_rclpy/install.log --single-version-externally-managed
+[0.806s] running egg_info
+[0.807s] writing ../../build/example_topic_rclpy/example_topic_rclpy.egg-info/PKG-INFO
+[0.807s] writing dependency_links to ../../build/example_topic_rclpy/example_topic_rclpy.egg-info/dependency_links.txt
+[0.807s] writing entry points to ../../build/example_topic_rclpy/example_topic_rclpy.egg-info/entry_points.txt
+[0.807s] writing requirements to ../../build/example_topic_rclpy/example_topic_rclpy.egg-info/requires.txt
+[0.807s] writing top-level names to ../../build/example_topic_rclpy/example_topic_rclpy.egg-info/top_level.txt
+[0.809s] reading manifest file '../../build/example_topic_rclpy/example_topic_rclpy.egg-info/SOURCES.txt'
+[0.810s] writing manifest file '../../build/example_topic_rclpy/example_topic_rclpy.egg-info/SOURCES.txt'
+[0.810s] running build
+[0.810s] running build_py
+[0.810s] copying example_topic_rclpy/change_speed.py -> /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/example_topic_rclpy/build/lib/example_topic_rclpy
+[0.811s] running install
+[0.811s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[0.811s]   warnings.warn(
+[0.811s] running install_lib
+[0.812s] copying /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/example_topic_rclpy/build/lib/example_topic_rclpy/change_speed.py -> /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/example_topic_rclpy/lib/python3.10/site-packages/example_topic_rclpy
+[0.813s] byte-compiling /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/example_topic_rclpy/lib/python3.10/site-packages/example_topic_rclpy/change_speed.py to change_speed.cpython-310.pyc
+[0.813s] running install_data
+[0.814s] running install_egg_info
+[0.815s] removing '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/example_topic_rclpy/lib/python3.10/site-packages/example_topic_rclpy-0.0.0-py3.10.egg-info' (and everything under it)
+[0.815s] Copying ../../build/example_topic_rclpy/example_topic_rclpy.egg-info to /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/example_topic_rclpy/lib/python3.10/site-packages/example_topic_rclpy-0.0.0-py3.10.egg-info
+[0.816s] running install_scripts
+[0.836s] Installing change_speed script to /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/example_topic_rclpy/lib/example_topic_rclpy
+[0.836s] Installing get_speed script to /home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/example_topic_rclpy/lib/example_topic_rclpy
+[0.836s] writing list of installed files to '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/example_topic_rclpy/install.log'
+[0.864s] Invoked command in '/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/example_topic_rclpy' returned '0': PYTHONPATH=/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/example_topic_rclpy/prefix_override:/home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/example_topic_rclpy/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/example_topic_rclpy build --build-base /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/example_topic_rclpy/build install --record /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/example_topic_rclpy/install.log --single-version-externally-managed

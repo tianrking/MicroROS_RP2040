@@ -8,7 +8,7 @@ from std_msgs.msg import Int32
 class NodeSubscribe02(Node):
     def __init__(self,name):
         super().__init__(name)
-        self.get_logger().info("大家好，我是%s!" % name)
+        self.get_logger().info("%s!" % name)
         # 创建订阅者
         self.command_subscribe_ = self.create_subscription(Int32,"pico_publisher_encoder",self.command_callback,10)
 
@@ -16,7 +16,7 @@ class NodeSubscribe02(Node):
         speed = 0.0
         if msg.data=="backup":
             speed = -0.2
-        self.get_logger().info(f'收到[{msg.data}]命令，发送速度{speed}')
+        self.get_logger().info(f'recieve[{msg.data}]，message_recieve{speed}')
 
 def main(args=None):
     rclpy.init(args=args) # 初始化rclpy

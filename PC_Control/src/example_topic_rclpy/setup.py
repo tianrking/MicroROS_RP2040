@@ -20,7 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            "get_speed = example_topic_rclpy.get_speed:main"
+            "get_speed = example_topic_rclpy.get_speed:main",
+            "change_speed = example_topic_rclpy.change_speed:main"      
         ],
     },
 )

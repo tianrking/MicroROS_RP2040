@@ -1,3 +1,4 @@
 [console_scripts]
+change_speed = example_topic_rclpy.change_speed:main
 get_speed = example_topic_rclpy.get_speed:main
 

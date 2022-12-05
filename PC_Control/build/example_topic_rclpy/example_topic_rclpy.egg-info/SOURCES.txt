@@ -9,6 +9,7 @@ setup.py
 ../../build/example_topic_rclpy/example_topic_rclpy.egg-info/top_level.txt
 ../../build/example_topic_rclpy/example_topic_rclpy.egg-info/zip-safe
 example_topic_rclpy/__init__.py
+example_topic_rclpy/change_speed.py
 example_topic_rclpy/get_speed.py
 resource/example_topic_rclpy
 test/test_copyright.py
