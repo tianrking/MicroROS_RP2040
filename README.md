@@ -1,5 +1,23 @@
 # PICO(rp2040) motor control via micro-ROS
 
+## Prepare
+
+### Hardware
+
+- [Pi Pico](https://www.raspberrypi.com/products/raspberry-pi-pico/)
+- [L298N motor Driver](https://lastminuteengineers.com/l298n-dc-stepper-driver-arduino-tutorial/)
+
+### Connect Solution
+
+- Encoder
+
+    - GPIO 10
+    - GPIO 11
+
+- PWM for L298N motor control
+    
+    - GPIO 6
+
 ## Getting Started
 
 [Detailed Tutorial](https://me.w0x7ce.eu/rp2040/micro-ROS-on-RP2040)
