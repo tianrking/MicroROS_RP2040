@@ -9,7 +9,7 @@ kk = 1
 class NodePublisher02(Node):
     def __init__(self,name):
         super().__init__(name)
-        self.get_logger().info("大家好，我是%s!" % name)
+        self.get_logger().info("%s!" % name)
         self.command_publisher_ = self.create_publisher(Int32,"/speed_change", 10) 
         self.timer = self.create_timer(0.5, self.timer_callback)
     
@@ -22,7 +22,7 @@ class NodePublisher02(Node):
             
         msg.data = 50
         self.command_publisher_.publish(msg) 
-        self.get_logger().info(f'发布了指令：{msg.data}')    #打印一下发布的数据
+        self.get_logger().info(f'Value：{msg.data}')    #打印一下发布的数据
 
 def main(args=None):
     rclpy.init(args=args) # 初始化rclpy
