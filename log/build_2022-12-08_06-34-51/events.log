@@ -1,0 +1,117 @@
+[0.000000] (-) TimerEvent: {}
+[0.000512] (micro_ros_raspberrypicosdk) JobQueued: {'identifier': 'micro_ros_raspberrypicosdk', 'dependencies': OrderedDict()}
+[0.000564] (micro_ros_raspberrypicosdk) JobStarted: {'identifier': 'micro_ros_raspberrypicosdk'}
+[0.008948] (micro_ros_raspberrypicosdk) JobProgress: {'identifier': 'micro_ros_raspberrypicosdk', 'progress': 'cmake'}
+[0.009258] (micro_ros_raspberrypicosdk) Command: {'cmd': ['/usr/bin/cmake', '/home/w0x7ce/Desktop/1_ros', '-DCATKIN_INSTALL_INTO_PREFIX_ROOT=0', '-DCMAKE_INSTALL_PREFIX=/home/w0x7ce/Desktop/1_ros/install/micro_ros_raspberrypicosdk'], 'cwd': '/home/w0x7ce/Desktop/1_ros/build/micro_ros_raspberrypicosdk', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'w0x7ce'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/w0x7ce'), ('OLDPWD', '/home/w0x7ce/Desktop/1_ros/PC_Control'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '2059'), ('SYSTEMD_EXEC_PID', '2415'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '4421'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'w0x7ce'), ('JOURNAL_STREAM', '8:45582'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'w0x7ce'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/w0x7ce-virtual-machine:@/tmp/.ICE-unix/2250,unix/w0x7ce-virtual-machine:/tmp/.ICE-unix/2250'), ('INVOCATION_ID', '155ce17e88394f83bf6a1fbb705934a3'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.J2SZW1'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:8149a302-0be2-4201-b3de-6cf3bd7ef725'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/w0x7ce/Desktop/1_ros/build/micro_ros_raspberrypicosdk'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('PICO_SDK_PATH', '/home/w0x7ce/pico-sdk'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800')]), 'shell': False}
+[0.019597] (micro_ros_raspberrypicosdk) StderrLine: {'line': b"\x1b[0mUsing PICO_SDK_PATH from environment ('/home/w0x7ce/pico-sdk')\x1b[0m\n"}
+[0.021082] (micro_ros_raspberrypicosdk) StderrLine: {'line': b'\x1b[0mPICO_SDK_PATH is /home/w0x7ce/pico-sdk\x1b[0m\n'}
+[0.021491] (micro_ros_raspberrypicosdk) StderrLine: {'line': b'\x1b[0mDefaulting PICO_PLATFORM to rp2040 since not specified.\x1b[0m\n'}
+[0.023178] (micro_ros_raspberrypicosdk) StderrLine: {'line': b'\x1b[0mDefaulting PICO platform compiler to pico_arm_gcc since not specified.\x1b[0m\n'}
+[0.023684] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b"-- Defaulting build type to 'Release' since not specified.\n"}
+[0.024379] (micro_ros_raspberrypicosdk) StderrLine: {'line': b'\x1b[0mPICO compiler is pico_arm_gcc\x1b[0m\n'}
+[0.099262] (-) TimerEvent: {}
+[0.185898] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b'-- The C compiler identification is GNU 10.3.1\n'}
+[0.199454] (-) TimerEvent: {}
+[0.300000] (-) TimerEvent: {}
+[0.331564] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 10.3.1\n'}
+[0.341563] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b'-- The ASM compiler identification is GNU\n'}
+[0.342697] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b'-- Found assembler: /usr/bin/arm-none-eabi-gcc\n'}
+[0.350344] (micro_ros_raspberrypicosdk) StderrLine: {'line': b'\x1b[0mBuild type is Release\x1b[0m\n'}
+[0.353799] (micro_ros_raspberrypicosdk) StderrLine: {'line': b'\x1b[0mDefaulting PICO target board to pico since not specified.\x1b[0m\n'}
+[0.355063] (micro_ros_raspberrypicosdk) StderrLine: {'line': b'\x1b[0mUsing board configuration from /home/w0x7ce/pico-sdk/src/boards/include/boards/pico.h\x1b[0m\n'}
+[0.400550] (-) TimerEvent: {}
+[0.501279] (-) TimerEvent: {}
+[0.523322] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3.10 (found version "3.10.6") found components: Interpreter \n'}
+[0.556609] (micro_ros_raspberrypicosdk) StderrLine: {'line': b'\x1b[0mTinyUSB available at /home/w0x7ce/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040; enabling build support for USB.\x1b[0m\n'}
+[0.568879] (micro_ros_raspberrypicosdk) StderrLine: {'line': b'\x1b[0mcyw43-driver available at /home/w0x7ce/pico-sdk/lib/cyw43-driver\x1b[0m\n'}
+[0.587272] (micro_ros_raspberrypicosdk) StderrLine: {'line': b'\x1b[0mlwIP available at /home/w0x7ce/pico-sdk/lib/lwip\x1b[0m\n'}
+[0.601545] (-) TimerEvent: {}
+[0.621262] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b'-- Configuring done\n'}
+[0.677027] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b'-- Generating done\n'}
+[0.682341] (micro_ros_raspberrypicosdk) StderrLine: {'line': b'\x1b[33mCMake Warning:\n'}
+[0.682675] (micro_ros_raspberrypicosdk) StderrLine: {'line': b'  Manually-specified variables were not used by the project:\n'}
+[0.682776] (micro_ros_raspberrypicosdk) StderrLine: {'line': b'\n'}
+[0.683093] (micro_ros_raspberrypicosdk) StderrLine: {'line': b'    CATKIN_INSTALL_INTO_PREFIX_ROOT\n'}
+[0.683306] (micro_ros_raspberrypicosdk) StderrLine: {'line': b'\n'}
+[0.683354] (micro_ros_raspberrypicosdk) StderrLine: {'line': b'\x1b[0m\n'}
+[0.683393] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b'-- Build files have been written to: /home/w0x7ce/Desktop/1_ros/build/micro_ros_raspberrypicosdk\n'}
+[0.691383] (micro_ros_raspberrypicosdk) CommandEnded: {'returncode': 0}
+[0.692003] (micro_ros_raspberrypicosdk) JobProgress: {'identifier': 'micro_ros_raspberrypicosdk', 'progress': 'build'}
+[0.693709] (micro_ros_raspberrypicosdk) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/w0x7ce/Desktop/1_ros/build/micro_ros_raspberrypicosdk', '--', '-j2', '-l2'], 'cwd': '/home/w0x7ce/Desktop/1_ros/build/micro_ros_raspberrypicosdk', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'w0x7ce'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/w0x7ce'), ('OLDPWD', '/home/w0x7ce/Desktop/1_ros/PC_Control'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '2059'), ('SYSTEMD_EXEC_PID', '2415'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '4421'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'w0x7ce'), ('JOURNAL_STREAM', '8:45582'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'w0x7ce'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/w0x7ce-virtual-machine:@/tmp/.ICE-unix/2250,unix/w0x7ce-virtual-machine:/tmp/.ICE-unix/2250'), ('INVOCATION_ID', '155ce17e88394f83bf6a1fbb705934a3'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.J2SZW1'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:8149a302-0be2-4201-b3de-6cf3bd7ef725'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/w0x7ce/Desktop/1_ros/build/micro_ros_raspberrypicosdk'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('PICO_SDK_PATH', '/home/w0x7ce/pico-sdk'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800')]), 'shell': False}
+[0.701997] (-) TimerEvent: {}
+[0.726231] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target bs2_default\x1b[0m\n'}
+[0.733699] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b"[  1%] \x1b[34m\x1b[1mCreating directories for 'PioasmBuild'\x1b[0m\n"}
+[0.741372] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b'[  2%] \x1b[32mBuilding ASM object pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default.dir/compile_time_choice.S.obj\x1b[0m\n'}
+[0.769554] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b'[  3%] \x1b[32m\x1b[1mLinking ASM executable bs2_default.elf\x1b[0m\n'}
+[0.800344] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b"[  4%] \x1b[34m\x1b[1mNo download step for 'PioasmBuild'\x1b[0m\n"}
+[0.800705] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b'[  4%] Built target bs2_default\n'}
+[0.802673] (-) TimerEvent: {}
+[0.815748] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b"[  5%] \x1b[34m\x1b[1mCreating directories for 'ELF2UF2Build'\x1b[0m\n"}
+[0.822861] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b"[  6%] \x1b[34m\x1b[1mNo update step for 'PioasmBuild'\x1b[0m\n"}
+[0.841337] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b"[  7%] \x1b[34m\x1b[1mNo patch step for 'PioasmBuild'\x1b[0m\n"}
+[0.859845] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b"[  8%] \x1b[34m\x1b[1mPerforming configure step for 'PioasmBuild'\x1b[0m\n"}
+[0.865188] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b"[  9%] \x1b[34m\x1b[1mNo download step for 'ELF2UF2Build'\x1b[0m\n"}
+[0.866396] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b'loading initial cache file /home/w0x7ce/Desktop/1_ros/build/micro_ros_raspberrypicosdk/pico-sdk/src/rp2_common/cyw43_driver/pioasm/tmp/PioasmBuild-cache-Release.cmake\n'}
+[0.881268] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b"[ 10%] \x1b[34m\x1b[1mNo update step for 'ELF2UF2Build'\x1b[0m\n"}
+[0.897336] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b"[ 11%] \x1b[34m\x1b[1mNo patch step for 'ELF2UF2Build'\x1b[0m\n"}
+[0.903352] (-) TimerEvent: {}
+[0.913484] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b"[ 12%] \x1b[34m\x1b[1mPerforming configure step for 'ELF2UF2Build'\x1b[0m\n"}
+[0.920129] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.3.0\n'}
+[0.925399] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.974169] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.3.0\n'}
+[1.004002] (-) TimerEvent: {}
+[1.004320] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[1.006889] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[1.007409] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[1.007893] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[1.008605] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.011768] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b'-- Generating done\n'}
+[1.012523] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b'-- Build files have been written to: /home/w0x7ce/Desktop/1_ros/build/micro_ros_raspberrypicosdk/pioasm\n'}
+[1.015098] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.3.0\n'}
+[1.019811] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[1.026374] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b"[ 13%] \x1b[34m\x1b[1mPerforming build step for 'PioasmBuild'\x1b[0m\n"}
+[1.058731] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b'[ 10%] \x1b[32mBuilding CXX object CMakeFiles/pioasm.dir/main.cpp.o\x1b[0m\n'}
+[1.074393] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[1.079605] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[1.079768] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[1.080056] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[1.082168] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[1.104270] (-) TimerEvent: {}
+[1.156346] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[1.161835] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[1.162007] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[1.162312] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[1.163474] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.165126] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b'-- Generating done\n'}
+[1.165771] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b'-- Build files have been written to: /home/w0x7ce/Desktop/1_ros/build/micro_ros_raspberrypicosdk/elf2uf2\n'}
+[1.181483] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b"[ 14%] \x1b[34m\x1b[1mPerforming build step for 'ELF2UF2Build'\x1b[0m\n"}
+[1.204564] (-) TimerEvent: {}
+[1.207893] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/elf2uf2.dir/main.cpp.o\x1b[0m\n'}
+[1.304986] (-) TimerEvent: {}
+[1.405552] (-) TimerEvent: {}
+[1.506328] (-) TimerEvent: {}
+[1.591217] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable elf2uf2\x1b[0m\n'}
+[1.606497] (-) TimerEvent: {}
+[1.642256] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b'[ 20%] \x1b[32mBuilding CXX object CMakeFiles/pioasm.dir/pio_assembler.cpp.o\x1b[0m\n'}
+[1.659369] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b'[100%] Built target elf2uf2\n'}
+[1.671513] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b"[ 15%] \x1b[34m\x1b[1mNo install step for 'ELF2UF2Build'\x1b[0m\n"}
+[1.688779] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b"[ 17%] \x1b[34m\x1b[1mCompleted 'ELF2UF2Build'\x1b[0m\n"}
+[1.706720] (-) TimerEvent: {}
+[1.710822] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b'[ 17%] Built target ELF2UF2Build\n'}
+[1.717495] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b'[ 30%] \x1b[32mBuilding CXX object CMakeFiles/pioasm.dir/pio_disassembler.cpp.o\x1b[0m\n'}
+[1.807240] (-) TimerEvent: {}
+[1.907991] (-) TimerEvent: {}
+[1.988128] (micro_ros_raspberrypicosdk) StdoutLine: {'line': b'[ 40%] \x1b[32mBuilding CXX object CMakeFiles/pioasm.dir/gen/lexer.cpp.o\x1b[0m\n'}
+[2.008073] (-) TimerEvent: {}
+[2.095168] (micro_ros_raspberrypicosdk) StderrLine: {'line': b'gmake[5]: *** [CMakeFiles/pioasm.dir/build.make:90: CMakeFiles/pioasm.dir/pio_assembler.cpp.o] Interrupt\n'}
+[2.095650] (micro_ros_raspberrypicosdk) StderrLine: {'line': b'gmake[5]: *** [CMakeFiles/pioasm.dir/build.make:118: CMakeFiles/pioasm.dir/gen/lexer.cpp.o] Interrupt\n'}
+[2.095790] (micro_ros_raspberrypicosdk) StderrLine: {'line': b'gmake[4]: *** [CMakeFiles/Makefile2:83: CMakeFiles/pioasm.dir/all] Interrupt\n'}
+[2.095830] (micro_ros_raspberrypicosdk) StderrLine: {'line': b'gmake[3]: *** [Makefile:91: all] Interrupt\n'}
+[2.096244] (micro_ros_raspberrypicosdk) StderrLine: {'line': b'gmake[2]: *** [pico-sdk/src/rp2_common/cyw43_driver/CMakeFiles/PioasmBuild.dir/build.make:86: pico-sdk/src/rp2_common/cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-build] Interrupt\n'}
+[2.096342] (micro_ros_raspberrypicosdk) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:1569: pico-sdk/src/rp2_common/cyw43_driver/CMakeFiles/PioasmBuild.dir/all] Interrupt\n'}
+[2.096987] (micro_ros_raspberrypicosdk) StderrLine: {'line': b'gmake: *** [Makefile:91: all] Interrupt\n'}
+[2.103504] (micro_ros_raspberrypicosdk) CommandEnded: {'returncode': -2}
+[2.108177] (-) TimerEvent: {}
+[2.208612] (-) TimerEvent: {}
+[2.280722] (micro_ros_raspberrypicosdk) JobEnded: {'identifier': 'micro_ros_raspberrypicosdk', 'rc': 'SIGINT'}
+[2.281425] (-) EventReactorShutdown: {}

@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclcpp
+CMAKE_SOURCE_DIR = /home/w0x7ce/Desktop/1_ros/PC_Control/src/motor_control_rclcpp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp
+CMAKE_BINARY_DIR = /home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -142,9 +142,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp/CMakeFiles /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp/CMakeFiles /home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

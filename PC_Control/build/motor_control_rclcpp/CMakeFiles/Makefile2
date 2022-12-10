@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclcpp
+CMAKE_SOURCE_DIR = /home/w0x7ce/Desktop/1_ros/PC_Control/src/motor_control_rclcpp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp
+CMAKE_BINARY_DIR = /home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -85,14 +85,14 @@ clean: CMakeFiles/motor_control_rclcpp_uninstall.dir/clean
 CMakeFiles/get_speed.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/get_speed.dir/build.make CMakeFiles/get_speed.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/get_speed.dir/build.make CMakeFiles/get_speed.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp/CMakeFiles --progress-num=3,4 "Built target get_speed"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp/CMakeFiles --progress-num=3,4 "Built target get_speed"
 .PHONY : CMakeFiles/get_speed.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/get_speed.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/get_speed.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp/CMakeFiles 0
 .PHONY : CMakeFiles/get_speed.dir/rule
 
 # Convenience name for target.
@@ -111,14 +111,14 @@ CMakeFiles/get_speed.dir/clean:
 CMakeFiles/change_speed.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/change_speed.dir/build.make CMakeFiles/change_speed.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/change_speed.dir/build.make CMakeFiles/change_speed.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp/CMakeFiles --progress-num=1,2 "Built target change_speed"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp/CMakeFiles --progress-num=1,2 "Built target change_speed"
 .PHONY : CMakeFiles/change_speed.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/change_speed.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/change_speed.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp/CMakeFiles 0
 .PHONY : CMakeFiles/change_speed.dir/rule
 
 # Convenience name for target.
@@ -137,14 +137,14 @@ CMakeFiles/change_speed.dir/clean:
 CMakeFiles/uninstall.dir/all: CMakeFiles/motor_control_rclcpp_uninstall.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/uninstall.dir/build.make CMakeFiles/uninstall.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/uninstall.dir/build.make CMakeFiles/uninstall.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp/CMakeFiles --progress-num= "Built target uninstall"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp/CMakeFiles --progress-num= "Built target uninstall"
 .PHONY : CMakeFiles/uninstall.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/uninstall.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/uninstall.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp/CMakeFiles 0
 .PHONY : CMakeFiles/uninstall.dir/rule
 
 # Convenience name for target.
@@ -163,14 +163,14 @@ CMakeFiles/uninstall.dir/clean:
 CMakeFiles/motor_control_rclcpp_uninstall.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/motor_control_rclcpp_uninstall.dir/build.make CMakeFiles/motor_control_rclcpp_uninstall.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/motor_control_rclcpp_uninstall.dir/build.make CMakeFiles/motor_control_rclcpp_uninstall.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp/CMakeFiles --progress-num= "Built target motor_control_rclcpp_uninstall"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp/CMakeFiles --progress-num= "Built target motor_control_rclcpp_uninstall"
 .PHONY : CMakeFiles/motor_control_rclcpp_uninstall.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/motor_control_rclcpp_uninstall.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/motor_control_rclcpp_uninstall.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp/CMakeFiles 0
 .PHONY : CMakeFiles/motor_control_rclcpp_uninstall.dir/rule
 
 # Convenience name for target.

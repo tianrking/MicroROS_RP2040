@@ -1,5 +1,5 @@
 CMakeFiles/change_speed.dir/src/change_speed.cpp.o: \
- /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclcpp/src/change_speed.cpp \
+ /home/w0x7ce/Desktop/1_ros/PC_Control/src/motor_control_rclcpp/src/change_speed.cpp \
  /usr/include/stdc-predef.h \
  /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp \
  /usr/include/c++/11/csignal \

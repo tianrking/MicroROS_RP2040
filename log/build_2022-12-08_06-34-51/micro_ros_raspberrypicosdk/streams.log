@@ -1,0 +1,88 @@
+[0.012s] Invoking command in '/home/w0x7ce/Desktop/1_ros/build/micro_ros_raspberrypicosdk': /usr/bin/cmake /home/w0x7ce/Desktop/1_ros -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/w0x7ce/Desktop/1_ros/install/micro_ros_raspberrypicosdk
+[0.019s] [0mUsing PICO_SDK_PATH from environment ('/home/w0x7ce/pico-sdk')[0m
+[0.021s] [0mPICO_SDK_PATH is /home/w0x7ce/pico-sdk[0m
+[0.021s] [0mDefaulting PICO_PLATFORM to rp2040 since not specified.[0m
+[0.023s] [0mDefaulting PICO platform compiler to pico_arm_gcc since not specified.[0m
+[0.023s] -- Defaulting build type to 'Release' since not specified.
+[0.024s] [0mPICO compiler is pico_arm_gcc[0m
+[0.186s] -- The C compiler identification is GNU 10.3.1
+[0.331s] -- The CXX compiler identification is GNU 10.3.1
+[0.341s] -- The ASM compiler identification is GNU
+[0.342s] -- Found assembler: /usr/bin/arm-none-eabi-gcc
+[0.350s] [0mBuild type is Release[0m
+[0.353s] [0mDefaulting PICO target board to pico since not specified.[0m
+[0.355s] [0mUsing board configuration from /home/w0x7ce/pico-sdk/src/boards/include/boards/pico.h[0m
+[0.523s] -- Found Python3: /usr/bin/python3.10 (found version "3.10.6") found components: Interpreter 
+[0.556s] [0mTinyUSB available at /home/w0x7ce/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040; enabling build support for USB.[0m
+[0.568s] [0mcyw43-driver available at /home/w0x7ce/pico-sdk/lib/cyw43-driver[0m
+[0.587s] [0mlwIP available at /home/w0x7ce/pico-sdk/lib/lwip[0m
+[0.621s] -- Configuring done
+[0.677s] -- Generating done
+[0.682s] [33mCMake Warning:
+[0.682s]   Manually-specified variables were not used by the project:
+[0.682s] 
+[0.683s]     CATKIN_INSTALL_INTO_PREFIX_ROOT
+[0.683s] 
+[0.683s] [0m
+[0.683s] -- Build files have been written to: /home/w0x7ce/Desktop/1_ros/build/micro_ros_raspberrypicosdk
+[0.691s] Invoked command in '/home/w0x7ce/Desktop/1_ros/build/micro_ros_raspberrypicosdk' returned '0': /usr/bin/cmake /home/w0x7ce/Desktop/1_ros -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/w0x7ce/Desktop/1_ros/install/micro_ros_raspberrypicosdk
+[0.693s] Invoking command in '/home/w0x7ce/Desktop/1_ros/build/micro_ros_raspberrypicosdk': /usr/bin/cmake --build /home/w0x7ce/Desktop/1_ros/build/micro_ros_raspberrypicosdk -- -j2 -l2
+[0.726s] [35m[1mScanning dependencies of target bs2_default[0m
+[0.733s] [  1%] [34m[1mCreating directories for 'PioasmBuild'[0m
+[0.741s] [  2%] [32mBuilding ASM object pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default.dir/compile_time_choice.S.obj[0m
+[0.769s] [  3%] [32m[1mLinking ASM executable bs2_default.elf[0m
+[0.800s] [  4%] [34m[1mNo download step for 'PioasmBuild'[0m
+[0.800s] [  4%] Built target bs2_default
+[0.815s] [  5%] [34m[1mCreating directories for 'ELF2UF2Build'[0m
+[0.822s] [  6%] [34m[1mNo update step for 'PioasmBuild'[0m
+[0.841s] [  7%] [34m[1mNo patch step for 'PioasmBuild'[0m
+[0.859s] [  8%] [34m[1mPerforming configure step for 'PioasmBuild'[0m
+[0.865s] [  9%] [34m[1mNo download step for 'ELF2UF2Build'[0m
+[0.866s] loading initial cache file /home/w0x7ce/Desktop/1_ros/build/micro_ros_raspberrypicosdk/pico-sdk/src/rp2_common/cyw43_driver/pioasm/tmp/PioasmBuild-cache-Release.cmake
+[0.881s] [ 10%] [34m[1mNo update step for 'ELF2UF2Build'[0m
+[0.897s] [ 11%] [34m[1mNo patch step for 'ELF2UF2Build'[0m
+[0.913s] [ 12%] [34m[1mPerforming configure step for 'ELF2UF2Build'[0m
+[0.920s] -- The CXX compiler identification is GNU 11.3.0
+[0.925s] -- Detecting CXX compiler ABI info
+[0.974s] -- The C compiler identification is GNU 11.3.0
+[1.004s] -- Detecting CXX compiler ABI info - done
+[1.006s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.007s] -- Detecting CXX compile features
+[1.007s] -- Detecting CXX compile features - done
+[1.008s] -- Configuring done
+[1.011s] -- Generating done
+[1.012s] -- Build files have been written to: /home/w0x7ce/Desktop/1_ros/build/micro_ros_raspberrypicosdk/pioasm
+[1.015s] -- The CXX compiler identification is GNU 11.3.0
+[1.019s] -- Detecting C compiler ABI info
+[1.026s] [ 13%] [34m[1mPerforming build step for 'PioasmBuild'[0m
+[1.058s] [ 10%] [32mBuilding CXX object CMakeFiles/pioasm.dir/main.cpp.o[0m
+[1.074s] -- Detecting C compiler ABI info - done
+[1.079s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.079s] -- Detecting C compile features
+[1.080s] -- Detecting C compile features - done
+[1.082s] -- Detecting CXX compiler ABI info
+[1.156s] -- Detecting CXX compiler ABI info - done
+[1.161s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.161s] -- Detecting CXX compile features
+[1.162s] -- Detecting CXX compile features - done
+[1.163s] -- Configuring done
+[1.165s] -- Generating done
+[1.165s] -- Build files have been written to: /home/w0x7ce/Desktop/1_ros/build/micro_ros_raspberrypicosdk/elf2uf2
+[1.181s] [ 14%] [34m[1mPerforming build step for 'ELF2UF2Build'[0m
+[1.208s] [ 50%] [32mBuilding CXX object CMakeFiles/elf2uf2.dir/main.cpp.o[0m
+[1.591s] [100%] [32m[1mLinking CXX executable elf2uf2[0m
+[1.642s] [ 20%] [32mBuilding CXX object CMakeFiles/pioasm.dir/pio_assembler.cpp.o[0m
+[1.659s] [100%] Built target elf2uf2
+[1.671s] [ 15%] [34m[1mNo install step for 'ELF2UF2Build'[0m
+[1.688s] [ 17%] [34m[1mCompleted 'ELF2UF2Build'[0m
+[1.710s] [ 17%] Built target ELF2UF2Build
+[1.717s] [ 30%] [32mBuilding CXX object CMakeFiles/pioasm.dir/pio_disassembler.cpp.o[0m
+[1.988s] [ 40%] [32mBuilding CXX object CMakeFiles/pioasm.dir/gen/lexer.cpp.o[0m
+[2.095s] gmake[5]: *** [CMakeFiles/pioasm.dir/build.make:90: CMakeFiles/pioasm.dir/pio_assembler.cpp.o] Interrupt
+[2.095s] gmake[5]: *** [CMakeFiles/pioasm.dir/build.make:118: CMakeFiles/pioasm.dir/gen/lexer.cpp.o] Interrupt
+[2.095s] gmake[4]: *** [CMakeFiles/Makefile2:83: CMakeFiles/pioasm.dir/all] Interrupt
+[2.095s] gmake[3]: *** [Makefile:91: all] Interrupt
+[2.096s] gmake[2]: *** [pico-sdk/src/rp2_common/cyw43_driver/CMakeFiles/PioasmBuild.dir/build.make:86: pico-sdk/src/rp2_common/cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-build] Interrupt
+[2.096s] gmake[1]: *** [CMakeFiles/Makefile2:1569: pico-sdk/src/rp2_common/cyw43_driver/CMakeFiles/PioasmBuild.dir/all] Interrupt
+[2.096s] gmake: *** [Makefile:91: all] Interrupt
+[2.103s] Invoked command in '/home/w0x7ce/Desktop/1_ros/build/micro_ros_raspberrypicosdk' returned '-2': /usr/bin/cmake --build /home/w0x7ce/Desktop/1_ros/build/micro_ros_raspberrypicosdk -- -j2 -l2

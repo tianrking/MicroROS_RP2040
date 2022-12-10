@@ -1,0 +1,41 @@
+running egg_info
+creating ../../build/motor_control_rclpy/motor_control_rclpy.egg-info
+writing ../../build/motor_control_rclpy/motor_control_rclpy.egg-info/PKG-INFO
+writing dependency_links to ../../build/motor_control_rclpy/motor_control_rclpy.egg-info/dependency_links.txt
+writing entry points to ../../build/motor_control_rclpy/motor_control_rclpy.egg-info/entry_points.txt
+writing requirements to ../../build/motor_control_rclpy/motor_control_rclpy.egg-info/requires.txt
+writing top-level names to ../../build/motor_control_rclpy/motor_control_rclpy.egg-info/top_level.txt
+writing manifest file '../../build/motor_control_rclpy/motor_control_rclpy.egg-info/SOURCES.txt'
+reading manifest file '../../build/motor_control_rclpy/motor_control_rclpy.egg-info/SOURCES.txt'
+writing manifest file '../../build/motor_control_rclpy/motor_control_rclpy.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclpy/build
+creating /home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclpy/build/lib
+creating /home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclpy/build/lib/motor_control_rclpy
+copying motor_control_rclpy/change_speed.py -> /home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclpy/build/lib/motor_control_rclpy
+copying motor_control_rclpy/get_speed.py -> /home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclpy/build/lib/motor_control_rclpy
+copying motor_control_rclpy/__init__.py -> /home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclpy/build/lib/motor_control_rclpy
+running install
+/usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+  warnings.warn(
+running install_lib
+creating /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclpy/lib/python3.10/site-packages/motor_control_rclpy
+copying /home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclpy/build/lib/motor_control_rclpy/change_speed.py -> /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclpy/lib/python3.10/site-packages/motor_control_rclpy
+copying /home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclpy/build/lib/motor_control_rclpy/get_speed.py -> /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclpy/lib/python3.10/site-packages/motor_control_rclpy
+copying /home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclpy/build/lib/motor_control_rclpy/__init__.py -> /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclpy/lib/python3.10/site-packages/motor_control_rclpy
+byte-compiling /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclpy/lib/python3.10/site-packages/motor_control_rclpy/change_speed.py to change_speed.cpython-310.pyc
+byte-compiling /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclpy/lib/python3.10/site-packages/motor_control_rclpy/get_speed.py to get_speed.cpython-310.pyc
+byte-compiling /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclpy/lib/python3.10/site-packages/motor_control_rclpy/__init__.py to __init__.cpython-310.pyc
+running install_data
+creating /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclpy/share/ament_index
+creating /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclpy/share/ament_index/resource_index
+creating /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclpy/share/ament_index/resource_index/packages
+copying resource/motor_control_rclpy -> /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclpy/share/ament_index/resource_index/packages
+copying package.xml -> /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclpy/share/motor_control_rclpy
+running install_egg_info
+Copying ../../build/motor_control_rclpy/motor_control_rclpy.egg-info to /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclpy/lib/python3.10/site-packages/motor_control_rclpy-0.0.0-py3.10.egg-info
+running install_scripts
+Installing change_speed script to /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclpy/lib/motor_control_rclpy
+Installing get_speed script to /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclpy/lib/motor_control_rclpy
+writing list of installed files to '/home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclpy/install.log'

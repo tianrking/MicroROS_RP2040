@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclcpp
+CMAKE_SOURCE_DIR = /home/w0x7ce/Desktop/1_ros/PC_Control/src/motor_control_rclcpp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp
+CMAKE_BINARY_DIR = /home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp
 
 # Utility rule file for motor_control_rclcpp_uninstall.
 
@@ -67,7 +67,7 @@ include CMakeFiles/motor_control_rclcpp_uninstall.dir/compiler_depend.make
 include CMakeFiles/motor_control_rclcpp_uninstall.dir/progress.make
 
 CMakeFiles/motor_control_rclcpp_uninstall:
-	/usr/bin/cmake -P /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
+	/usr/bin/cmake -P /home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
 
 motor_control_rclcpp_uninstall: CMakeFiles/motor_control_rclcpp_uninstall
 motor_control_rclcpp_uninstall: CMakeFiles/motor_control_rclcpp_uninstall.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/motor_control_rclcpp_uninstall.dir/clean:
 .PHONY : CMakeFiles/motor_control_rclcpp_uninstall.dir/clean
 
 CMakeFiles/motor_control_rclcpp_uninstall.dir/depend:
-	cd /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclcpp /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclcpp /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp/CMakeFiles/motor_control_rclcpp_uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/w0x7ce/Desktop/1_ros/PC_Control/src/motor_control_rclcpp /home/w0x7ce/Desktop/1_ros/PC_Control/src/motor_control_rclcpp /home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp /home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp /home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp/CMakeFiles/motor_control_rclcpp_uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/motor_control_rclcpp_uninstall.dir/depend
 

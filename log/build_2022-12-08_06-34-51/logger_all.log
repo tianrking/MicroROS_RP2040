@@ -1,0 +1,82 @@
+[0.221s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.221s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=2, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7f20f7358d60>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7f20f7c72440>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7f20f7c72440>>)
+[0.244s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.244s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.244s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.244s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.244s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.244s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.244s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/w0x7ce/Desktop/1_ros'
+[0.244s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.244s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.244s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.244s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.244s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.244s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.245s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.245s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.245s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.255s] DEBUG:colcon.colcon_core.package_identification:Package '.' with type 'ros.catkin' and name 'micro_ros_raspberrypicosdk'
+[0.255s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.255s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.255s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.255s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.255s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.274s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.274s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.276s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 305 installed packages in /opt/ros/humble
+[0.277s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.322s] Level 5:colcon.colcon_core.verb:set package 'micro_ros_raspberrypicosdk' build argument 'cmake_args' from command line to 'None'
+[0.322s] Level 5:colcon.colcon_core.verb:set package 'micro_ros_raspberrypicosdk' build argument 'cmake_target' from command line to 'None'
+[0.322s] Level 5:colcon.colcon_core.verb:set package 'micro_ros_raspberrypicosdk' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.322s] Level 5:colcon.colcon_core.verb:set package 'micro_ros_raspberrypicosdk' build argument 'cmake_clean_cache' from command line to 'False'
+[0.322s] Level 5:colcon.colcon_core.verb:set package 'micro_ros_raspberrypicosdk' build argument 'cmake_clean_first' from command line to 'False'
+[0.322s] Level 5:colcon.colcon_core.verb:set package 'micro_ros_raspberrypicosdk' build argument 'cmake_force_configure' from command line to 'False'
+[0.322s] Level 5:colcon.colcon_core.verb:set package 'micro_ros_raspberrypicosdk' build argument 'ament_cmake_args' from command line to 'None'
+[0.322s] Level 5:colcon.colcon_core.verb:set package 'micro_ros_raspberrypicosdk' build argument 'catkin_cmake_args' from command line to 'None'
+[0.322s] Level 5:colcon.colcon_core.verb:set package 'micro_ros_raspberrypicosdk' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.322s] DEBUG:colcon.colcon_core.verb:Building package 'micro_ros_raspberrypicosdk' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/w0x7ce/Desktop/1_ros/build/micro_ros_raspberrypicosdk', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/w0x7ce/Desktop/1_ros/install/micro_ros_raspberrypicosdk', 'merge_install': False, 'path': '/home/w0x7ce/Desktop/1_ros', 'symlink_install': False, 'test_result_base': None}
+[0.322s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.325s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.325s] INFO:colcon.colcon_ros.task.catkin.build:Building ROS package in '/home/w0x7ce/Desktop/1_ros' with build type 'catkin'
+[0.326s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/w0x7ce/Desktop/1_ros'
+[0.329s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.329s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.329s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.339s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/w0x7ce/Desktop/1_ros/build/micro_ros_raspberrypicosdk': /usr/bin/cmake /home/w0x7ce/Desktop/1_ros -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/w0x7ce/Desktop/1_ros/install/micro_ros_raspberrypicosdk
+[1.018s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/w0x7ce/Desktop/1_ros/build/micro_ros_raspberrypicosdk' returned '0': /usr/bin/cmake /home/w0x7ce/Desktop/1_ros -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/w0x7ce/Desktop/1_ros/install/micro_ros_raspberrypicosdk
+[1.020s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/w0x7ce/Desktop/1_ros/build/micro_ros_raspberrypicosdk': /usr/bin/cmake --build /home/w0x7ce/Desktop/1_ros/build/micro_ros_raspberrypicosdk -- -j2 -l2
+[2.421s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete was interrupted
+[2.421s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete again
+[2.430s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/w0x7ce/Desktop/1_ros/build/micro_ros_raspberrypicosdk' returned '-2': /usr/bin/cmake --build /home/w0x7ce/Desktop/1_ros/build/micro_ros_raspberrypicosdk -- -j2 -l2
+[2.595s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(micro_ros_raspberrypicosdk)
+[2.602s] Level 1:colcon.colcon_core.environment:checking '/home/w0x7ce/Desktop/1_ros/install/micro_ros_raspberrypicosdk' for CMake module files
+[2.602s] Level 1:colcon.colcon_core.environment:checking '/home/w0x7ce/Desktop/1_ros/install/micro_ros_raspberrypicosdk' for CMake config files
+[2.602s] Level 1:colcon.colcon_core.environment:checking '/home/w0x7ce/Desktop/1_ros/install/micro_ros_raspberrypicosdk/bin'
+[2.602s] Level 1:colcon.colcon_core.environment:checking '/home/w0x7ce/Desktop/1_ros/install/micro_ros_raspberrypicosdk/lib/pkgconfig/micro_ros_raspberrypicosdk.pc'
+[2.602s] Level 1:colcon.colcon_core.environment:checking '/home/w0x7ce/Desktop/1_ros/install/micro_ros_raspberrypicosdk/lib/python3.10/site-packages'
+[2.603s] Level 1:colcon.colcon_core.environment:checking '/home/w0x7ce/Desktop/1_ros/install/micro_ros_raspberrypicosdk/bin'
+[2.604s] INFO:colcon.colcon_core.shell:Creating package script '/home/w0x7ce/Desktop/1_ros/install/micro_ros_raspberrypicosdk/share/micro_ros_raspberrypicosdk/package.ps1'
+[2.605s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/w0x7ce/Desktop/1_ros/install/micro_ros_raspberrypicosdk/share/micro_ros_raspberrypicosdk/package.dsv'
+[2.605s] INFO:colcon.colcon_core.shell:Creating package script '/home/w0x7ce/Desktop/1_ros/install/micro_ros_raspberrypicosdk/share/micro_ros_raspberrypicosdk/package.sh'
+[2.606s] INFO:colcon.colcon_core.shell:Creating package script '/home/w0x7ce/Desktop/1_ros/install/micro_ros_raspberrypicosdk/share/micro_ros_raspberrypicosdk/package.bash'
+[2.606s] INFO:colcon.colcon_core.shell:Creating package script '/home/w0x7ce/Desktop/1_ros/install/micro_ros_raspberrypicosdk/share/micro_ros_raspberrypicosdk/package.zsh'
+[2.607s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/w0x7ce/Desktop/1_ros/install/micro_ros_raspberrypicosdk/share/colcon-core/packages/micro_ros_raspberrypicosdk)
+[2.607s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished
+[2.607s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[2.608s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[2.608s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[2.614s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[2.614s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[2.614s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[2.632s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[2.633s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/w0x7ce/Desktop/1_ros/install/local_setup.ps1'
+[2.634s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/w0x7ce/Desktop/1_ros/install/_local_setup_util_ps1.py'
+[2.635s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/w0x7ce/Desktop/1_ros/install/setup.ps1'
+[2.637s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/w0x7ce/Desktop/1_ros/install/local_setup.sh'
+[2.637s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/w0x7ce/Desktop/1_ros/install/_local_setup_util_sh.py'
+[2.638s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/w0x7ce/Desktop/1_ros/install/setup.sh'
+[2.639s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/w0x7ce/Desktop/1_ros/install/local_setup.bash'
+[2.639s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/w0x7ce/Desktop/1_ros/install/setup.bash'
+[2.640s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/w0x7ce/Desktop/1_ros/install/local_setup.zsh'
+[2.641s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/w0x7ce/Desktop/1_ros/install/setup.zsh'

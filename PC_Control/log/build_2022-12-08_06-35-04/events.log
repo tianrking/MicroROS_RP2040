@@ -1,0 +1,245 @@
+[0.000000] (-) TimerEvent: {}
+[0.000135] (motor_control_rclcpp) JobQueued: {'identifier': 'motor_control_rclcpp', 'dependencies': OrderedDict()}
+[0.000157] (motor_control_rclpy) JobQueued: {'identifier': 'motor_control_rclpy', 'dependencies': OrderedDict()}
+[0.000854] (motor_control_rclcpp) JobStarted: {'identifier': 'motor_control_rclcpp'}
+[0.008883] (motor_control_rclpy) JobStarted: {'identifier': 'motor_control_rclpy'}
+[0.019879] (motor_control_rclcpp) JobProgress: {'identifier': 'motor_control_rclcpp', 'progress': 'cmake'}
+[0.019935] (motor_control_rclcpp) Command: {'cmd': ['/usr/bin/cmake', '/home/w0x7ce/Desktop/1_ros/PC_Control/src/motor_control_rclcpp', '-DCMAKE_INSTALL_PREFIX=/home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclcpp'], 'cwd': '/home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'w0x7ce'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/w0x7ce'), ('OLDPWD', '/home/w0x7ce/Desktop/1_ros'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '2059'), ('SYSTEMD_EXEC_PID', '2415'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '4421'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'w0x7ce'), ('JOURNAL_STREAM', '8:45582'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'w0x7ce'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/w0x7ce-virtual-machine:@/tmp/.ICE-unix/2250,unix/w0x7ce-virtual-machine:/tmp/.ICE-unix/2250'), ('INVOCATION_ID', '155ce17e88394f83bf6a1fbb705934a3'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.J2SZW1'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:8149a302-0be2-4201-b3de-6cf3bd7ef725'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('PICO_SDK_PATH', '/home/w0x7ce/pico-sdk'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.066461] (motor_control_rclcpp) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.3.0\n'}
+[0.100437] (-) TimerEvent: {}
+[0.107571] (motor_control_rclcpp) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.3.0\n'}
+[0.113109] (motor_control_rclcpp) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.171734] (motor_control_rclcpp) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.174070] (motor_control_rclcpp) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.174407] (motor_control_rclcpp) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.174853] (motor_control_rclcpp) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.176957] (motor_control_rclcpp) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.200961] (-) TimerEvent: {}
+[0.237880] (motor_control_rclcpp) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.241955] (motor_control_rclcpp) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.242677] (motor_control_rclcpp) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.243215] (motor_control_rclcpp) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.245189] (motor_control_rclcpp) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.3 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.301374] (-) TimerEvent: {}
+[0.380748] (motor_control_rclcpp) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3.10 (found version "3.10.6") found components: Interpreter \n'}
+[0.401714] (-) TimerEvent: {}
+[0.446649] (motor_control_rclcpp) StdoutLine: {'line': b'-- Found rclcpp: 16.0.2 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.480361] (motor_control_rclcpp) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.4 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.483568] (motor_control_rclcpp) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.4 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.491832] (motor_control_rclcpp) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.4 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.499822] (motor_control_rclpy) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../../build/motor_control_rclpy', 'build', '--build-base', '/home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclpy/build', 'install', '--record', '/home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclpy/install.log', '--single-version-externally-managed'], 'cwd': '/home/w0x7ce/Desktop/1_ros/PC_Control/src/motor_control_rclpy', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'w0x7ce', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/w0x7ce', 'OLDPWD': '/home/w0x7ce/Desktop/1_ros', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'MANAGERPID': '2059', 'SYSTEMD_EXEC_PID': '2415', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '4421', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'ROS_DISTRO': 'humble', 'LOGNAME': 'w0x7ce', 'JOURNAL_STREAM': '8:45582', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'w0x7ce', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/w0x7ce-virtual-machine:@/tmp/.ICE-unix/2250,unix/w0x7ce-virtual-machine:/tmp/.ICE-unix/2250', 'INVOCATION_ID': '155ce17e88394f83bf6a1fbb705934a3', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'IBUS_DISABLE_SNOOPER': '1', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.J2SZW1', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/opt/ros/humble', 'SHELL': '/bin/bash', 'TERMINATOR_UUID': 'urn:uuid:8149a302-0be2-4201-b3de-6cf3bd7ef725', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclpy', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'PICO_SDK_PATH': '/home/w0x7ce/pico-sdk', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclpy/prefix_override:/home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclpy/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'VTE_VERSION': '6800'}, 'shell': False}
+[0.502118] (-) TimerEvent: {}
+[0.504641] (motor_control_rclcpp) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.519283] (motor_control_rclcpp) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.571552] (motor_control_rclcpp) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.573470] (motor_control_rclcpp) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.2 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.602576] (-) TimerEvent: {}
+[0.637835] (motor_control_rclcpp) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[0.661423] (motor_control_rclcpp) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[0.689274] (motor_control_rclpy) StdoutLine: {'line': b'running egg_info\n'}
+[0.690137] (motor_control_rclpy) StdoutLine: {'line': b'creating ../../build/motor_control_rclpy/motor_control_rclpy.egg-info\n'}
+[0.690318] (motor_control_rclpy) StdoutLine: {'line': b'writing ../../build/motor_control_rclpy/motor_control_rclpy.egg-info/PKG-INFO\n'}
+[0.690539] (motor_control_rclpy) StdoutLine: {'line': b'writing dependency_links to ../../build/motor_control_rclpy/motor_control_rclpy.egg-info/dependency_links.txt\n'}
+[0.690704] (motor_control_rclpy) StdoutLine: {'line': b'writing entry points to ../../build/motor_control_rclpy/motor_control_rclpy.egg-info/entry_points.txt\n'}
+[0.690915] (motor_control_rclpy) StdoutLine: {'line': b'writing requirements to ../../build/motor_control_rclpy/motor_control_rclpy.egg-info/requires.txt\n'}
+[0.691068] (motor_control_rclpy) StdoutLine: {'line': b'writing top-level names to ../../build/motor_control_rclpy/motor_control_rclpy.egg-info/top_level.txt\n'}
+[0.691256] (motor_control_rclpy) StdoutLine: {'line': b"writing manifest file '../../build/motor_control_rclpy/motor_control_rclpy.egg-info/SOURCES.txt'\n"}
+[0.694151] (motor_control_rclpy) StdoutLine: {'line': b"reading manifest file '../../build/motor_control_rclpy/motor_control_rclpy.egg-info/SOURCES.txt'\n"}
+[0.695238] (motor_control_rclpy) StdoutLine: {'line': b"writing manifest file '../../build/motor_control_rclpy/motor_control_rclpy.egg-info/SOURCES.txt'\n"}
+[0.695581] (motor_control_rclpy) StdoutLine: {'line': b'running build\n'}
+[0.695669] (motor_control_rclpy) StdoutLine: {'line': b'running build_py\n'}
+[0.695819] (motor_control_rclpy) StdoutLine: {'line': b'creating /home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclpy/build\n'}
+[0.695993] (motor_control_rclpy) StdoutLine: {'line': b'creating /home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclpy/build/lib\n'}
+[0.696354] (motor_control_rclpy) StdoutLine: {'line': b'creating /home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclpy/build/lib/motor_control_rclpy\n'}
+[0.696507] (motor_control_rclpy) StdoutLine: {'line': b'copying motor_control_rclpy/change_speed.py -> /home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclpy/build/lib/motor_control_rclpy\n'}
+[0.697025] (motor_control_rclpy) StdoutLine: {'line': b'copying motor_control_rclpy/get_speed.py -> /home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclpy/build/lib/motor_control_rclpy\n'}
+[0.697422] (motor_control_rclpy) StdoutLine: {'line': b'copying motor_control_rclpy/__init__.py -> /home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclpy/build/lib/motor_control_rclpy\n'}
+[0.697614] (motor_control_rclpy) StdoutLine: {'line': b'running install\n'}
+[0.697795] (motor_control_rclpy) StderrLine: {'line': b'/usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.\n'}
+[0.697866] (motor_control_rclpy) StderrLine: {'line': b'  warnings.warn(\n'}
+[0.698210] (motor_control_rclpy) StdoutLine: {'line': b'running install_lib\n'}
+[0.699139] (motor_control_rclpy) StdoutLine: {'line': b'creating /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclpy/lib/python3.10/site-packages/motor_control_rclpy\n'}
+[0.699339] (motor_control_rclpy) StdoutLine: {'line': b'copying /home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclpy/build/lib/motor_control_rclpy/change_speed.py -> /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclpy/lib/python3.10/site-packages/motor_control_rclpy\n'}
+[0.699531] (motor_control_rclpy) StdoutLine: {'line': b'copying /home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclpy/build/lib/motor_control_rclpy/get_speed.py -> /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclpy/lib/python3.10/site-packages/motor_control_rclpy\n'}
+[0.700058] (motor_control_rclpy) StdoutLine: {'line': b'copying /home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclpy/build/lib/motor_control_rclpy/__init__.py -> /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclpy/lib/python3.10/site-packages/motor_control_rclpy\n'}
+[0.700544] (motor_control_rclpy) StdoutLine: {'line': b'byte-compiling /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclpy/lib/python3.10/site-packages/motor_control_rclpy/change_speed.py to change_speed.cpython-310.pyc\n'}
+[0.701147] (motor_control_rclpy) StdoutLine: {'line': b'byte-compiling /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclpy/lib/python3.10/site-packages/motor_control_rclpy/get_speed.py to get_speed.cpython-310.pyc\n'}
+[0.701263] (motor_control_rclpy) StdoutLine: {'line': b'byte-compiling /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclpy/lib/python3.10/site-packages/motor_control_rclpy/__init__.py to __init__.cpython-310.pyc\n'}
+[0.701713] (motor_control_rclpy) StdoutLine: {'line': b'running install_data\n'}
+[0.701949] (motor_control_rclpy) StdoutLine: {'line': b'creating /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclpy/share/ament_index\n'}
+[0.703322] (-) TimerEvent: {}
+[0.704957] (motor_control_rclpy) StdoutLine: {'line': b'creating /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclpy/share/ament_index/resource_index\n'}
+[0.705041] (motor_control_rclpy) StdoutLine: {'line': b'creating /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclpy/share/ament_index/resource_index/packages\n'}
+[0.705080] (motor_control_rclpy) StdoutLine: {'line': b'copying resource/motor_control_rclpy -> /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclpy/share/ament_index/resource_index/packages\n'}
+[0.705117] (motor_control_rclpy) StdoutLine: {'line': b'copying package.xml -> /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclpy/share/motor_control_rclpy\n'}
+[0.705151] (motor_control_rclpy) StdoutLine: {'line': b'running install_egg_info\n'}
+[0.705202] (motor_control_rclpy) StdoutLine: {'line': b'Copying ../../build/motor_control_rclpy/motor_control_rclpy.egg-info to /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclpy/lib/python3.10/site-packages/motor_control_rclpy-0.0.0-py3.10.egg-info\n'}
+[0.705259] (motor_control_rclpy) StdoutLine: {'line': b'running install_scripts\n'}
+[0.710027] (motor_control_rclcpp) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.720275] (motor_control_rclcpp) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[0.729935] (motor_control_rclpy) StdoutLine: {'line': b'Installing change_speed script to /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclpy/lib/motor_control_rclpy\n'}
+[0.732107] (motor_control_rclpy) StdoutLine: {'line': b'Installing get_speed script to /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclpy/lib/motor_control_rclpy\n'}
+[0.732676] (motor_control_rclpy) StdoutLine: {'line': b"writing list of installed files to '/home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclpy/install.log'\n"}
+[0.764613] (motor_control_rclpy) CommandEnded: {'returncode': 0}
+[0.777213] (motor_control_rclpy) JobEnded: {'identifier': 'motor_control_rclpy', 'rc': 0}
+[0.790377] (motor_control_rclcpp) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[0.790851] (motor_control_rclcpp) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[0.803569] (-) TimerEvent: {}
+[0.854995] (motor_control_rclcpp) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[0.855899] (motor_control_rclcpp) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[0.904732] (-) TimerEvent: {}
+[0.981176] (motor_control_rclcpp) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.4 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[1.005361] (-) TimerEvent: {}
+[1.039406] (motor_control_rclcpp) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[1.039716] (motor_control_rclcpp) StdoutLine: {'line': b'-- Configured cppcheck include dirs: \n'}
+[1.039779] (motor_control_rclcpp) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[1.040313] (motor_control_rclcpp) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[1.040657] (motor_control_rclcpp) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[1.040727] (motor_control_rclcpp) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[1.041078] (motor_control_rclcpp) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[1.042015] (motor_control_rclcpp) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.052182] (motor_control_rclcpp) StdoutLine: {'line': b'-- Generating done\n'}
+[1.053991] (motor_control_rclcpp) StdoutLine: {'line': b'-- Build files have been written to: /home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp\n'}
+[1.064222] (motor_control_rclcpp) CommandEnded: {'returncode': 0}
+[1.065329] (motor_control_rclcpp) JobProgress: {'identifier': 'motor_control_rclcpp', 'progress': 'build'}
+[1.065352] (motor_control_rclcpp) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp', '--', '-j2', '-l2'], 'cwd': '/home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'w0x7ce'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/w0x7ce'), ('OLDPWD', '/home/w0x7ce/Desktop/1_ros'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '2059'), ('SYSTEMD_EXEC_PID', '2415'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '4421'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'w0x7ce'), ('JOURNAL_STREAM', '8:45582'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'w0x7ce'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/w0x7ce-virtual-machine:@/tmp/.ICE-unix/2250,unix/w0x7ce-virtual-machine:/tmp/.ICE-unix/2250'), ('INVOCATION_ID', '155ce17e88394f83bf6a1fbb705934a3'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.J2SZW1'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:8149a302-0be2-4201-b3de-6cf3bd7ef725'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('PICO_SDK_PATH', '/home/w0x7ce/pico-sdk'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[1.099501] (motor_control_rclcpp) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/change_speed.dir/src/change_speed.cpp.o\x1b[0m\n'}
+[1.099711] (motor_control_rclcpp) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/get_speed.dir/src/get_speed.cpp.o\x1b[0m\n'}
+[1.105597] (-) TimerEvent: {}
+[1.206251] (-) TimerEvent: {}
+[1.306954] (-) TimerEvent: {}
+[1.407389] (-) TimerEvent: {}
+[1.507883] (-) TimerEvent: {}
+[1.608414] (-) TimerEvent: {}
+[1.708911] (-) TimerEvent: {}
+[1.809563] (-) TimerEvent: {}
+[1.910138] (-) TimerEvent: {}
+[2.011010] (-) TimerEvent: {}
+[2.111479] (-) TimerEvent: {}
+[2.212002] (-) TimerEvent: {}
+[2.312580] (-) TimerEvent: {}
+[2.414018] (-) TimerEvent: {}
+[2.514996] (-) TimerEvent: {}
+[2.615764] (-) TimerEvent: {}
+[2.716254] (-) TimerEvent: {}
+[2.816787] (-) TimerEvent: {}
+[2.917288] (-) TimerEvent: {}
+[3.017853] (-) TimerEvent: {}
+[3.118471] (-) TimerEvent: {}
+[3.219526] (-) TimerEvent: {}
+[3.320718] (-) TimerEvent: {}
+[3.421150] (-) TimerEvent: {}
+[3.521603] (-) TimerEvent: {}
+[3.622102] (-) TimerEvent: {}
+[3.722538] (-) TimerEvent: {}
+[3.823300] (-) TimerEvent: {}
+[3.930124] (-) TimerEvent: {}
+[4.031832] (-) TimerEvent: {}
+[4.132389] (-) TimerEvent: {}
+[4.237921] (-) TimerEvent: {}
+[4.338397] (-) TimerEvent: {}
+[4.438791] (-) TimerEvent: {}
+[4.539802] (-) TimerEvent: {}
+[4.640259] (-) TimerEvent: {}
+[4.746418] (-) TimerEvent: {}
+[4.848868] (-) TimerEvent: {}
+[4.949364] (-) TimerEvent: {}
+[5.051357] (-) TimerEvent: {}
+[5.151870] (-) TimerEvent: {}
+[5.252284] (-) TimerEvent: {}
+[5.352639] (-) TimerEvent: {}
+[5.453774] (-) TimerEvent: {}
+[5.554156] (-) TimerEvent: {}
+[5.654867] (-) TimerEvent: {}
+[5.755431] (-) TimerEvent: {}
+[5.855850] (-) TimerEvent: {}
+[5.959012] (-) TimerEvent: {}
+[6.059746] (-) TimerEvent: {}
+[6.160348] (-) TimerEvent: {}
+[6.260961] (-) TimerEvent: {}
+[6.361597] (-) TimerEvent: {}
+[6.462241] (-) TimerEvent: {}
+[6.563012] (-) TimerEvent: {}
+[6.663611] (-) TimerEvent: {}
+[6.764310] (-) TimerEvent: {}
+[6.864803] (-) TimerEvent: {}
+[6.965670] (-) TimerEvent: {}
+[7.066400] (-) TimerEvent: {}
+[7.166873] (-) TimerEvent: {}
+[7.267433] (-) TimerEvent: {}
+[7.367870] (-) TimerEvent: {}
+[7.469062] (-) TimerEvent: {}
+[7.569683] (-) TimerEvent: {}
+[7.618048] (motor_control_rclcpp) StdoutLine: {'line': b'[ 75%] \x1b[32m\x1b[1mLinking CXX executable change_speed\x1b[0m\n'}
+[7.670086] (-) TimerEvent: {}
+[7.770553] (-) TimerEvent: {}
+[7.771013] (motor_control_rclcpp) StdoutLine: {'line': b'[ 75%] Built target change_speed\n'}
+[7.870686] (-) TimerEvent: {}
+[7.971286] (-) TimerEvent: {}
+[8.071801] (-) TimerEvent: {}
+[8.172199] (-) TimerEvent: {}
+[8.273379] (-) TimerEvent: {}
+[8.373973] (-) TimerEvent: {}
+[8.474396] (-) TimerEvent: {}
+[8.574859] (-) TimerEvent: {}
+[8.675567] (-) TimerEvent: {}
+[8.776706] (-) TimerEvent: {}
+[8.878002] (-) TimerEvent: {}
+[8.978592] (-) TimerEvent: {}
+[9.078986] (-) TimerEvent: {}
+[9.179679] (-) TimerEvent: {}
+[9.280433] (-) TimerEvent: {}
+[9.381313] (-) TimerEvent: {}
+[9.483537] (-) TimerEvent: {}
+[9.584363] (-) TimerEvent: {}
+[9.685393] (-) TimerEvent: {}
+[9.786339] (-) TimerEvent: {}
+[9.887131] (-) TimerEvent: {}
+[9.987769] (-) TimerEvent: {}
+[10.088445] (-) TimerEvent: {}
+[10.189024] (-) TimerEvent: {}
+[10.290312] (-) TimerEvent: {}
+[10.390776] (-) TimerEvent: {}
+[10.491161] (-) TimerEvent: {}
+[10.592192] (-) TimerEvent: {}
+[10.692540] (-) TimerEvent: {}
+[10.793138] (-) TimerEvent: {}
+[10.894192] (-) TimerEvent: {}
+[10.995629] (-) TimerEvent: {}
+[11.096424] (-) TimerEvent: {}
+[11.197326] (-) TimerEvent: {}
+[11.297939] (-) TimerEvent: {}
+[11.398272] (-) TimerEvent: {}
+[11.498958] (-) TimerEvent: {}
+[11.518991] (motor_control_rclcpp) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable get_speed\x1b[0m\n'}
+[11.599636] (-) TimerEvent: {}
+[11.700901] (-) TimerEvent: {}
+[11.801853] (-) TimerEvent: {}
+[11.815279] (motor_control_rclcpp) StdoutLine: {'line': b'[100%] Built target get_speed\n'}
+[11.823057] (motor_control_rclcpp) CommandEnded: {'returncode': 0}
+[11.849479] (motor_control_rclcpp) JobProgress: {'identifier': 'motor_control_rclcpp', 'progress': 'install'}
+[11.856903] (motor_control_rclcpp) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp'], 'cwd': '/home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'w0x7ce'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/w0x7ce'), ('OLDPWD', '/home/w0x7ce/Desktop/1_ros'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '2059'), ('SYSTEMD_EXEC_PID', '2415'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '4421'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'w0x7ce'), ('JOURNAL_STREAM', '8:45582'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'w0x7ce'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/w0x7ce-virtual-machine:@/tmp/.ICE-unix/2250,unix/w0x7ce-virtual-machine:/tmp/.ICE-unix/2250'), ('INVOCATION_ID', '155ce17e88394f83bf6a1fbb705934a3'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.J2SZW1'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:8149a302-0be2-4201-b3de-6cf3bd7ef725'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('PICO_SDK_PATH', '/home/w0x7ce/pico-sdk'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[11.863162] (motor_control_rclcpp) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[11.865113] (motor_control_rclcpp) StdoutLine: {'line': b'-- Installing: /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclcpp/lib/motor_control_rclcpp/get_speed\n'}
+[11.868485] (motor_control_rclcpp) StdoutLine: {'line': b'-- Set runtime path of "/home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclcpp/lib/motor_control_rclcpp/get_speed" to ""\n'}
+[11.870112] (motor_control_rclcpp) StdoutLine: {'line': b'-- Installing: /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclcpp/lib/motor_control_rclcpp/change_speed\n'}
+[11.871252] (motor_control_rclcpp) StdoutLine: {'line': b'-- Set runtime path of "/home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclcpp/lib/motor_control_rclcpp/change_speed" to ""\n'}
+[11.871557] (motor_control_rclcpp) StdoutLine: {'line': b'-- Installing: /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclcpp/share/ament_index/resource_index/package_run_dependencies/motor_control_rclcpp\n'}
+[11.872203] (motor_control_rclcpp) StdoutLine: {'line': b'-- Installing: /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclcpp/share/ament_index/resource_index/parent_prefix_path/motor_control_rclcpp\n'}
+[11.872309] (motor_control_rclcpp) StdoutLine: {'line': b'-- Installing: /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclcpp/share/motor_control_rclcpp/environment/ament_prefix_path.sh\n'}
+[11.872387] (motor_control_rclcpp) StdoutLine: {'line': b'-- Installing: /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclcpp/share/motor_control_rclcpp/environment/ament_prefix_path.dsv\n'}
+[11.872506] (motor_control_rclcpp) StdoutLine: {'line': b'-- Installing: /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclcpp/share/motor_control_rclcpp/environment/path.sh\n'}
+[11.872582] (motor_control_rclcpp) StdoutLine: {'line': b'-- Installing: /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclcpp/share/motor_control_rclcpp/environment/path.dsv\n'}
+[11.872654] (motor_control_rclcpp) StdoutLine: {'line': b'-- Installing: /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclcpp/share/motor_control_rclcpp/local_setup.bash\n'}
+[11.872731] (motor_control_rclcpp) StdoutLine: {'line': b'-- Installing: /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclcpp/share/motor_control_rclcpp/local_setup.sh\n'}
+[11.872833] (motor_control_rclcpp) StdoutLine: {'line': b'-- Installing: /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclcpp/share/motor_control_rclcpp/local_setup.zsh\n'}
+[11.872912] (motor_control_rclcpp) StdoutLine: {'line': b'-- Installing: /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclcpp/share/motor_control_rclcpp/local_setup.dsv\n'}
+[11.873019] (motor_control_rclcpp) StdoutLine: {'line': b'-- Installing: /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclcpp/share/motor_control_rclcpp/package.dsv\n'}
+[11.873484] (motor_control_rclcpp) StdoutLine: {'line': b'-- Installing: /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclcpp/share/ament_index/resource_index/packages/motor_control_rclcpp\n'}
+[11.873618] (motor_control_rclcpp) StdoutLine: {'line': b'-- Installing: /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclcpp/share/motor_control_rclcpp/cmake/motor_control_rclcppConfig.cmake\n'}
+[11.873696] (motor_control_rclcpp) StdoutLine: {'line': b'-- Installing: /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclcpp/share/motor_control_rclcpp/cmake/motor_control_rclcppConfig-version.cmake\n'}
+[11.873767] (motor_control_rclcpp) StdoutLine: {'line': b'-- Up-to-date: /home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclcpp/share/motor_control_rclcpp/package.xml\n'}
+[11.879055] (motor_control_rclcpp) CommandEnded: {'returncode': 0}
+[11.902187] (-) TimerEvent: {}
+[11.917271] (motor_control_rclcpp) JobEnded: {'identifier': 'motor_control_rclcpp', 'rc': 0}
+[11.917573] (-) EventReactorShutdown: {}

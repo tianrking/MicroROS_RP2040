@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclcpp/src/change_speed.cpp" "CMakeFiles/change_speed.dir/src/change_speed.cpp.o" "gcc" "CMakeFiles/change_speed.dir/src/change_speed.cpp.o.d"
+  "/home/w0x7ce/Desktop/1_ros/PC_Control/src/motor_control_rclcpp/src/change_speed.cpp" "CMakeFiles/change_speed.dir/src/change_speed.cpp.o" "gcc" "CMakeFiles/change_speed.dir/src/change_speed.cpp.o.d"
   )
 
 # Targets to which this target links.

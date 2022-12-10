@@ -2,7 +2,7 @@
 # ament_cmake_core/cmake/uninstall_target/ament_cmake_uninstall_target.cmake.in
 
 function(ament_cmake_uninstall_target_remove_empty_directories path)
-  set(install_space "/home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp")
+  set(install_space "/home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclcpp")
   if(install_space STREQUAL "")
     message(FATAL_ERROR "The CMAKE_INSTALL_PREFIX variable must not be empty")
   endif()
@@ -29,7 +29,7 @@ function(ament_cmake_uninstall_target_remove_empty_directories path)
 endfunction()
 
 # uninstall files installed using the standard install() function
-set(install_manifest "/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp/install_manifest.txt")
+set(install_manifest "/home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp/install_manifest.txt")
 if(NOT EXISTS "${install_manifest}")
   message(FATAL_ERROR "Cannot find install manifest: ${install_manifest}")
 endif()

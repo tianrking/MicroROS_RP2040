@@ -1,0 +1,6 @@
+[0.022s] Invoking command in '/home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp -- -j2 -l2
+[0.035s] [0mCMake Error: The current CMakeCache.txt directory /home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp/CMakeCache.txt is different than the directory /home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp where CMakeCache.txt was created. This may result in binaries being created in the wrong place. If you are not sure, reedit the CMakeCache.txt[0m
+[0.054s] [0mCMake Error: The source directory "/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclcpp" does not exist.
+[0.054s] Specify --help for usage, or press the help button on the CMake GUI.[0m
+[0.055s] gmake: *** [Makefile:308: cmake_check_build_system] Error 1
+[0.238s] Invoked command in '/home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp' returned '2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp -- -j2 -l2

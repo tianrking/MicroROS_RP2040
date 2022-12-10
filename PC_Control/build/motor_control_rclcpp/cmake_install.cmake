@@ -1,8 +1,8 @@
-# Install script for directory: /home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclcpp
+# Install script for directory: /home/w0x7ce/Desktop/1_ros/PC_Control/src/motor_control_rclcpp
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/w0x7ce/Desktop/AMAKE/A/PC_Control/install/motor_control_rclcpp")
+  set(CMAKE_INSTALL_PREFIX "/home/w0x7ce/Desktop/1_ros/PC_Control/install/motor_control_rclcpp")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -49,7 +49,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/motor_control_rclcpp/get_speed"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/motor_control_rclcpp" TYPE EXECUTABLE FILES "/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp/get_speed")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/motor_control_rclcpp" TYPE EXECUTABLE FILES "/home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp/get_speed")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/motor_control_rclcpp/get_speed" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/motor_control_rclcpp/get_speed")
     file(RPATH_CHANGE
@@ -69,7 +69,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/motor_control_rclcpp/change_speed"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/motor_control_rclcpp" TYPE EXECUTABLE FILES "/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp/change_speed")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/motor_control_rclcpp" TYPE EXECUTABLE FILES "/home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp/change_speed")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/motor_control_rclcpp/change_speed" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/motor_control_rclcpp/change_speed")
     file(RPATH_CHANGE
@@ -83,11 +83,11 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/package_run_dependencies" TYPE FILE FILES "/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/motor_control_rclcpp")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/package_run_dependencies" TYPE FILE FILES "/home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/motor_control_rclcpp")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/parent_prefix_path" TYPE FILE FILES "/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/motor_control_rclcpp")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/parent_prefix_path" TYPE FILE FILES "/home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/motor_control_rclcpp")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -95,7 +95,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/motor_control_rclcpp/environment" TYPE FILE FILES "/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp/ament_cmake_environment_hooks/ament_prefix_path.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/motor_control_rclcpp/environment" TYPE FILE FILES "/home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp/ament_cmake_environment_hooks/ament_prefix_path.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -103,42 +103,42 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/motor_control_rclcpp/environment" TYPE FILE FILES "/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp/ament_cmake_environment_hooks/path.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/motor_control_rclcpp/environment" TYPE FILE FILES "/home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp/ament_cmake_environment_hooks/path.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/motor_control_rclcpp" TYPE FILE FILES "/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp/ament_cmake_environment_hooks/local_setup.bash")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/motor_control_rclcpp" TYPE FILE FILES "/home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp/ament_cmake_environment_hooks/local_setup.bash")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/motor_control_rclcpp" TYPE FILE FILES "/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp/ament_cmake_environment_hooks/local_setup.sh")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/motor_control_rclcpp" TYPE FILE FILES "/home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp/ament_cmake_environment_hooks/local_setup.sh")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/motor_control_rclcpp" TYPE FILE FILES "/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp/ament_cmake_environment_hooks/local_setup.zsh")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/motor_control_rclcpp" TYPE FILE FILES "/home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp/ament_cmake_environment_hooks/local_setup.zsh")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/motor_control_rclcpp" TYPE FILE FILES "/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp/ament_cmake_environment_hooks/local_setup.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/motor_control_rclcpp" TYPE FILE FILES "/home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp/ament_cmake_environment_hooks/local_setup.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/motor_control_rclcpp" TYPE FILE FILES "/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp/ament_cmake_environment_hooks/package.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/motor_control_rclcpp" TYPE FILE FILES "/home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp/ament_cmake_environment_hooks/package.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/packages" TYPE FILE FILES "/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp/ament_cmake_index/share/ament_index/resource_index/packages/motor_control_rclcpp")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/packages" TYPE FILE FILES "/home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp/ament_cmake_index/share/ament_index/resource_index/packages/motor_control_rclcpp")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/motor_control_rclcpp/cmake" TYPE FILE FILES
-    "/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp/ament_cmake_core/motor_control_rclcppConfig.cmake"
-    "/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp/ament_cmake_core/motor_control_rclcppConfig-version.cmake"
+    "/home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp/ament_cmake_core/motor_control_rclcppConfig.cmake"
+    "/home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp/ament_cmake_core/motor_control_rclcppConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/motor_control_rclcpp" TYPE FILE FILES "/home/w0x7ce/Desktop/AMAKE/A/PC_Control/src/motor_control_rclcpp/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/motor_control_rclcpp" TYPE FILE FILES "/home/w0x7ce/Desktop/1_ros/PC_Control/src/motor_control_rclcpp/package.xml")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -149,5 +149,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/w0x7ce/Desktop/AMAKE/A/PC_Control/build/motor_control_rclcpp/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/w0x7ce/Desktop/1_ros/PC_Control/build/motor_control_rclcpp/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

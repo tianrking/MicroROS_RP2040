@@ -1,0 +1,4 @@
+[console_scripts]
+change_speed = motor_control_rclpy.change_speed:main
+get_speed = motor_control_rclpy.get_speed:main
+
