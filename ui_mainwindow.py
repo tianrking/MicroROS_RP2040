@@ -22,6 +22,54 @@ from PySide6.QtWidgets import (QApplication, QComboBox, QDateTimeEdit, QDial,
     QSizePolicy, QSlider, QStatusBar, QTextEdit,
     QWidget)
 
+from PySide6.QtCore import Slot
+
+import rclpy
+from rclpy.node import Node
+
+from std_msgs.msg import String
+from std_msgs.msg import Int32
+
+import random
+
+from common import global_var as gl
+gl._init()
+
+class NodeSubscribe02(Node):
+    def __init__(self,name):
+        super().__init__(name)
+        self.get_logger().info("%s!" % name)
+        # 创建订阅者
+        self.command_subscribe_ = self.create_subscription(Int32,"pico_publisher_encoder",self.command_callback,10)
+
+    def command_callback(self,msg):
+        speed = 0.0
+        if msg.data=="backup":
+            speed = -0.2
+        self.get_logger().info(f'recieve[{msg.data}]，message_recieve{speed}')
+
+class NodePublisher02(Node):
+    def __init__(self,name):
+        super().__init__(name)
+        self.get_logger().info("%s!" % name)
+        self.command_publisher_ = self.create_publisher(Int32,"/speed_change", 10) 
+        self.timer = self.create_timer(0.5, self.timer_callback)
+    
+    def timer_callback(self):
+        """
+        定时器回调函数
+        """
+        # msg = String()
+        msg = Int32()
+            
+        msg.data = 50
+        self.command_publisher_.publish(msg) 
+        self.get_logger().info(f'Value：{msg.data}')    #打印一下发布的数据
+
+# @Slot()
+# def get_topic():
+#     print("单击按钮, Hello!")
+
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
@@ -59,7 +107,7 @@ class Ui_MainWindow(object):
         self.pushButton_2.setObjectName(u"pushButton_2")
         self.pushButton_2.setGeometry(QRect(30, 40, 89, 25))
         self.pushButton_3 = QPushButton(self.centralwidget)
-        self.pushButton_3.setObjectName(u"pushButton_3")
+        self.pushButton_3.setObjectName(u"pushButton_3")        
         self.pushButton_3.setGeometry(QRect(150, 40, 89, 25))
         self.horizontalSlider = QSlider(self.centralwidget)
         self.horizontalSlider.setObjectName(u"horizontalSlider")
@@ -178,7 +226,7 @@ class Ui_MainWindow(object):
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"kD", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"Protocol", None))
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Micro-ROS Agent Start/reStart", None))
-        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"Node", None))
+        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"Send", None))
         self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"Topic", None))
         self.comboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"micro-ROS", None))
         self.comboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"UART", None))
@@ -194,4 +242,59 @@ class Ui_MainWindow(object):
         self.menuAbout.setTitle(QCoreApplication.translate("MainWindow", u"Setting", None))
         self.menuAbout_2.setTitle(QCoreApplication.translate("MainWindow", u"More", None))
     # retranslateUi
+    
+    def add_slot(self):
+    
+        # clicked.connect(GET_ENCODE_VALUE)
+        self.pushButton_3.clicked.connect(self.get_topic_list)
+        self.pushButton_2.clicked.connect(self.publish_data)
+        
+        pass
+    
+    def ros_init(self):
+        
+        rclpy.init() # 初始化rclpy
+        self.ros_node_publish_data = Node("tt_2")
+        self.ros_node_publish_data_publisher_  = self.ros_node_publish_data.create_publisher(Int32,"/speed_change", 10) 
+        
+    
+    @Slot()
+    def get_topic_list(self):
 
+        # rclpy.init()
+        node_dummy = Node("_ros2cli_show_topic_list")
+        topic_list = node_dummy.get_topic_names_and_types()
+        node_dummy.destroy_node()
+        for info in topic_list:
+            print(info[0])
+
+    
+    @Slot()
+    def get_node_list(self):
+
+        # rclpy.init()
+        node_dummy = Node("_ros2cli_dummy_to_show_node_list")
+        topic_list = node_dummy.get_node_names_and_types()
+        node_dummy.destroy_node()
+        for info in topic_list:
+            print(info[0])
+            
+        
+    @Slot()
+    def publish_data(self):
+        
+        # rclpy.init() # 初始化rclpy
+        # node_publish_data = Node("tt_2")
+        try:
+            self.ros_node_publish_data_publisher_ = self.ros_node_publish_data.create_publisher(Int32,"/speed_change", 10) 
+        except:
+            pass
+        
+        msg = Int32()  
+        msg.data = int(gl.get_value('speed'))
+        self.ros_node_publish_data_publisher_.publish(msg) 
+        
+        # node = NodePublisher02("topic_publisher_02")  # 新建一个节点
+        # rclpy.spin(node) # 保持节点运行，检测是否收到退出指令（Ctrl+C）
+        # node_publish_data.destroy_node()
+        # rclpy.shutdown() # 关闭rclpy

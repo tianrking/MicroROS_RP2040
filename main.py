@@ -17,16 +17,25 @@ from PySide6.QtWidgets import (QLineEdit, QPushButton, QApplication,
 from chart import Chart
 import chart
 
+import serial
+
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String
 from std_msgs.msg import Int32
+
+import subprocess
+ 
+reply=subprocess.getstatusoutput("")
+print(reply)
 
 class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        self.ui.add_slot()
+        self.ui.ros_init()
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
@@ -58,6 +67,7 @@ if __name__ == "__main__":
     
     main_widget.resize(800, 700)
     main_widget.setFixedSize(800, 700)
+    
     
     print("Start Success")
     sys.exit(app.exec())

@@ -12,6 +12,11 @@ from rclpy.node import Node
 from std_msgs.msg import String
 from std_msgs.msg import Int32
 
+from common import global_var as gl
+
+gl._init()
+gl.set_value('speed', 0)
+
 class Chart(QChart):
     def __init__(self, parent=None):
         super().__init__(QChart.ChartTypeCartesian, parent, Qt.WindowFlags())
@@ -40,7 +45,7 @@ class Chart(QChart):
         self._series.attachAxis(self._axisY)
         self._axisX.setTickCount(5)
         self._axisX.setRange(0, 10)
-        self._axisY.setRange(-5, 10)
+        self._axisY.setRange(-100, +100)
 
         self._timer.start()
 
@@ -49,7 +54,11 @@ class Chart(QChart):
         x = self.plotArea().width() / self._axisX.tickCount()
         y = (self._axisX.max() - self._axisX.min()) / self._axisX.tickCount()
         self._x += y
-        self._y = random.uniform(0, 5) - 2.5
+        # self._y = random.uniform(0, 5) - 2.5
+        
+        self._y = random.randint(-95, 95)
+        gl.set_value('speed', self._y)
+
         self._series.append(self._x, self._y)
         self.scroll(x, 0)
         if self._x == 100:
