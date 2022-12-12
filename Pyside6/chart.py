@@ -3,6 +3,10 @@ import random
 from PySide6.QtCharts import QChart, QSplineSeries, QValueAxis
 from PySide6.QtCore import Qt, QTimer, Slot
 from PySide6.QtGui import QPen
+from PySide6 import QtCore, QtWidgets, QtGui
+
+import sys
+from PySide6.QtWidgets import QApplication, QPushButton
 
 speed_temp = 0
 
@@ -33,11 +37,12 @@ class Chart(QChart):
 
         self._series.attachAxis(self._axisX)
         self._series.attachAxis(self._axisY)
-        self._axisX.setTickCount(5)
+        self._axisX.setTickCount(10)
         self._axisX.setRange(0, 10)
-        self._axisY.setRange(-5, 10)
+        self._axisY.setRange(-100, 100)
 
         self._timer.start()
+        
     
     def get_speed(self,encoder):
         
@@ -50,8 +55,13 @@ class Chart(QChart):
         y = (self._axisX.max() - self._axisX.min()) / self._axisX.tickCount()
         self._x += y
         self._y = random.uniform(0, 5) - 2.5
-        self._series.append(self._x, speed_temp)
+        self._series.append(self._x, random.randint(-80,80))
         self.scroll(x, 0)
-        if self._x == 100:
-            self._timer.stop()
-        print(speed_temp)
+        # if self._x == 100:
+        #     self._timer.stop()
+        # print(speed_temp)
+        
+
+    @Slot()
+    def say_hello():
+        print("Button clicked, Hello!")
