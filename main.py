@@ -55,7 +55,7 @@ if __name__ == "__main__":
     main_widget.show()
     
     main_widget.resize(1000, 800)
-
-    print(type(window_Q))
-
+    main_widget.setFixedSize(800, 700)
+    
+    print("Start Success")
     sys.exit(app.exec())
