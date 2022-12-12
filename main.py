@@ -37,7 +37,7 @@ if __name__ == "__main__":
     window_Q = QMainWindow()
     
     chart = Chart()
-    chart.setTitle("Dynamic spline chart")
+    chart.setTitle("Speed")
     chart.legend().hide()
     chart.setAnimationOptions(QChart.AllAnimations)
     chart_view = QChartView(chart)
@@ -52,9 +52,11 @@ if __name__ == "__main__":
     main_layout.addWidget(chart_view)
     
     main_widget.setLayout(main_layout)
+    
+    main_widget.setWindowTitle("PC controller")
     main_widget.show()
     
-    main_widget.resize(1000, 800)
+    main_widget.resize(800, 700)
     main_widget.setFixedSize(800, 700)
     
     print("Start Success")
