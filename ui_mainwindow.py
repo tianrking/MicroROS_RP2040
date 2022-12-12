@@ -20,6 +20,12 @@ from PySide6.QtWidgets import (QApplication, QLabel, QLineEdit, QMainWindow,
     QMenu, QMenuBar, QPushButton, QSizePolicy,
     QStatusBar, QWidget)
 
+from PySide6.QtCore import Slot
+
+@Slot()
+def say_hello():
+    print("Button clicked, Hello AAAAAA")
+        
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
@@ -57,6 +63,7 @@ class Ui_MainWindow(object):
         self.lineEdit_4.setGeometry(QRect(190, 230, 113, 25))
         self.pushButton = QPushButton(self.centralwidget)
         self.pushButton.setObjectName(u"pushButton")
+        self.pushButton.clicked.connect(self.say_AAA)
         self.pushButton.setGeometry(QRect(190, 280, 89, 25))
         self.widget = QWidget(self.centralwidget)
         self.widget.setObjectName(u"widget")
@@ -96,4 +103,8 @@ class Ui_MainWindow(object):
         self.menuAbout.setTitle(QCoreApplication.translate("MainWindow", u"Setting", None))
         self.menuAbout_2.setTitle(QCoreApplication.translate("MainWindow", u"About", None))
     # retranslateUi
+
+    @Slot()
+    def say_AAA(self):
+        print("Button clicked, Hello!")
 
