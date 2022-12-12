@@ -11,6 +11,10 @@ from PySide6.QtGui import QPen
 from PySide6.QtGui import QPainter
 from PySide6.QtWidgets import QApplication, QMainWindow
 
+from PySide6.QtWidgets import (QLineEdit, QPushButton, QApplication,
+    QVBoxLayout, QDialog, QToolBar)
+
+
 from chart import Chart
 import chart
 
@@ -40,9 +44,10 @@ class MyWidget(QtWidgets.QWidget):
     @QtCore.Slot()
     def magic(self):
         self.text.setText(random.choice(self.hello))
-        chart.speed_temp = random.randint(0,9)
+        chart.speed_temp = random.randint(5,40)
         
-        
+def magic():
+    chart.speed_temp = random.randint(5,40)     
 
 class NodePublisher02(Node):
     def __init__(self,name):
@@ -62,6 +67,9 @@ class NodePublisher02(Node):
         self.command_publisher_.publish(msg) 
         self.get_logger().info(f'Value：{msg.data}')    #打印一下发布的数据
 
+def clickMethod():
+    print('Clicked Pyqt button.')
+
 def main(args=None):
     # rclpy.init(args=args) # 初始化rclpy
     # node = NodePublisher02("topic_publisher_02")  # 新建一个节点
@@ -70,21 +78,39 @@ def main(args=None):
     
     app = QtWidgets.QApplication([])
 
-    widget = MyWidget()
-    widget.resize(800, 600)
-    widget.show()
+    # widget = MyWidget()
+    # widget.resize(800, 600)
+    # widget.show()
     
     window = QMainWindow()
+    
     chart = Chart()
 
     chart.setTitle("Speed chart")
     chart.legend().hide()
     chart.setAnimationOptions(QChart.AllAnimations)
     chart_view = QChartView(chart)
-    chart_view.setRenderHint(QPainter.Antialiasing)
+    chart_view.setRenderHint(QPainter.Antialiasing)   
+    
+    # window.addPushButton = QtWidgets.QPushButton("Click me!")
+    
     window.setCentralWidget(chart_view)
-    window.resize(400, 300)
-    window.show()
+    window.resize(300, 400)
+    # window.show()
+    
+    main_widget = QtWidgets.QWidget()
+    main_layout = QVBoxLayout()
+    main_layout.addWidget(window)
+    
+    button1 = QPushButton("Click me")
+    button1.clicked.connect(magic)
+
+    main_layout.addWidget(button1)
+    main_widget.setLayout(main_layout)
+    # main_widget.
+    
+    main_widget.resize(1200, 800)
+    main_widget.show()
 
     sys.exit(app.exec())
     
