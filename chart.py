@@ -7,6 +7,11 @@ from PySide6.QtCharts import QChart, QSplineSeries, QValueAxis
 from PySide6.QtCore import Qt, QTimer, Slot
 from PySide6.QtGui import QPen
 
+import rclpy
+from rclpy.node import Node
+from std_msgs.msg import String
+from std_msgs.msg import Int32
+
 class Chart(QChart):
     def __init__(self, parent=None):
         super().__init__(QChart.ChartTypeCartesian, parent, Qt.WindowFlags())
