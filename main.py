@@ -35,7 +35,9 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.ui.add_slot()
+        self.ui.add_timer()
         self.ui.ros_init()
+        
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

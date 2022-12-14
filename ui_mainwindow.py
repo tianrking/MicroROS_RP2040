@@ -10,7 +10,7 @@
 
 from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
     QMetaObject, QObject, QPoint, QRect,
-    QSize, QTime, QUrl, Qt)
+    QSize, QTime, QTimer, QUrl, Qt) ## QTime vs QTimer ?
 from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QCursor, QFont, QFontDatabase, QGradient,
     QIcon, QImage, QKeySequence, QLinearGradient,
@@ -251,11 +251,26 @@ class Ui_MainWindow(object):
         
         pass
     
+    def add_timer(self):
+        self._timer = QTimer()
+        self._timer.timeout.connect(self.handleTimeout)
+        self._timer.setInterval(100)
+        self._timer.start()
+        
+    @Slot()
+    def handleTimeout(self):
+        
+        msg = Int32()  
+        msg.data = int(self.horizontalSlider.value())
+        self.ros_node_publish_data_publisher_PID_change.publish(msg) 
+
+    
     def ros_init(self):
         
         rclpy.init() # 初始化rclpy
         self.ros_node_publish_data = Node("tt_2")
         self.ros_node_publish_data_publisher_  = self.ros_node_publish_data.create_publisher(Int32,"/speed_change", 10) 
+        self.ros_node_publish_data_publisher_PID_change = self.ros_node_publish_data.create_publisher(Int32,"/PID_change", 10)
         
     
     @Slot()
@@ -293,6 +308,10 @@ class Ui_MainWindow(object):
         msg = Int32()  
         msg.data = int(gl.get_value('speed'))
         self.ros_node_publish_data_publisher_.publish(msg) 
+        
+        # msg = Int32()  
+        # msg.data = int(self.horizontalSlider.value())
+        # self.ros_node_publish_data_publisher_PID_change.publish(msg) 
         
         # node = NodePublisher02("topic_publisher_02")  # 新建一个节点
         # rclpy.spin(node) # 保持节点运行，检测是否收到退出指令（Ctrl+C）
