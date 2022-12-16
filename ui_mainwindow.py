@@ -262,7 +262,30 @@ class Ui_MainWindow(object):
         
         msg = Int32()  
         msg.data = int(self.horizontalSlider.value())
-        self.ros_node_publish_data_publisher_PID_change.publish(msg) 
+        self.ros_node_publish_data_publisher_PID_KP.publish(msg)
+        
+        msg = Int32()  
+        msg.data = int(self.horizontalSlider_2.value())     
+        self.ros_node_publish_data_publisher_PID_KI.publish(msg) 
+        
+        msg = Int32()  
+        msg.data = int(self.horizontalSlider_3.value())    
+        self.ros_node_publish_data_publisher_PID_KD.publish(msg)
+        
+        msg = Int32()  
+        msg.data = int(self.horizontalSlider_4.value())    
+        self.ros_node_publish_data_publisher_PID_Target_Speed.publish(msg) 
+        self.lcdNumber_3.display(msg.data)
+          
+        # msg = Int32()  
+        gl.set_value('speed',msg.data)
+        self.lcdNumber_4.display(msg.data)
+        # self.lcdNumber_3.display(1)
+        # self.lcdNumber_4.display(2)
+        # self.lcdNumber_2.display(3)
+        # self.lcdNumber.display(4)
+        
+        
 
     
     def ros_init(self):
@@ -270,7 +293,12 @@ class Ui_MainWindow(object):
         rclpy.init() # 初始化rclpy
         self.ros_node_publish_data = Node("tt_2")
         self.ros_node_publish_data_publisher_  = self.ros_node_publish_data.create_publisher(Int32,"/speed_change", 10) 
-        self.ros_node_publish_data_publisher_PID_change = self.ros_node_publish_data.create_publisher(Int32,"/PID_change", 10)
+        
+        self.ros_node_publish_data_publisher_PID_KP = self.ros_node_publish_data.create_publisher(Int32,"/PID_change_KP", 10)
+        self.ros_node_publish_data_publisher_PID_KI = self.ros_node_publish_data.create_publisher(Int32,"/PID_change_KI", 10)
+        self.ros_node_publish_data_publisher_PID_KD = self.ros_node_publish_data.create_publisher(Int32,"/PID_change_KD", 10)
+        self.ros_node_publish_data_publisher_PID_Target_Speed = self.ros_node_publish_data.create_publisher(Int32,"/speed_change", 10)
+        
         
     
     @Slot()

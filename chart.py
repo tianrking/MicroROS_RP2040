@@ -56,8 +56,9 @@ class Chart(QChart):
         self._x += y
         # self._y = random.uniform(0, 5) - 2.5
         
-        self._y = random.randint(-95, 95)
-        gl.set_value('speed', self._y)
+        # self._y = random.randint(-95, 95)
+        # gl.set_value('speed', self._y)
+        self._y = gl.get_value('speed', self._y)
 
         self._series.append(self._x, self._y)
         self.scroll(x, 0)
