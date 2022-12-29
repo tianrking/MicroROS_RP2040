@@ -121,3 +121,74 @@ pip install PySide6
 source /opt/ros/humble/setup.bash
 python3 main.py
 ```
+
+## Debug
+
+### Build and Upload Picoprobe
+
+```bash
+git clone https://github.com/raspberrypi/picoprobe
+cd picoprobe
+git submodule update --init --recursive
+mkdir build
+cd build
+cmake -G "Unix Makefiles" ..
+make
+cp picoprobe.uf2 /media/${USER}/RPI-RP2
+```
+
+### Flash 
+
+#### build openocd
+
+```bash
+sudo apt install libhidapi-dev -y
+```
+
+```bash
+cd ~/pico
+sudo apt install automake autoconf build-essential texinfo libtool libftdi-dev libusb-1.0-0-dev
+git clone https://github.com/raspberrypi/openocd.git --depth=1 
+cd openocd
+./bootstrap
+./configure --enable-picoprobe --enable-cmsis-dap --enable-jlink --enable-stlink --enable-ti-icdi
+make -j4
+sudo make install
+```
+
+#### Flash elf
+
+```bash
+openocd -f interface/picoprobe.cfg -f target/rp2040.cfg -c "program blink/blink.elf  verify reset exit"
+```
+
+bug
+
+```bash
+openocd -f interface/cmsis-dap.cfg -c "transport select swd" -c "adapter_khz 500" -f target/rp2040.cfg -c "program blink/blink.elf  verify reset exit"
+```
+
+### GDB
+
+![img](./pico-debug-1.png)
+
+Shell A
+
+```bash
+openocd -f interface/picoprobe.cfg -f target/rp2040.cfg
+```
+
+Shell B
+
+```bash
+gdb-multiarch blink/blink.elf
+```
+
+```bash
+target remote localhost:3333
+monitor reset init
+continue
+
+flash probe 0
+flash erase_sector 0 0 last
+```
