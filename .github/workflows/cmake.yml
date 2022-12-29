@@ -2,9 +2,9 @@ name: C/C++ CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main" , "pico_control_motor" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main" , "pico_control_motor"]
 
 jobs:
   build:
