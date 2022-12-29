@@ -1,4 +1,0 @@
-Invoking command in '/home/w0x7ce/Desktop/1_ros/build/micro_ros_raspberrypicosdk': /usr/bin/cmake /home/w0x7ce/Desktop/1_ros -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/w0x7ce/Desktop/1_ros/install/micro_ros_raspberrypicosdk
-Invoked command in '/home/w0x7ce/Desktop/1_ros/build/micro_ros_raspberrypicosdk' returned '0': /usr/bin/cmake /home/w0x7ce/Desktop/1_ros -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/w0x7ce/Desktop/1_ros/install/micro_ros_raspberrypicosdk
-Invoking command in '/home/w0x7ce/Desktop/1_ros/build/micro_ros_raspberrypicosdk': /usr/bin/cmake --build /home/w0x7ce/Desktop/1_ros/build/micro_ros_raspberrypicosdk -- -j2 -l2
-Invoked command in '/home/w0x7ce/Desktop/1_ros/build/micro_ros_raspberrypicosdk' returned '-2': /usr/bin/cmake --build /home/w0x7ce/Desktop/1_ros/build/micro_ros_raspberrypicosdk -- -j2 -l2

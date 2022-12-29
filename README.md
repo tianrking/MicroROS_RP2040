@@ -41,6 +41,16 @@ source ~/.bashrc
 
 ```
 
+Second, make sure microros freeRTOS and pico-example have configured
+
+```bash
+git clone https://github.com/micro-ROS/micro_ros_raspberrypi_pico_sdk ~/micro_ROS_SDK_PATH
+export micro_ROS_SDK_PATH=~/micro_ROS_SDK_PATH
+
+git clone https://github.com/raspberrypi/pico-examples ~/pico-examples
+export pico_examples_PATH=~/pico-examples
+```
+
 ## Build
 
 ```bash
@@ -56,7 +66,7 @@ make
 To flash, hold the boot button, plug the USB and run:
 
 ```bash
-cp pico_micro_ros_example.uf2 /media/$USER/RPI-RP2
+cp pico_micro_ros_motor_control.uf2 /media/$USER/RPI-RP2
 ```
 
 ## Start Micro-ROS Agent
@@ -66,11 +76,6 @@ You can do so using the [micro-ros-agent Docker](https://hub.docker.com/r/micror
 ```bash
 docker run -it --rm -v /dev:/dev --privileged --net=host microros/micro-ros-agent:humble serial --dev /dev/ttyACM0 -b 115200
 ```
-
-## What files are relevant?
-- `pico_uart_transport.c`: Contains the board specific implementation of the serial transport (no change needed).
-- `CMakeLists.txt`: CMake file.
-- `pico_micro_ros_motor_control.c`: Our code .
 
 ## Remote Control
 
@@ -105,3 +110,14 @@ ros2 run motor_control_rclpy get_speed
 ### RCLCPP
 
 Todo
+
+
+### PySide6 GUI Control
+
+```bash
+git clone https://github.com/tianrking/1_ros -b GUI Pico_Control
+cd Pico_Control
+pip install PySide6
+source /opt/ros/humble/setup.bash
+python3 main.py
+```
