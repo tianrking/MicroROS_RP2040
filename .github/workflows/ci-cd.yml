@@ -3,11 +3,10 @@ name: RP2040 CI/CD
 on:
   push:
     branches:
-#       - main  # 或者您使用的其他主分支名称
         - pico_control_motor
+       
   pull_request:
     branches:
-#       - main  # 或者您使用的其他主分支名称
         - pico_control_motor
 
 jobs:
