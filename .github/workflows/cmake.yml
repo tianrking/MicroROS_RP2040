@@ -1,4 +1,4 @@
-name: C/C++ CI
+name: Micro-ROS RP2040 Firmware Build
 
 on:
   push:
@@ -13,6 +13,22 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y --no-install-recommends \
+          git \
+          cmake \
+          gcc-arm-none-eabi \
+          libnewlib-arm-none-eabi \
+          build-essential \
+          libstdc++-arm-none-eabi-newlib \
+          python3 \
+          python3-pip \
+          python3-venv \
+          python3-dev
+          
     - name: setup env
       run: |
         git clone https://github.com/RaspberryPi/pico-sdk --recurse-submodules ~/pico-sdk
@@ -23,6 +39,7 @@ jobs:
         export FREERTOS_KERNEL_PATH=~/FreeRTOS-Kernel
         export micro_ROS_SDK_PATH=~/micro_ROS_SDK_PATH
         export pico_examples_PATH=~/pico-examples
+        
     - name: make
       run: |
         sudo apt update
