@@ -56,7 +56,7 @@ jobs:
     - name: Upload Firmware to Release
       uses: svenstaro/upload-release-action@v2
       with:
-        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        repo_token: ${{ secrets.CI_RELEASE_TOKEN }}
         file: /home/runner/work/MicroROS_RP2040/MicroROS_RP2040/build/*.uf2
         asset_name: rp2040.uf2
         tag: ${{ github.ref }}
