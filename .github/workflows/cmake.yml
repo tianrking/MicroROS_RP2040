@@ -59,7 +59,7 @@ jobs:
       uses: svenstaro/upload-release-action@v2
       with:
         repo_token: ${{ secrets.CI_RELEASE_TOKEN }}
-        file: ~/MicroROS_RP2040/build/pico_micro_ros_motor_control.uf2
+        file: build/pico_micro_ros_motor_control.uf2
         asset_name: pico_micro_ros_motor_control.uf2
         tag: ${{ github.ref }}
         overwrite: true
