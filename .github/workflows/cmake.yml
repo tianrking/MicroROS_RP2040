@@ -44,6 +44,8 @@ jobs:
       run: |
         sudo apt update
         sudo apt install cmake gcc-arm-none-eabi libnewlib-arm-none-eabi libstdc++-arm-none-eabi-newlib -y
+        git clone -b pico_control_motor https://github.com/tianrking/MicroROS_RP2040 ~/MicroROS_RP2040
+        cd ~/MicroROS_RP2040
         export PICO_SDK_PATH=~/pico-sdk
         export FREERTOS_KERNEL_PATH=~/FreeRTOS-Kernel
         export micro_ROS_SDK_PATH=~/micro_ROS_SDK_PATH
@@ -57,8 +59,8 @@ jobs:
       uses: svenstaro/upload-release-action@v2
       with:
         repo_token: ${{ secrets.CI_RELEASE_TOKEN }}
-        file: /home/runner/work/MicroROS_RP2040/MicroROS_RP2040/build/*.uf2
-        asset_name: rp2040.uf2
+        file: ~/MicroROS_RP2040/build/pico_micro_ros_motor_control.uf2
+        asset_name: pico_micro_ros_motor_control.uf2
         tag: ${{ github.ref }}
         overwrite: true
         prerelease: false    
