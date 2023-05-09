@@ -57,8 +57,8 @@ jobs:
       uses: svenstaro/upload-release-action@v2
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
-        file: ${{ github.workspace }}/build/*.uf2
-        asset_name: your_firmware.uf2
+        file: /home/runner/work/MicroROS_RP2040/MicroROS_RP2040/build/*.uf2
+        asset_name: rp2040.uf2
         tag: ${{ github.ref }}
         overwrite: true
         prerelease: false    
