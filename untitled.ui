@@ -338,8 +338,8 @@
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>90</y>
+      <x>350</x>
+      <y>80</y>
       <width>111</width>
       <height>17</height>
      </rect>
@@ -351,8 +351,8 @@
    <widget class="QSlider" name="horizontalSlider_4">
     <property name="geometry">
      <rect>
-      <x>330</x>
-      <y>130</y>
+      <x>320</x>
+      <y>100</y>
       <width>160</width>
       <height>16</height>
      </rect>
@@ -384,14 +384,14 @@
    <widget class="QLabel" name="label_7">
     <property name="geometry">
      <rect>
-      <x>350</x>
+      <x>340</x>
       <y>160</y>
-      <width>31</width>
-      <height>17</height>
+      <width>51</width>
+      <height>20</height>
      </rect>
     </property>
     <property name="text">
-     <string>Set</string>
+     <string>SPEED</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_8">
@@ -399,12 +399,38 @@
      <rect>
       <x>430</x>
       <y>160</y>
-      <width>31</width>
+      <width>41</width>
       <height>17</height>
      </rect>
     </property>
     <property name="text">
-     <string>Now</string>
+     <string>Angle</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>120</y>
+      <width>67</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Angle</string>
+    </property>
+   </widget>
+   <widget class="QSlider" name="horizontalSlider_5">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>140</y>
+      <width>160</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
     </property>
    </widget>
   </widget>

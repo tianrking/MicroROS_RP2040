@@ -10,7 +10,7 @@
 
 from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
     QMetaObject, QObject, QPoint, QRect,
-    QSize, QTime, QTimer, QUrl, Qt) ## QTime vs QTimer ?
+    QSize, QTimer, QUrl, Qt)
 from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QCursor, QFont, QFontDatabase, QGradient,
     QIcon, QImage, QKeySequence, QLinearGradient,
@@ -34,41 +34,6 @@ import random
 
 from common import global_var as gl
 gl._init()
-
-class NodeSubscribe02(Node):
-    def __init__(self,name):
-        super().__init__(name)
-        self.get_logger().info("%s!" % name)
-        # 创建订阅者
-        self.command_subscribe_ = self.create_subscription(Int32,"pico_publisher_encoder",self.command_callback,10)
-
-    def command_callback(self,msg):
-        speed = 0.0
-        if msg.data=="backup":
-            speed = -0.2
-        self.get_logger().info(f'recieve[{msg.data}]，message_recieve{speed}')
-
-class NodePublisher02(Node):
-    def __init__(self,name):
-        super().__init__(name)
-        self.get_logger().info("%s!" % name)
-        self.command_publisher_ = self.create_publisher(Int32,"/speed_change", 10) 
-        self.timer = self.create_timer(0.5, self.timer_callback)
-    
-    def timer_callback(self):
-        """
-        定时器回调函数
-        """
-        # msg = String()
-        msg = Int32()
-            
-        msg.data = 50
-        self.command_publisher_.publish(msg) 
-        self.get_logger().info(f'Value：{msg.data}')    #打印一下发布的数据
-
-# @Slot()
-# def get_topic():
-#     print("单击按钮, Hello!")
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -107,7 +72,7 @@ class Ui_MainWindow(object):
         self.pushButton_2.setObjectName(u"pushButton_2")
         self.pushButton_2.setGeometry(QRect(30, 40, 89, 25))
         self.pushButton_3 = QPushButton(self.centralwidget)
-        self.pushButton_3.setObjectName(u"pushButton_3")        
+        self.pushButton_3.setObjectName(u"pushButton_3")
         self.pushButton_3.setGeometry(QRect(150, 40, 89, 25))
         self.horizontalSlider = QSlider(self.centralwidget)
         self.horizontalSlider.setObjectName(u"horizontalSlider")
@@ -173,10 +138,10 @@ class Ui_MainWindow(object):
         self.pushButton_4.setGeometry(QRect(290, 260, 89, 25))
         self.label_6 = QLabel(self.centralwidget)
         self.label_6.setObjectName(u"label_6")
-        self.label_6.setGeometry(QRect(360, 90, 111, 17))
+        self.label_6.setGeometry(QRect(350, 80, 111, 17))
         self.horizontalSlider_4 = QSlider(self.centralwidget)
         self.horizontalSlider_4.setObjectName(u"horizontalSlider_4")
-        self.horizontalSlider_4.setGeometry(QRect(330, 130, 160, 16))
+        self.horizontalSlider_4.setGeometry(QRect(320, 100, 160, 16))
         self.horizontalSlider_4.setOrientation(Qt.Horizontal)
         self.lcdNumber_3 = QLCDNumber(self.centralwidget)
         self.lcdNumber_3.setObjectName(u"lcdNumber_3")
@@ -186,10 +151,17 @@ class Ui_MainWindow(object):
         self.lcdNumber_4.setGeometry(QRect(420, 180, 64, 23))
         self.label_7 = QLabel(self.centralwidget)
         self.label_7.setObjectName(u"label_7")
-        self.label_7.setGeometry(QRect(350, 160, 31, 17))
+        self.label_7.setGeometry(QRect(340, 160, 51, 20))
         self.label_8 = QLabel(self.centralwidget)
         self.label_8.setObjectName(u"label_8")
-        self.label_8.setGeometry(QRect(430, 160, 31, 17))
+        self.label_8.setGeometry(QRect(430, 160, 41, 17))
+        self.label_9 = QLabel(self.centralwidget)
+        self.label_9.setObjectName(u"label_9")
+        self.label_9.setGeometry(QRect(370, 120, 67, 17))
+        self.horizontalSlider_5 = QSlider(self.centralwidget)
+        self.horizontalSlider_5.setObjectName(u"horizontalSlider_5")
+        self.horizontalSlider_5.setGeometry(QRect(320, 140, 160, 16))
+        self.horizontalSlider_5.setOrientation(Qt.Horizontal)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
@@ -226,7 +198,7 @@ class Ui_MainWindow(object):
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"kD", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"Protocol", None))
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Micro-ROS Agent Start/reStart", None))
-        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"Send", None))
+        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"Node", None))
         self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"Topic", None))
         self.comboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"micro-ROS", None))
         self.comboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"UART", None))
@@ -237,70 +209,75 @@ class Ui_MainWindow(object):
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"Command", None))
         self.pushButton_4.setText(QCoreApplication.translate("MainWindow", u"Reset", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"Target_Speed", None))
-        self.label_7.setText(QCoreApplication.translate("MainWindow", u"Set", None))
-        self.label_8.setText(QCoreApplication.translate("MainWindow", u"Now", None))
+        self.label_7.setText(QCoreApplication.translate("MainWindow", u"SPEED", None))
+        self.label_8.setText(QCoreApplication.translate("MainWindow", u"Angle", None))
+        self.label_9.setText(QCoreApplication.translate("MainWindow", u"Angle", None))
         self.menuAbout.setTitle(QCoreApplication.translate("MainWindow", u"Setting", None))
         self.menuAbout_2.setTitle(QCoreApplication.translate("MainWindow", u"More", None))
     # retranslateUi
     
     def add_slot(self):
-    
+
         # clicked.connect(GET_ENCODE_VALUE)
         self.pushButton_3.clicked.connect(self.get_topic_list)
         self.pushButton_2.clicked.connect(self.publish_data)
-        
+
         pass
-    
+
     def add_timer(self):
         self._timer = QTimer()
         self._timer.timeout.connect(self.handleTimeout)
         self._timer.setInterval(100)
         self._timer.start()
-        
+
     @Slot()
     def handleTimeout(self):
-        
-        msg = Int32()  
+
+        msg = Int32()
         msg.data = int(self.horizontalSlider.value())
         self.ros_node_publish_data_publisher_PID_KP.publish(msg)
-        
-        msg = Int32()  
-        msg.data = int(self.horizontalSlider_2.value())     
-        self.ros_node_publish_data_publisher_PID_KI.publish(msg) 
-        
-        msg = Int32()  
-        msg.data = int(self.horizontalSlider_3.value())    
+
+        msg = Int32()
+        msg.data = int(self.horizontalSlider_2.value())
+        self.ros_node_publish_data_publisher_PID_KI.publish(msg)
+
+        msg = Int32()
+        msg.data = int(self.horizontalSlider_3.value())
         self.ros_node_publish_data_publisher_PID_KD.publish(msg)
-        
-        msg = Int32()  
-        msg.data = int(self.horizontalSlider_4.value())    
-        self.ros_node_publish_data_publisher_PID_Target_Speed.publish(msg) 
+
+        msg = Int32()
+        msg.data = int(self.horizontalSlider_4.value())
+        self.ros_node_publish_data_publisher_PID_Target_Speed.publish(msg)
         self.lcdNumber_3.display(msg.data)
-          
-        # msg = Int32()  
-        gl.set_value('speed',msg.data)
+
+        msg = Int32()
+        msg.data = int(self.horizontalSlider_5.value())
+        self.ros_node_publish_data_publisher_PID_Target_Angle.publish(msg)
         self.lcdNumber_4.display(msg.data)
+        # msg = Int32()
+        #gl.set_value('speed',msg.data)
+        #self.lcdNumber_4.display(msg.data)
         # self.lcdNumber_3.display(1)
         # self.lcdNumber_4.display(2)
         # self.lcdNumber_2.display(3)
         # self.lcdNumber.display(4)
-        
-        
 
-    
+
+
+
     def ros_init(self):
-        
+
         rclpy.init() # 初始化rclpy
         self.ros_node_publish_data = Node("tt_2")
-        self.ros_node_publish_data_publisher_  = self.ros_node_publish_data.create_publisher(Int32,"/speed_change", 10) 
-        
+        self.ros_node_publish_data_publisher_  = self.ros_node_publish_data.create_publisher(Int32,"/speed_change", 10)
+
         self.ros_node_publish_data_publisher_PID_KP = self.ros_node_publish_data.create_publisher(Int32,"/PID_change_KP", 10)
         self.ros_node_publish_data_publisher_PID_KI = self.ros_node_publish_data.create_publisher(Int32,"/PID_change_KI", 10)
         self.ros_node_publish_data_publisher_PID_KD = self.ros_node_publish_data.create_publisher(Int32,"/PID_change_KD", 10)
         self.ros_node_publish_data_publisher_PID_Target_Speed = self.ros_node_publish_data.create_publisher(Int32,"/speed_change", 10)
-        
-        
-    
+        self.ros_node_publish_data_publisher_PID_Target_Angle = self.ros_node_publish_data.create_publisher(Int32,"/angle_change", 10)
+
+
     @Slot()
     def get_topic_list(self):
 
@@ -311,7 +288,7 @@ class Ui_MainWindow(object):
         for info in topic_list:
             print(info[0])
 
-    
+
     @Slot()
     def get_node_list(self):
 
@@ -321,26 +298,26 @@ class Ui_MainWindow(object):
         node_dummy.destroy_node()
         for info in topic_list:
             print(info[0])
-            
-        
+
+
     @Slot()
     def publish_data(self):
-        
+
         # rclpy.init() # 初始化rclpy
         # node_publish_data = Node("tt_2")
         try:
-            self.ros_node_publish_data_publisher_ = self.ros_node_publish_data.create_publisher(Int32,"/speed_change", 10) 
+            self.ros_node_publish_data_publisher_ = self.ros_node_publish_data.create_publisher(Int32,"/speed_change", 10)
         except:
             pass
-        
-        msg = Int32()  
+
+        msg = Int32()
         msg.data = int(gl.get_value('speed'))
-        self.ros_node_publish_data_publisher_.publish(msg) 
-        
-        # msg = Int32()  
+        self.ros_node_publish_data_publisher_.publish(msg)
+
+        # msg = Int32()
         # msg.data = int(self.horizontalSlider.value())
-        # self.ros_node_publish_data_publisher_PID_change.publish(msg) 
-        
+        # self.ros_node_publish_data_publisher_PID_change.publish(msg)
+
         # node = NodePublisher02("topic_publisher_02")  # 新建一个节点
         # rclpy.spin(node) # 保持节点运行，检测是否收到退出指令（Ctrl+C）
         # node_publish_data.destroy_node()
