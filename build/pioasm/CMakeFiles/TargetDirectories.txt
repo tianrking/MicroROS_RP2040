@@ -1,0 +1,3 @@
+/var/www/html/OO/build/pioasm/CMakeFiles/pioasm.dir
+/var/www/html/OO/build/pioasm/CMakeFiles/edit_cache.dir
+/var/www/html/OO/build/pioasm/CMakeFiles/rebuild_cache.dir
