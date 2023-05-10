@@ -19,7 +19,13 @@
 
 
 int wrap;
-int GPIO_motor_pwm = 6;
+int GPIO_motor_L_pwm_A = 6;
+int GPIO_motor_L_pwm_B = 7;
+int GPIO_motor_R_pwm_A = 8;
+int GPIO_motor_R_pwm_B = 9;
+int GPIO_servo_pwm = 5;
+
+
 int new_value, delta, old_value = 0;
 const uint sm = 0;
 PIO pio = pio0;
@@ -35,6 +41,9 @@ std_msgs__msg__String msg_publisher_encoder_String;
 
 rcl_subscription_t subscriber_speed_change;
 std_msgs__msg__Int32 msg_subscriber_speed_change;
+
+rcl_subscription_t subscriber_angle_change;
+std_msgs__msg__Int32 msg_subscriber_angle_change;
 
 float output_pwm = 0; // 12000
 float kp=5, ki=0.4, kd=0;
@@ -75,13 +84,23 @@ void timer_callback(rcl_timer_t *timer, int64_t last_call_time)
 
 }
 
-float speed_value;
+float speed_value,angle_value;
 void subscription_callback_speed_change(const void *msgin_diy)
 {
     // Cast received message to used type
     const std_msgs__msg__Int32 *msg_diy = (const std_msgs__msg__Int32 *)msgin_diy;
 
     speed_value = (float)msg_diy->data / 100 ;
+    // pwm_set_chan_level(slice_num, PWM_CHAN_A, _value * 62500);
+
+}
+
+void subscription_callback_angle_change(const void *msgin_diy)
+{
+    // Cast received message to used type
+    const std_msgs__msg__Int32 *msg_diy = (const std_msgs__msg__Int32 *)msgin_diy;
+
+    angle_value = (float)msg_diy->data / 100 ;
     // pwm_set_chan_level(slice_num, PWM_CHAN_A, _value * 62500);
 
 }
@@ -142,6 +161,12 @@ int main()
         ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Int32),
         "speed_change");
 
+    rclc_subscription_init_default(
+        &subscriber_angle_change,
+        &node,
+        ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Int32),
+        "angle_change");
+
     rclc_timer_init_default(
         &timer,
         &support,
@@ -152,7 +177,7 @@ int main()
     rclc_executor_add_timer(&executor, &timer);
 
     rclc_executor_add_subscription(&executor, &subscriber_speed_change, &msg_subscriber_speed_change, &subscription_callback_speed_change, ON_NEW_DATA);
-
+    rclc_executor_add_subscription(&executor, &subscriber_angle_change, &msg_subscriber_angle_change, &subscription_callback_angle_change, ON_NEW_DATA);
 
     gpio_put(LED_PIN, 1);
 
@@ -168,11 +193,38 @@ int main()
     quadrature_encoder_program_init(pio, sm, offset, PIN_AB, 0);
 
     // 选择输出 pwm 的引脚 用作控制信号传入L298n 电机驱动并完成初始化
-    gpio_set_function(GPIO_motor_pwm, GPIO_FUNC_PWM);
-    uint slice_num = pwm_gpio_to_slice_num(GPIO_motor_pwm);
+    gpio_set_function(GPIO_motor_L_pwm_A, GPIO_FUNC_PWM);
+    uint slice_num_L_pwm_A = pwm_gpio_to_slice_num(GPIO_motor_L_pwm_A);
     wrap = 62500; // 2khz
-    pwm_set_wrap(slice_num, wrap);
-    pwm_set_enabled(slice_num, true);
+    pwm_set_wrap(slice_num_L_pwm_A, wrap);
+    pwm_set_enabled(slice_num_L_pwm_A, true);
+
+    gpio_set_function(GPIO_motor_L_pwm_B, GPIO_FUNC_PWM);
+    uint slice_num_L_pwm_B = pwm_gpio_to_slice_num(GPIO_motor_L_pwm_B);
+    wrap = 62500; // 2khz
+    pwm_set_wrap(slice_num_L_pwm_B, wrap);
+    pwm_set_enabled(slice_num_L_pwm_B, true);
+
+    gpio_set_function(GPIO_motor_R_pwm_A, GPIO_FUNC_PWM);
+    uint slice_num_R_pwm_A = pwm_gpio_to_slice_num(GPIO_motor_R_pwm_A);
+    wrap = 62500; // 2khz
+    pwm_set_wrap(slice_num_R_pwm_A, wrap);
+    pwm_set_enabled(slice_num_R_pwm_A, true);
+
+    gpio_set_function(GPIO_motor_R_pwm_B, GPIO_FUNC_PWM);
+    uint slice_num_R_pwm_B = pwm_gpio_to_slice_num(GPIO_motor_R_pwm_B);
+    wrap = 62500; // 2khz
+    pwm_set_wrap(slice_num_R_pwm_B, wrap);
+    pwm_set_enabled(slice_num_R_pwm_B, true);
+
+    gpio_set_function(GPIO_servo_pwm, GPIO_FUNC_PWM);
+    uint slice_num_servo_pwm = pwm_gpio_to_slice_num(GPIO_servo_pwm);
+    wrap = 62500; // 2khz
+    pwm_set_wrap(slice_num_servo_pwm, wrap);
+    pwm_set_clkdiv(slice_num_servo_pwm, 40.0f);
+    pwm_set_enabled(slice_num_servo_pwm, true);
+
+    
 
     // 在这里我们设定默认输出 占空比为0 即 静止状态
     // float output_pwm = 0; // 12000
@@ -199,7 +251,21 @@ int main()
             output_pwm = 0;
         }
 
-        pwm_set_chan_level(slice_num, PWM_CHAN_A, speed_value * 62500);
+        // pwm_set_chan_level(slice_num, PWM_CHAN_A, speed_value * 62500);
+        // pwm_set_chan_level(slice_num, PWM_CHAN_A, speed_value * 62500);
+        // pwm_set_chan_level(slice_num_L_pwm_A, PWM_CHAN_A,speed_value * 62500);
+        // pwm_set_chan_level(slice_num_L_pwm_B, PWM_CHAN_B,speed_value * 31250);
+
+        pwm_set_gpio_level(GPIO_motor_L_pwm_A, speed_value * 62500);
+        pwm_set_gpio_level(GPIO_motor_L_pwm_B, speed_value * 31250);
+
+        pwm_set_gpio_level(GPIO_motor_R_pwm_A, speed_value * 62500);
+        pwm_set_gpio_level(GPIO_motor_R_pwm_B, speed_value * 31250);
+
+        // uint16_t level = (uint16_t)(( speed_value/100 * 0.5f + 0.5f) * (float)0xFFFF);
+        // pwm_set_gpio_level(GPIO_servo_pwm, level);
+        pwm_set_gpio_level(GPIO_servo_pwm, angle_value* 3125 + 3125); // TEST:ok 50HZ
+
         // pwm_set_chan_level(slice_num, PWM_CHAN_A, output_pwm);
         
         sleep_ms(20);
