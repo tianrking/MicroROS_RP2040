@@ -260,9 +260,14 @@ class Ui_MainWindow(object):
         # self.lcdNumber_3.display(1)
         # self.lcdNumber_4.display(2)
         # self.lcdNumber_2.display(3)
-        # self.lcdNumber.display(4)
+        # self.lcdNumber.display(4)i
 
+        rclpy.spin_once(self.ros_node_publish_data, timeout_sec=0)
 
+    def listener_callback(self, msg):
+        #self.get_logger().info('I heard: "%d"' % msg.data)
+        #print("AA")
+        gl.set_value('speed',msg.data)        
 
 
     def ros_init(self):
@@ -276,6 +281,7 @@ class Ui_MainWindow(object):
         self.ros_node_publish_data_publisher_PID_KD = self.ros_node_publish_data.create_publisher(Int32,"/PID_change_KD", 10)
         self.ros_node_publish_data_publisher_PID_Target_Speed = self.ros_node_publish_data.create_publisher(Int32,"/speed_change", 10)
         self.ros_node_publish_data_publisher_PID_Target_Angle = self.ros_node_publish_data.create_publisher(Int32,"/angle_change", 10)
+        self.subscription = self.ros_node_publish_data.create_subscription(Int32,'/pico_publisher_encoder',self.listener_callback,10)
 
 
     @Slot()
@@ -322,3 +328,5 @@ class Ui_MainWindow(object):
         # rclpy.spin(node) # 保持节点运行，检测是否收到退出指令（Ctrl+C）
         # node_publish_data.destroy_node()
         # rclpy.shutdown() # 关闭rclpy
+
+
