@@ -17,13 +17,16 @@
 - PWM for L298N motor control
     
     - GPIO 6
+    - GPIO 7
+    - GPIO 8
+    - GPIO 9
 
 ## Getting Started
 
 [Detailed Tutorial](https://me.w0x7ce.eu/rp2040/micro-ROS-on-RP2040)
 
 ```bash
-git clone https://github.com/tianrking/1_ros ~/1_ros
+git clone https://github.com/tianrking/MicroROS_RP2040 ~/MicroROS_RP2040
 ```
 
 ## Dependencies
@@ -45,16 +48,17 @@ Second, make sure microros [freeRTOS](https://github.com/tianrking/RP2040_FreeRT
 
 ```bash
 git clone https://github.com/micro-ROS/micro_ros_raspberrypi_pico_sdk ~/micro_ROS_SDK_PATH
-export micro_ROS_SDK_PATH=~/micro_ROS_SDK_PATH
+echo "export micro_ROS_SDK_PATH=~/micro_ROS_SDK_PATH" >> ~/.bashrc
 
 git clone https://github.com/raspberrypi/pico-examples ~/pico-examples
-export pico_examples_PATH=~/pico-examples
+echo "export pico_examples_PATH=~/pico-examples" >> ~/.bashrc
+source ~/.bashrc
 ```
 
 ## Build
 
 ```bash
-cd ~/1_ros
+cd ~/MicroROS_RP2040
 mkdir build
 cd build
 cmake ..
