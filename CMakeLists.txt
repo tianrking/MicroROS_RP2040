@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.12)
 
 include($ENV{PICO_SDK_PATH}/external/pico_sdk_import.cmake)
-include($ENV{FREERTOS_KERNEL_PATH}/portable/ThirdParty/GCC/RP2040/FreeRTOS_Kernel_import.cmake)
+#include($ENV{FREERTOS_KERNEL_PATH}/portable/ThirdParty/GCC/RP2040/FreeRTOS_Kernel_import.cmake)
 
 project(pico_micro_ros_motor_control C CXX ASM)
 set(CMAKE_C_STANDARD 11)
@@ -21,8 +21,8 @@ target_link_libraries(pico_micro_ros_motor_control
     hardware_pio
     hardware_pwm
     pico_multicore
-    FreeRTOS-Kernel 
-    FreeRTOS-Kernel-Heap4
+ #   FreeRTOS-Kernel 
+ #   FreeRTOS-Kernel-Heap4
 )
 
 pico_generate_pio_header(pico_micro_ros_motor_control $ENV{pico_examples_PATH}/pio/quadrature_encoder/quadrature_encoder.pio)
