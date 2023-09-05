@@ -1,5 +1,7 @@
 # PICO(rp2040) motor control via micro-ROS
 
+[![Micro-ROS RP2040 Firmware Build](https://github.com/tianrking/MicroROS_RP2040/actions/workflows/cmake.yml/badge.svg)](https://github.com/tianrking/MicroROS_RP2040/actions/workflows/cmake.yml)
+
 ## Prepare
 
 ### Hardware
