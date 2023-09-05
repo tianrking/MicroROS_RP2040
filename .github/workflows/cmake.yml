@@ -52,16 +52,17 @@ jobs:
         cd build 
         cmake ..
         make
+        echo "gg"
         
-    - name: Upload Firmware to Release
-      uses: svenstaro/upload-release-action@v2
-      with:
-        repo_token: ${{ secrets.CI_RELEASE_TOKEN }}
-        file: ${{ github.workspace }}/build/pico_micro_ros_motor_control.uf2
-        asset_name: pico_micro_ros_motor_control.uf2
-        tag: ${{ github.ref }}
-        overwrite: true
-        prerelease: false    
+    # - name: Upload Firmware to Release
+    #   uses: svenstaro/upload-release-action@v2
+    #   with:
+    #     repo_token: ${{ secrets.CI_RELEASE_TOKEN }}
+    #     file: ${{ github.workspace }}/build/pico_micro_ros_motor_control.uf2
+    #     asset_name: pico_micro_ros_motor_control.uf2
+    #     tag: ${{ github.ref }}
+    #     overwrite: true
+    #     prerelease: false    
     
       
     
