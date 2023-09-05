@@ -1,7 +1,5 @@
 #include <stdio.h>
-//
 
-//
 #include "hardware/pio.h"
 #include "hardware/timer.h"
 #include "hardware/pwm.h"
@@ -92,7 +90,8 @@ void subscription_callback_speed_change(const void *msgin_diy)
     // Cast received message to used type
     const std_msgs__msg__Int32 *msg_diy = (const std_msgs__msg__Int32 *)msgin_diy;
 
-    speed_value = (float)msg_diy->data / 100 ;
+    //speed_value = (float)msg_diy->data / 100 ;
+    speed_value = (float)msg_diy->data ;
     // pwm_set_chan_level(slice_num, PWM_CHAN_A, _value * 62500);
 
 }
@@ -102,14 +101,15 @@ void subscription_callback_angle_change(const void *msgin_diy)
     // Cast received message to used type
     const std_msgs__msg__Int32 *msg_diy = (const std_msgs__msg__Int32 *)msgin_diy;
 
-    angle_value = (float)msg_diy->data / 100 ;
+    //angle_value = (float)msg_diy->data / 100 ;
+    angle_value = (float)msg_diy->data ;
     // pwm_set_chan_level(slice_num, PWM_CHAN_A, _value * 62500);
 
 }
 
 int main()
 {
-   
+    //stdio_init_all();
     rmw_uros_set_custom_transport(
 		true,
 		NULL,
@@ -184,15 +184,15 @@ int main()
     gpio_put(LED_PIN, 1);
 
     msg.data = 0;
-
+    int qx;
     // int new_value, delta, old_value = 0;
     //编码器一根线接到Pin10 另外一根接到11
     const uint PIN_AB = 10;
 
-    // PIO pio = pio0;
-    // const uint sm = 0;
-    uint offset = pio_add_program(pio, &quadrature_encoder_program);
-    quadrature_encoder_program_init(pio, sm, offset, PIN_AB, 0);
+    PIO pio = pio0;
+    const uint sm = 0;
+    pio_add_program(pio, &quadrature_encoder_program);
+    quadrature_encoder_program_init(pio, sm, PIN_AB, 0);
 
     // 选择输出 pwm 的引脚 用作控制信号传入L298n 电机驱动并完成初始化
     gpio_set_function(GPIO_motor_L_pwm_A, GPIO_FUNC_PWM);
@@ -235,38 +235,44 @@ int main()
     {
         rclc_executor_spin_some(&executor, RCL_MS_TO_NS(100));
 
-        // output_pwm += caculate(delta,30,1, 0.1, 0);
+        //output_pwm += caculate(delta,30,1, 0.1, 0);
         
-        new_value = quadrature_encoder_get_count(pio, sm);
-        delta = new_value - old_value; //获取反应速度的相对数值
-        old_value = new_value;
+        // new_value = quadrature_encoder_get_count(pio, sm);
+        // delta = new_value - old_value; //获取反应速度的相对数值
+        // old_value = new_value;
 
-        output_pwm += caculate(delta, 25);
+        // output_pwm += caculate(delta, 25);
 
-        if (output_pwm > 65000)
-        {
-            output_pwm = 65000;
-        }
+        // if (output_pwm > 65000)
+        // {
+        //     output_pwm = 65000;
+        // }
 
-        if (output_pwm < 0)
-        {
-            output_pwm = 0;
-        }
+        // if (output_pwm < 0)
+        // {
+        //     output_pwm = 0;
+        // }
 
         // pwm_set_chan_level(slice_num, PWM_CHAN_A, speed_value * 62500);
         // pwm_set_chan_level(slice_num, PWM_CHAN_A, speed_value * 62500);
         // pwm_set_chan_level(slice_num_L_pwm_A, PWM_CHAN_A,speed_value * 62500);
         // pwm_set_chan_level(slice_num_L_pwm_B, PWM_CHAN_B,speed_value * 31250);
-
-        pwm_set_gpio_level(GPIO_motor_L_pwm_A, speed_value * 62500);
-        pwm_set_gpio_level(GPIO_motor_L_pwm_B, speed_value * 31250);
-
-        pwm_set_gpio_level(GPIO_motor_R_pwm_A, speed_value * 62500);
-        pwm_set_gpio_level(GPIO_motor_R_pwm_B, speed_value * 31250);
-
+        if(speed_value > 50){
+            pwm_set_gpio_level(GPIO_motor_L_pwm_A, (speed_value - 50) * 2 * 625);
+            pwm_set_gpio_level(GPIO_motor_L_pwm_B, 0);
+            pwm_set_gpio_level(GPIO_motor_R_pwm_A, (speed_value -50)  * 2*625);
+            pwm_set_gpio_level(GPIO_motor_R_pwm_B, 0);
+        }
+        else
+        {
+            pwm_set_gpio_level(GPIO_motor_L_pwm_B, (50 - speed_value)* 2* 625);
+            pwm_set_gpio_level(GPIO_motor_L_pwm_A, 0);
+            pwm_set_gpio_level(GPIO_motor_R_pwm_B, (50 - speed_value) * 2* 625);
+            pwm_set_gpio_level(GPIO_motor_R_pwm_A, 0);            
+        }
         // uint16_t level = (uint16_t)(( speed_value/100 * 0.5f + 0.5f) * (float)0xFFFF);
         // pwm_set_gpio_level(GPIO_servo_pwm, level);
-        pwm_set_gpio_level(GPIO_servo_pwm, angle_value* 3125 + 3125); // TEST:ok 50HZ
+        pwm_set_gpio_level(GPIO_servo_pwm, (angle_value )* 3125 + 3125); // TEST:ok 50HZ
 
         // pwm_set_chan_level(slice_num, PWM_CHAN_A, output_pwm);
         
@@ -275,3 +281,4 @@ int main()
     }
     return 0;
 }
+
