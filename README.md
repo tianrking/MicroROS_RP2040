@@ -21,6 +21,10 @@
     - GPIO 8
     - GPIO 9
 
+- PWM for Servo control
+  
+    - GPIO 5
+
 ## Getting Started
 
 [Detailed Tutorial](https://me.w0x7ce.eu/rp2040/micro-ROS-on-RP2040)
