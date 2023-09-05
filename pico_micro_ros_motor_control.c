@@ -237,9 +237,9 @@ int main()
 
         //output_pwm += caculate(delta,30,1, 0.1, 0);
         
-        // new_value = quadrature_encoder_get_count(pio, sm);
-        // delta = new_value - old_value; //获取反应速度的相对数值
-        // old_value = new_value;
+        new_value = quadrature_encoder_get_count(pio, sm);
+        delta = new_value - old_value; //获取反应速度的相对数值
+        old_value = new_value;
 
         // output_pwm += caculate(delta, 25);
 
