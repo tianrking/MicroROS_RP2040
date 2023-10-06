@@ -1,22 +1,4 @@
-#include <stdio.h>
-
-#include "hardware/pio.h"
-#include "hardware/timer.h"
-#include "hardware/pwm.h"
-
-#include "quadrature_encoder.pio.h"
-
-#include <rcl/rcl.h>
-#include <rcl/error_handling.h>
-#include <rclc/rclc.h>
-#include <rclc/executor.h>
-#include <std_msgs/msg/int32.h>
-#include <std_msgs/msg/string.h>
-#include <rmw_microros/rmw_microros.h>
-
-#include "pico/stdlib.h"
-#include "pico_uart_transports.h"
-
+#include "pico_micro_ros_motor_control.h"
 
 int wrap;
 int GPIO_motor_L_pwm_A = 6;
@@ -35,6 +17,12 @@ const uint LED_PIN = 25;
 rcl_publisher_t publisher;
 std_msgs__msg__Int32 msg;
 
+rcl_publisher_t publisher_move_x;
+std_msgs__msg__Float64 msg_move_x;
+
+rcl_publisher_t publisher_move_y;
+std_msgs__msg__Float64 msg_move_y;
+
 rcl_publisher_t publisher_encoder;
 std_msgs__msg__Int32 msg_publisher_encoder;
 std_msgs__msg__String msg_publisher_encoder_String;
@@ -45,12 +33,98 @@ std_msgs__msg__Int32 msg_subscriber_speed_change;
 rcl_subscription_t subscriber_angle_change;
 std_msgs__msg__Int32 msg_subscriber_angle_change;
 
+rcl_publisher_t publisher_encoder_move_x;
+std_msgs__msg__Int32 msg_publisher_move_x;
+rcl_publisher_t publisher_encoder_move_y;
+std_msgs__msg__Int32 msg_publisher_move_y;
+
 float output_pwm = 0; // 12000
 float kp=5, ki=0.4, kd=0;
 float err, last_err;
 float err_i;
 float err_d;
 float fix;
+
+float window_2[WINDOW_SIZE] = {0};
+int index_window_2 = 0;
+float window_3[WINDOW_SIZE] = {0};
+int index_window_3 = 0;
+
+float moving_average(float new_value, float window[], int *index) {
+    // Update the window with the new value
+    window[*index] = new_value;
+
+    // Increment the index and wrap around if necessary
+    *index = (*index + 1) % WINDOW_SIZE;
+
+    // Calculate and return the average of the window
+    float sum = 0;
+    for (int i = 0; i < WINDOW_SIZE; i++) {
+        sum += window[i];
+    }
+    return sum / WINDOW_SIZE;
+}
+
+
+#define PPM_PIN_2 2 // The GPIO pin number where PPM signal is connected
+#define PWM_PIN_2 2  // GPIO pin where PWM signal is connected
+#define PPM_PIN_3 3 // The GPIO pin number where PPM signal is connected
+#define PWM_PIN_3 3 
+
+volatile uint32_t high_time_2 = 0;  // Time when signal is HIGH
+volatile uint32_t low_time_2 = 0;   // Time when signal is LOW
+volatile uint32_t last_time_2 = 0;  // Last time the edge was detected
+
+volatile uint32_t high_time_3 = 0;  // Time when signal is HIGH
+volatile uint32_t low_time_3 = 0;   // Time when signal is LOW
+volatile uint32_t last_time_3 = 0;  // Last time the edge was detected
+
+void gpio_2_callback(uint gpio, uint32_t events) {
+    uint32_t time_now = time_us_32();
+    uint32_t duration = time_now - last_time_2;
+    last_time_2 = time_now;
+
+    if (gpio_get(PWM_PIN_2)) {
+        // Rising edge detected
+        low_time_2 = duration;
+    } else {
+        // Falling edge detected
+        high_time_2 = duration;
+    }
+}
+void gpio_3_callback(uint gpio, uint32_t events) {
+    uint32_t time_now = time_us_32();
+    uint32_t duration = time_now - last_time_3;
+    last_time_3 = time_now;
+
+    if (gpio_get(PWM_PIN_3)) {
+        // Rising edge detected
+        low_time_3 = duration;
+    } else {
+        // Falling edge detected
+        high_time_3 = duration;
+    }
+}
+
+
+volatile uint32_t channel_values[8]; // To store decoded channel values
+volatile uint32_t last_time;
+volatile uint8_t channel;
+
+void ppm_callback(uint gpio, uint32_t events) {
+    uint32_t time_now = time_us_32();
+    uint32_t pulse_width = time_now - last_time_3;
+    last_time_3 = time_now;
+
+    if(pulse_width > 4000) {
+        channel = 0; // Reset to first channel on long pulse
+    } else {
+        if (channel < 8) { // Check to avoid array overflow
+            channel_values[channel] = pulse_width;
+            channel++;
+        }
+    }
+}
 
 int caculate(int now, int target)
 {
@@ -61,6 +135,11 @@ int caculate(int now, int target)
 
     fix = kp * err + ki * err_i + kd * err_d;
     return fix;
+}
+
+uint16_t read_adc(uint channel) {
+    adc_select_input(channel);
+    return adc_read();
 }
 
 void timer_callback(rcl_timer_t *timer, int64_t last_call_time)
@@ -76,12 +155,39 @@ void timer_callback(rcl_timer_t *timer, int64_t last_call_time)
     
     msg.data++;
     msg_publisher_encoder.data = delta ;
-
     sprintf(msg_publisher_encoder_String.data.data, "%d", delta); /////
     msg_publisher_encoder_String.data.size = strlen(msg_publisher_encoder_String.data.data); ////
     rcl_ret_t ret = rcl_publish(&publisher, &msg, NULL);
     ret = rcl_publish(&publisher_encoder, &msg_publisher_encoder, NULL); // https://github.com/micro-ROS/micro-ROS-demos/blob/humble/rclc/string_publisher/main.c#L28
 
+
+    uint32_t high_time_copy = high_time_2;
+    uint32_t low_time_copy = low_time_2;
+
+    // Calculate duty cycle and frequency
+    uint32_t period = high_time_copy + low_time_copy;
+    float duty_cycle = (float)high_time_copy / (float)period * 100.0f;
+    float frequency = 1.0f / ((float)period / 1000000.0f);
+
+    //26,27
+    // msg_move_x.data = read_adc(0) ;
+    // msg_move_x.data = channel_values[0];
+    // ret = rcl_publish(&publisher_move_x, &msg_move_x, NULL);
+    // msg_move_y.data = read_adc(1) ;
+    
+    msg_move_y.data = duty_cycle;
+    //msg_move_y.data = duty_cycle;
+    //msg_move_y.data = moving_average(duty_cycle, window_2, &index_window_2);
+    //float filtered_duty_cycle_0 = moving_average(duty_cycle_0, window, &index);
+    ret = rcl_publish(&publisher_move_y, &msg_move_y, NULL);
+
+    high_time_copy = high_time_3;
+    low_time_copy = low_time_3;
+    period = high_time_copy + low_time_copy;
+    duty_cycle = (float)high_time_copy / (float)period * 100.0f;
+    frequency = 1.0f / ((float)period / 1000000.0f);
+    msg_move_x.data = moving_average(duty_cycle, window_3, &index_window_3);
+    ret = rcl_publish(&publisher_move_x, &msg_move_x, NULL);
 }
 
 float speed_value,angle_value;
@@ -121,6 +227,21 @@ int main()
 
     gpio_init(LED_PIN);
     gpio_set_dir(LED_PIN, GPIO_OUT);
+    
+    adc_init();
+    adc_gpio_init(26);
+    adc_gpio_init(27);
+    // Select ADC input 0 (GPIO26)
+    adc_select_input(0);
+    adc_select_input(1);
+
+    //PPM
+    //gpio_set_irq_enabled_with_callback(PPM_PIN_3, GPIO_IRQ_EDGE_RISE, true, &ppm_callback);
+    //last_time = time_us_32();
+    //PWM
+    
+    gpio_set_irq_enabled_with_callback(PWM_PIN_2, GPIO_IRQ_EDGE_FALL | GPIO_IRQ_EDGE_RISE, true, &gpio_2_callback);
+    gpio_set_irq_enabled_with_callback(PWM_PIN_3, GPIO_IRQ_EDGE_FALL | GPIO_IRQ_EDGE_RISE, true, &gpio_3_callback);
 
     rcl_timer_t timer;
     rcl_node_t node;
@@ -150,6 +271,18 @@ int main()
         &node,
         ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Int32),
         "pico_publisher");
+
+    rclc_publisher_init_default(
+        &publisher_move_x,
+        &node,
+        ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Float64),
+        "pico_publisher_move_x");
+
+    rclc_publisher_init_default(
+        &publisher_move_y,
+        &node,
+        ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Float64),
+        "pico_publisher_move_y");
 
     rclc_publisher_init_default(
         &publisher_encoder,
