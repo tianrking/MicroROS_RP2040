@@ -22,6 +22,8 @@
 #include "pico/stdlib.h"
 #include "pico_uart_transports.h"
 
+#include "drv/motor_control.h"
+
 float moving_average(float new_value, float window[], int *index);
 int caculate(int now, int target);
 
@@ -35,6 +37,7 @@ void subscription_callback_speed_change(const void *msgin_diy);
 
 void ppm_callback(uint gpio, uint32_t events);
 
-#define WINDOW_SIZE 20
+int gpio_motor_init(void);
+void motor_speed_set(int L, int R);
 
 #endif /* PICO_MOTOR_COMTROL_H */

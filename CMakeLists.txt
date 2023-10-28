@@ -10,6 +10,7 @@ set(CMAKE_CXX_STANDARD 17)
 pico_sdk_init()
 
 link_directories($ENV{micro_ROS_SDK_PATH}/libmicroros)
+#link_directories(${CMAKE_CURRENT_LIST_DIR}/drv)
 
 add_executable(pico_micro_ros_motor_control
     pico_micro_ros_motor_control.c
@@ -31,6 +32,7 @@ target_include_directories(pico_micro_ros_motor_control PUBLIC
     $ENV{micro_ROS_SDK_PATH}/libmicroros/include
     $ENV{micro_ROS_SDK_PATH}
     ${CMAKE_CURRENT_LIST_DIR}
+    #${CMAKE_CURRENT_LIST_DIR}/drv
 )
 
 SET(CMAKE_C_FLAGS  "${CMAKE_C_FLAGS} -ffunction-sections -fdata-sections")
