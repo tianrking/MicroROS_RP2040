@@ -21,6 +21,7 @@ target_link_libraries(pico_micro_ros_motor_control
     hardware_pio
     hardware_pwm
     pico_multicore
+    hardware_adc
  #   FreeRTOS-Kernel 
  #   FreeRTOS-Kernel-Heap4
 )

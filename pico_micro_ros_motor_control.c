@@ -50,6 +50,12 @@ int index_window_2 = 0;
 float window_3[WINDOW_SIZE] = {0};
 int index_window_3 = 0;
 
+
+#define PPM_PIN 22
+
+uint64_t last_time = 0;
+uint32_t channel_values[8];
+
 float moving_average(float new_value, float window[], int *index) {
     // Update the window with the new value
     window[*index] = new_value;
@@ -71,6 +77,8 @@ float moving_average(float new_value, float window[], int *index) {
 #define PPM_PIN_3 3 // The GPIO pin number where PPM signal is connected
 #define PWM_PIN_3 3 
 
+#define PPM_PIN_22 22 //29
+
 volatile uint32_t high_time_2 = 0;  // Time when signal is HIGH
 volatile uint32_t low_time_2 = 0;   // Time when signal is LOW
 volatile uint32_t last_time_2 = 0;  // Last time the edge was detected
@@ -84,7 +92,7 @@ void gpio_2_callback(uint gpio, uint32_t events) {
     uint32_t duration = time_now - last_time_2;
     last_time_2 = time_now;
 
-    if (gpio_get(PWM_PIN_2)) {
+    if (gpio_get(PPM_PIN_22)) {
         // Rising edge detected
         low_time_2 = duration;
     } else {
@@ -107,24 +115,69 @@ void gpio_3_callback(uint gpio, uint32_t events) {
 }
 
 
-volatile uint32_t channel_values[8]; // To store decoded channel values
-volatile uint32_t last_time;
-volatile uint8_t channel;
+// volatile uint32_t channel_values[8]; // To store decoded channel values
+// volatile uint32_t last_time;
+// volatile uint8_t channel;
+
+////////////////////////////////// test block
+// #define PPM_PIN 22
+
+// uint64_t last_time = 0;
+// uint32_t channel_values[8];
 
 void ppm_callback(uint gpio, uint32_t events) {
-    uint32_t time_now = time_us_32();
-    uint32_t pulse_width = time_now - last_time_3;
-    last_time_3 = time_now;
+    uint64_t now = time_us_64();
+    uint32_t duration = (uint32_t)(now - last_time);
+    last_time = now;
 
-    if(pulse_width > 4000) {
-        channel = 0; // Reset to first channel on long pulse
-    } else {
-        if (channel < 8) { // Check to avoid array overflow
-            channel_values[channel] = pulse_width;
-            channel++;
+    static int channel = 0;
+    static int sync = 0;
+
+    if (duration > 4000) {
+        // Sync pulse detected
+        sync = 1;
+        channel = 0;
+    } else if (sync) {
+        // Record the pulse length for each channel
+        if (channel < 8) {
+            channel_values[channel] = duration;
         }
+        channel++;
     }
 }
+
+// int main() {
+//     stdio_init_all();
+//     gpio_init(PPM_PIN);
+//     gpio_set_dir(PPM_PIN, GPIO_IN);
+//     gpio_set_irq_enabled_with_callback(PPM_PIN, GPIO_IRQ_EDGE_RISE, true, &ppm_callback);
+
+//     while (1) {
+//         // Do something with channel_values
+//         // For demonstration, print channel values every second
+//         sleep_ms(1000);
+//         for (int i = 0; i < 8; i++) {
+//             printf("Channel %d: %u\n", i, channel_values[i]);
+//         }
+//     }
+
+//     return 0;
+// }
+
+// void ppm_callback(uint gpio, uint32_t events) {
+//     uint32_t time_now = time_us_32();
+//     uint32_t pulse_width = time_now - last_time_3;
+//     last_time_3 = time_now;
+
+//     if(pulse_width > 4000) {
+//         channel = 0; // Reset to first channel on long pulse
+//     } else {
+//         if (channel < 8) { // Check to avoid array overflow
+//             channel_values[channel] = pulse_width;
+//             channel++;
+//         }
+//     }
+// }
 
 int caculate(int now, int target)
 {
@@ -175,18 +228,22 @@ void timer_callback(rcl_timer_t *timer, int64_t last_call_time)
     // ret = rcl_publish(&publisher_move_x, &msg_move_x, NULL);
     // msg_move_y.data = read_adc(1) ;
     
-    msg_move_y.data = duty_cycle;
+    //msg_move_y.data = duty_cycle;
     //msg_move_y.data = duty_cycle;
     //msg_move_y.data = moving_average(duty_cycle, window_2, &index_window_2);
     //float filtered_duty_cycle_0 = moving_average(duty_cycle_0, window, &index);
+    msg_move_y.data = channel_values[2];
     ret = rcl_publish(&publisher_move_y, &msg_move_y, NULL);
 
-    high_time_copy = high_time_3;
-    low_time_copy = low_time_3;
-    period = high_time_copy + low_time_copy;
-    duty_cycle = (float)high_time_copy / (float)period * 100.0f;
-    frequency = 1.0f / ((float)period / 1000000.0f);
-    msg_move_x.data = moving_average(duty_cycle, window_3, &index_window_3);
+    // high_time_copy = high_time_3;
+    // low_time_copy = low_time_3;
+    // period = high_time_copy + low_time_copy;
+    // duty_cycle = (float)high_time_copy / (float)period * 100.0f;
+    // frequency = 1.0f / ((float)period / 1000000.0f);
+    // msg_move_x.data = moving_average(duty_cycle, window_3, &index_window_3);
+
+    
+    msg_move_x.data = channel_values[0];
     ret = rcl_publish(&publisher_move_x, &msg_move_x, NULL);
 }
 
@@ -240,8 +297,12 @@ int main()
     //last_time = time_us_32();
     //PWM
     
-    gpio_set_irq_enabled_with_callback(PWM_PIN_2, GPIO_IRQ_EDGE_FALL | GPIO_IRQ_EDGE_RISE, true, &gpio_2_callback);
+    //gpio_set_irq_enabled_with_callback(PPM_PIN_22, GPIO_IRQ_EDGE_FALL | GPIO_IRQ_EDGE_RISE, true, &gpio_2_callback); //29
     gpio_set_irq_enabled_with_callback(PWM_PIN_3, GPIO_IRQ_EDGE_FALL | GPIO_IRQ_EDGE_RISE, true, &gpio_3_callback);
+
+
+    gpio_set_dir(PPM_PIN, GPIO_IN);
+    gpio_set_irq_enabled_with_callback(PPM_PIN, GPIO_IRQ_EDGE_RISE, true, &ppm_callback);
 
     rcl_timer_t timer;
     rcl_node_t node;

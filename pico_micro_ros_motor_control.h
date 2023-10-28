@@ -33,6 +33,8 @@ void ppm_callback(uint gpio, uint32_t events);
 
 void subscription_callback_speed_change(const void *msgin_diy);
 
+void ppm_callback(uint gpio, uint32_t events);
+
 #define WINDOW_SIZE 20
 
 #endif /* PICO_MOTOR_COMTROL_H */
