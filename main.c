@@ -1,4 +1,4 @@
-#include "pico_micro_ros_motor_control.h"
+#include "main.h"
 
 int wrap;
 int GPIO_motor_L_pwm_A = 6;
@@ -50,11 +50,7 @@ int index_window_2 = 0;
 float window_3[WINDOW_SIZE] = {0};
 int index_window_3 = 0;
 
-#define PPM_PIN 22
-
-uint64_t last_time = 0;
-uint32_t channel_values[8];
-
+extern int32_t channel_values[];
 float moving_average(float new_value, float window[], int *index)
 {
     // Update the window with the new value
@@ -72,13 +68,6 @@ float moving_average(float new_value, float window[], int *index)
     return sum / WINDOW_SIZE;
 }
 
-// #define PPM_PIN_2 2 // The GPIO pin number where PPM signal is connected
-// #define PWM_PIN_2 2 // GPIO pin where PWM signal is connected
-// #define PPM_PIN_3 3 // The GPIO pin number where PPM signal is connected
-// #define PWM_PIN_3 3
-
-#define PPM_PIN_22 22 // 29
-
 volatile uint32_t high_time_2 = 0; // Time when signal is HIGH
 volatile uint32_t low_time_2 = 0;  // Time when signal is LOW
 volatile uint32_t last_time_2 = 0; // Last time the edge was detected
@@ -86,111 +75,6 @@ volatile uint32_t last_time_2 = 0; // Last time the edge was detected
 volatile uint32_t high_time_3 = 0; // Time when signal is HIGH
 volatile uint32_t low_time_3 = 0;  // Time when signal is LOW
 volatile uint32_t last_time_3 = 0; // Last time the edge was detected
-
-// void gpio_2_callback(uint gpio, uint32_t events)
-// {
-//     uint32_t time_now = time_us_32();
-//     uint32_t duration = time_now - last_time_2;
-//     last_time_2 = time_now;
-
-//     if (gpio_get(PPM_PIN_22))
-//     {
-//         // Rising edge detected
-//         low_time_2 = duration;
-//     }
-//     else
-//     {
-//         // Falling edge detected
-//         high_time_2 = duration;
-//     }
-// }
-// void gpio_3_callback(uint gpio, uint32_t events)
-// {
-//     uint32_t time_now = time_us_32();
-//     uint32_t duration = time_now - last_time_3;
-//     last_time_3 = time_now;
-
-//     if (gpio_get(PWM_PIN_3))
-//     {
-//         // Rising edge detected
-//         low_time_3 = duration;
-//     }
-//     else
-//     {
-//         // Falling edge detected
-//         high_time_3 = duration;
-//     }
-// }
-
-// volatile uint32_t channel_values[8]; // To store decoded channel values
-// volatile uint32_t last_time;
-// volatile uint8_t channel;
-
-////////////////////////////////// test block
-// #define PPM_PIN 22
-
-// uint64_t last_time = 0;
-// uint32_t channel_values[8];
-
-void ppm_callback(uint gpio, uint32_t events)
-{
-    uint64_t now = time_us_64();
-    uint32_t duration = (uint32_t)(now - last_time);
-    last_time = now;
-
-    static int channel = 0;
-    static int sync = 0;
-
-    if (duration > 4000)
-    {
-        // Sync pulse detected
-        sync = 1;
-        channel = 0;
-    }
-    else if (sync)
-    {
-        // Record the pulse length for each channel
-        if (channel < 8)
-        {
-            channel_values[channel] = duration;
-        }
-        channel++;
-    }
-}
-
-const uint MOTOR_PIN_1 = 12;
-const uint MOTOR_PIN_2 = 13;
-int gpio_motor_init(void)
-{
-    // Initialize stdio for debugging purposes
-    stdio_init_all();
-
-    const uint PWM_FREQUENCY = 50; // 50 Hz
-
-    // Initialize the PWM for the first pin
-    uint slice1 = pwm_gpio_to_slice_num(MOTOR_PIN_1);
-    pwm_config config1 = pwm_get_default_config();
-    pwm_set_wrap(slice1, 19999); // for 50Hz with a system clock of 2MHz
-    pwm_init(slice1, &config1, true);
-    gpio_set_function(MOTOR_PIN_1, GPIO_FUNC_PWM);
-
-    // Initialize the PWM for the second pin
-    uint slice2 = pwm_gpio_to_slice_num(MOTOR_PIN_2);
-    pwm_config config2 = pwm_get_default_config();
-    pwm_set_wrap(slice2, 19999); // for 50Hz with a system clock of 2MHz
-    pwm_init(slice2, &config2, true);
-    gpio_set_function(MOTOR_PIN_2, GPIO_FUNC_PWM);
-
-    return 1;
-}
-
-void motor_speed_set(int L, int R)
-{
-    // Set the duty cycle for each channel
-    pwm_set_gpio_level(MOTOR_PIN_1, 1500); // 1.5ms pulse width
-    pwm_set_gpio_level(MOTOR_PIN_2, 1000); // 1.0ms pulse width
-    // sleep_ms(20); // Sleep to make it easier to observe, not necessary for real code
-}
 
 int caculate(int now, int target)
 {
@@ -203,12 +87,6 @@ int caculate(int now, int target)
     return fix;
 }
 
-uint16_t read_adc(uint channel)
-{
-    adc_select_input(channel);
-    return adc_read();
-}
-
 void timer_callback(rcl_timer_t *timer, int64_t last_call_time)
 {
     // 读取编码器的数值
@@ -218,6 +96,9 @@ void timer_callback(rcl_timer_t *timer, int64_t last_call_time)
 
     /*读取编码器测量的速度值*/
     /*进行PID运算，得到PWM输出值*/
+    cooneo_timer_callback(timer, last_call_time);
+
+    test_timer_init();
 
     msg.data++;
     msg_publisher_encoder.data = delta;
@@ -281,77 +162,15 @@ void subscription_callback_angle_change(const void *msgin_diy)
     // pwm_set_chan_level(slice_num, PWM_CHAN_A, _value * 62500);
 }
 
-/////////////////////////////motor control
-#include "pico/stdlib.h"
-#include "hardware/pwm.h"
+// Wait for agent successful ping for 2 minutes.
+#define timeout_ms 1000
+#define attempts 120
 
-// Pin definitions
-const uint AIN1 = 3;
-const uint AIN2 = 2;
-const uint PWMA = 12;
-
-void setup_pwm(uint gpio, float duty_cycle)
-{
-    uint slice_num = pwm_gpio_to_slice_num(gpio);
-    pwm_set_wrap(slice_num, 255);
-    pwm_set_gpio_level(gpio, duty_cycle * 255);
-    gpio_set_function(gpio, GPIO_FUNC_PWM);
-    pwm_set_enabled(slice_num, true);
-}
-
-void motorA_forward()
-{
-    gpio_put(AIN1, 1);
-    gpio_put(AIN2, 0);
-}
-
-void motorA_backward()
-{
-    gpio_put(AIN1, 0);
-    gpio_put(AIN2, 1);
-}
-
-void motorA_stop()
-{
-    gpio_put(AIN1, 0);
-    gpio_put(AIN2, 0);
-}
-
-void motorA_gpio_init()
-{
-    gpio_init(AIN1);
-    gpio_init(AIN2);
-    gpio_set_dir(AIN1, GPIO_OUT);
-    gpio_set_dir(AIN2, GPIO_OUT);
-}
-
-// int main() {
-//     stdio_init_all();
-
-//     // Initialize GPIO
-//     gpio_init(AIN1);
-//     gpio_init(AIN2);
-//     gpio_init(STBY);
-
-//     gpio_set_dir(AIN1, GPIO_OUT);
-//     gpio_set_dir(AIN2, GPIO_OUT);
-//     gpio_set_dir(STBY, GPIO_OUT);
-
-//     gpio_put(STBY, 1); // Take out of standby
-
-//     // Setup PWM
-//     setup_pwm(PWMA, 0.5); // 50% duty cycle
-
-//     while (true) {
-//         motorA_forward();
-//         sleep_ms(1000);
-//         motorA_backward();
-//         sleep_ms(1000);
-//         motorA_stop();
-//         sleep_ms(1000);
-//     }
-// }
-//////
+rcl_timer_t timer;
+rcl_node_t node;
+rcl_allocator_t allocator;
+rclc_support_t support;
+rclc_executor_t executor;
 
 int main()
 {
@@ -374,28 +193,9 @@ int main()
     adc_select_input(0);
     adc_select_input(1);
 
-    // PPM
-    // gpio_set_irq_enabled_with_callback(PPM_PIN_3, GPIO_IRQ_EDGE_RISE, true, &ppm_callback);
-    // last_time = time_us_32();
-    // PWM
-
-    // gpio_set_irq_enabled_with_callback(PPM_PIN_22, GPIO_IRQ_EDGE_FALL | GPIO_IRQ_EDGE_RISE, true, &gpio_2_callback); //29
-    // gpio_set_irq_enabled_with_callback(PWM_PIN_3, GPIO_IRQ_EDGE_FALL | GPIO_IRQ_EDGE_RISE, true, &gpio_3_callback);
-
-    gpio_set_dir(PPM_PIN, GPIO_IN);
-    gpio_set_irq_enabled_with_callback(PPM_PIN, GPIO_IRQ_EDGE_RISE, true, &ppm_callback);
-
-    rcl_timer_t timer;
-    rcl_node_t node;
-    rcl_allocator_t allocator;
-    rclc_support_t support;
-    rclc_executor_t executor;
+    ppm_init();
 
     allocator = rcl_get_default_allocator();
-
-    // Wait for agent successful ping for 2 minutes.
-    const int timeout_ms = 1000;
-    const uint8_t attempts = 120;
 
     rcl_ret_t ret = rmw_uros_ping_agent(timeout_ms, attempts);
 
@@ -501,37 +301,12 @@ int main()
     pwm_set_clkdiv(slice_num_servo_pwm, 40.0f);
     pwm_set_enabled(slice_num_servo_pwm, true);
 
-    // 在这里我们设定默认输出 占空比为0 即 静止状态
-    // float output_pwm = 0; // 12000
-
-    // gpio_motor_init();
-
-    // const uint PWM_FREQUENCY = 50; // 50 Hz
-
-    // // Initialize the PWM for the first pin
-    // gpio_set_function(MOTOR_PIN_1, GPIO_FUNC_PWM);
-    // uint slice1 = pwm_gpio_to_slice_num(MOTOR_PIN_1);
-    // // pwm_set_wrap(slice1, 19999);  // for 50Hz with a system clock of 2MHz
-    // // pwm_init(slice1, &config1, true);
-    // wrap = 62500; // 2khz
-    // pwm_set_wrap(slice_num_servo_pwm, wrap);
-    // pwm_set_clkdiv(MOTOR_PIN_1, 40.0f);
-    // pwm_set_enabled(MOTOR_PIN_1, true);
-
-    // // Initialize the PWM for the second pin
-    // gpio_set_function(MOTOR_PIN_2, GPIO_FUNC_PWM);
-    // uint slice2 = pwm_gpio_to_slice_num(MOTOR_PIN_2);
-    // // pwm_set_wrap(slice2, 19999);  // for 50Hz with a system clock of 2MHz
-    // // pwm_init(slice2, &config2, true);
-    // wrap = 62500; // 2khz
-    // pwm_set_wrap(slice_num_servo_pwm, wrap);
-    // pwm_set_clkdiv(MOTOR_PIN_2, 40.0f);
-    // pwm_set_enabled(MOTOR_PIN_2, true);
-
-    //////test
     motorA_gpio_init();
     setup_pwm(PWMA, 0.5);
 
+    //test_node_create();
+    test_publish_init();
+    test_timer_init();
     ////
     while (true)
     {
@@ -582,13 +357,13 @@ int main()
 
         // pwm_set_gpio_level(MOTOR_PIN_1, 31250); // 1.5ms pulse width
         // pwm_set_gpio_level(MOTOR_PIN_2, 15625); // 1.5ms pulse width
-        motorA_forward();
-        sleep_ms(1000);
-        motorA_backward();
-        sleep_ms(1000);
-        motorA_stop();
-        sleep_ms(1000);
-        sleep_ms(20);
+        // motorA_forward();
+        // sleep_ms(1000);
+        // motorA_backward();
+        // sleep_ms(1000);
+        // motorA_stop();
+        // sleep_ms(1000);
+        // sleep_ms(20);
     }
     return 0;
 }
