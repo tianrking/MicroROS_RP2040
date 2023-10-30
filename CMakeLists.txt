@@ -20,6 +20,7 @@ target_link_libraries(pico_micro_ros_motor_control
     pico_stdlib
     microros
     hardware_pio
+    hardware_clock
     hardware_pwm
     pico_multicore
     hardware_adc

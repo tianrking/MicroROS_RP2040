@@ -8,6 +8,7 @@
 #include "hardware/timer.h"
 #include "hardware/pwm.h"
 #include "hardware/adc.h"
+#include "hardware/clocks.h"
 #include "quadrature_encoder.pio.h"
 
 #include <rcl/rcl.h>
@@ -39,5 +40,29 @@ void ppm_callback(uint gpio, uint32_t events);
 
 int gpio_motor_init(void);
 void motor_speed_set(int L, int R);
+
+void motor_set_speed(uint gpio, float duty_cycle);
+// float mapInputToOutput(int input);
+
+typedef enum{
+    STOP,
+    FORWARD,
+    BACKWARD,
+} MOTOR_STATE;
+
+typedef enum
+{
+    T_NONE,
+    T_MOTOR,
+    T_SERVO,
+} CONTROL_TARGET;
+
+int constrainInput(int input);
+float mapInputToOutput(int input, CONTROL_TARGET _ct);
+
+void motor_control(MOTOR_STATE _state);
+
+void servo_init(uint gpio,int frq);
+void servo_set_angle(uint gpio, int angle) ;
 
 #endif /* PICO_MOTOR_COMTROL_H */

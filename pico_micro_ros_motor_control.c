@@ -55,6 +55,17 @@ int index_window_3 = 0;
 uint64_t last_time = 0;
 uint32_t channel_values[8];
 
+// Pin definitions COONEO MOTOR
+const uint AIN1 = 3;
+const uint AIN2 = 2;
+const uint PWMA = 12;
+
+const uint BIN2 = 10; // switch BIN2 BIN1 mirror install
+const uint BIN1 = 11;
+const uint PWMB = 13;
+
+const uint SERVO_PIN = 26; // COONEO SERVO3
+
 float moving_average(float new_value, float window[], int *index)
 {
     // Update the window with the new value
@@ -248,6 +259,20 @@ void timer_callback(rcl_timer_t *timer, int64_t last_call_time)
     msg_move_y.data = moving_average(channel_values[2], window_2, &index_window_2);
     ret = rcl_publish(&publisher_move_y, &msg_move_y, NULL);
 
+    float _speed_temp = mapInputToOutput(channel_values[2], T_MOTOR);
+    if (_speed_temp > 0)
+    {
+        motor_control(FORWARD);
+        motor_set_speed(PWMA, _speed_temp);
+        motor_set_speed(PWMB, _speed_temp);
+    }
+    else
+    {
+        motor_control(BACKWARD);
+        motor_set_speed(PWMA, -_speed_temp);
+        motor_set_speed(PWMB, -_speed_temp);
+    }
+
     // high_time_copy = high_time_3;
     // low_time_copy = low_time_3;
     // period = high_time_copy + low_time_copy;
@@ -257,6 +282,9 @@ void timer_callback(rcl_timer_t *timer, int64_t last_call_time)
 
     // msg_move_x.data = channel_values[0];
     msg_move_x.data = moving_average(channel_values[0], window_3, &index_window_3);
+    msg_move_x.data = mapInputToOutput(msg_move_x.data, T_SERVO);
+    servo_set_angle((int)SERVO_PIN, msg_move_x.data);
+
     ret = rcl_publish(&publisher_move_x, &msg_move_x, NULL);
 }
 
@@ -281,16 +309,9 @@ void subscription_callback_angle_change(const void *msgin_diy)
     // pwm_set_chan_level(slice_num, PWM_CHAN_A, _value * 62500);
 }
 
-/////////////////////////////motor control
-#include "pico/stdlib.h"
-#include "hardware/pwm.h"
+/////////////////////////////cooneo motor control
 
-// Pin definitions
-const uint AIN1 = 3;
-const uint AIN2 = 2;
-const uint PWMA = 12;
-
-void setup_pwm(uint gpio, float duty_cycle)
+void motor_set_speed(uint gpio, float duty_cycle)
 {
     uint slice_num = pwm_gpio_to_slice_num(gpio);
     pwm_set_wrap(slice_num, 255);
@@ -299,30 +320,170 @@ void setup_pwm(uint gpio, float duty_cycle)
     pwm_set_enabled(slice_num, true);
 }
 
-void motorA_forward()
+void motor_control(MOTOR_STATE _state)
 {
-    gpio_put(AIN1, 1);
-    gpio_put(AIN2, 0);
+    switch (_state)
+    {
+    case FORWARD:
+        gpio_put(AIN1, 1);
+        gpio_put(AIN2, 0);
+        gpio_put(BIN1, 1);
+        gpio_put(BIN2, 0);
+        break;
+
+    case BACKWARD:
+        // 處理向後既情況
+        gpio_put(AIN1, 0);
+        gpio_put(AIN2, 1);
+        gpio_put(BIN1, 0);
+        gpio_put(BIN2, 1);
+        break;
+
+    case STOP:
+        // 處理停止既情況
+        gpio_put(AIN1, 0);
+        gpio_put(AIN2, 0);
+        gpio_put(BIN1, 0);
+        gpio_put(BIN2, 0);
+        break;
+
+    default:
+        // 預設情況
+        gpio_put(AIN1, 0);
+        gpio_put(AIN2, 0);
+        gpio_put(BIN1, 0);
+        gpio_put(BIN2, 0);
+        break;
+    }
 }
 
-void motorA_backward()
-{
-    gpio_put(AIN1, 0);
-    gpio_put(AIN2, 1);
-}
-
-void motorA_stop()
-{
-    gpio_put(AIN1, 0);
-    gpio_put(AIN2, 0);
-}
-
-void motorA_gpio_init()
+void motor_gpio_init()
 {
     gpio_init(AIN1);
     gpio_init(AIN2);
     gpio_set_dir(AIN1, GPIO_OUT);
     gpio_set_dir(AIN2, GPIO_OUT);
+    gpio_init(BIN1);
+    gpio_init(BIN2);
+    gpio_set_dir(BIN1, GPIO_OUT);
+    gpio_set_dir(BIN2, GPIO_OUT);
+}
+
+//////////// cooneo servo control
+
+#define DUTY_MIN 2400
+#define DUTY_MAX 8000
+#define TOP_MAX 65534
+
+long map(long x, long in_min, long in_max, long out_min, long out_max) {
+  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+}
+
+void servo_init(uint gpio,int base_frequency)
+{
+       gpio_set_function(gpio, GPIO_FUNC_PWM);
+    uint slice = pwm_gpio_to_slice_num(gpio);
+    uint channel = pwm_gpio_to_channel(gpio);
+
+
+    uint32_t source_hz = clock_get_hz(clk_sys);
+        uint freq = 50;
+        uint32_t div16_top = 16 * source_hz / freq;
+        uint32_t top = 1;
+        for (;;) {
+            if (div16_top >= 16 * 5 && div16_top % 5 == 0 && top * 5 <= TOP_MAX) {
+                div16_top /= 5;
+                top *= 5;
+            } else if (div16_top >= 16 * 3 && div16_top % 3 == 0 && top * 3 <= TOP_MAX) {
+                div16_top /= 3;
+                top *= 3;
+            } else if (div16_top >= 16 * 2 && top * 2 <= TOP_MAX) {
+                div16_top /= 2;
+                top *= 2;
+            } else {
+                break;
+            }
+        }
+        pwm_hw->slice[slice].div = div16_top;
+        pwm_hw->slice[slice].top = top;
+}
+
+// Function to set servo angle
+void servo_set_angle(uint gpio, int angle)
+{
+    uint slice = pwm_gpio_to_slice_num(gpio);
+    uint channel = pwm_gpio_to_channel(gpio);
+    uint32_t top = pwm_hw->slice[slice].top;
+    int duty_u16 = map(angle, 0, 180, DUTY_MIN, DUTY_MAX);
+    uint32_t cc = duty_u16 * (top + 1) / 65535;
+    pwm_set_chan_level(slice, channel, cc);
+    pwm_set_enabled(slice, true);
+}
+
+////////////////////////////////////
+
+int constrainInput(int input)
+{
+    if (input < 900)
+        return 900;
+    if (input > 1900)
+        return 1900;
+    return input;
+}
+
+float mapInputToOutput(int input, CONTROL_TARGET _ct)
+{
+    float output;
+    input = constrainInput(input); // 使用封裝好的函數來限制輸入
+
+    switch (_ct)
+    {
+    case T_MOTOR:
+        if (input <= 1400)
+        {
+            output = (float)(input - 1400) / (1400 - 900);
+        }
+        else
+        {
+            output = (float)(input - 1400) / (1900 - 1400);
+        }
+        break;
+
+    case T_SERVO:
+        // if (input <= 1400)
+        // {
+        //     output = (float)(input - 1400) / (1400 - 900) * 45;
+        // }
+        // else
+        // {
+        //     output = (float)(input - 1400) / (1900 - 1400) * 45;
+        // }
+        // 進行線性轉換
+        if (input <= 1400)
+        {
+            output = (float)(input - 1400) / (1400 - 900) * 50 + 50;
+        }
+        else
+        {
+            output = (float)(input - 1400) / (1900 - 1400) * 50 + 50;
+        }
+
+        break;
+
+    default:
+        // None 或者其他未定義的 CONTROL_TARGET
+        if (input <= 1400)
+        {
+            output = (float)(input - 1400) / (1400 - 900);
+        }
+        else
+        {
+            output = (float)(input - 1400) / (1900 - 1400);
+        }
+        break;
+    }
+
+    return output;
 }
 
 // int main() {
@@ -529,8 +690,12 @@ int main()
     // pwm_set_enabled(MOTOR_PIN_2, true);
 
     //////test
-    motorA_gpio_init();
-    setup_pwm(PWMA, 0.5);
+    motor_gpio_init();
+
+    servo_init(SERVO_PIN, 50);
+    //servo_init(SERVO_PIN);
+    
+    // setup_pwm(PWMA, 0.5);
 
     ////
     while (true)
@@ -582,12 +747,13 @@ int main()
 
         // pwm_set_gpio_level(MOTOR_PIN_1, 31250); // 1.5ms pulse width
         // pwm_set_gpio_level(MOTOR_PIN_2, 15625); // 1.5ms pulse width
-        motorA_forward();
-        sleep_ms(1000);
-        motorA_backward();
-        sleep_ms(1000);
-        motorA_stop();
-        sleep_ms(1000);
+
+        // motor_control(FORWARD);
+        // sleep_ms(1000);
+        // motor_control(STOP);
+        // sleep_ms(1000);
+        // motor_control(BACKWARD);
+        // sleep_ms(1000);
         sleep_ms(20);
     }
     return 0;
