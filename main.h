@@ -23,6 +23,13 @@
 #include "pico_uart_transports.h"
 
 #include "drv/motor_control.h"
+#include "drv/remote_ppm.h"
+#include "drv/debug_module.h"
+#include "drv/cooneo_motor_control.h"
+
+ // Wait for agent successful ping for 2 minutes.
+#define timeout_ms 1000
+#define attempts 120
 
 float moving_average(float new_value, float window[], int *index);
 int caculate(int now, int target);
