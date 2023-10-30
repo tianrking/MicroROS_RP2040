@@ -1,12 +1,5 @@
 #include "main.h"
 
-int wrap;
-int GPIO_motor_L_pwm_A = 6;
-int GPIO_motor_L_pwm_B = 7;
-int GPIO_motor_R_pwm_A = 8;
-int GPIO_motor_R_pwm_B = 9;
-int GPIO_servo_pwm = 5;
-
 int new_value, delta, old_value = 0;
 const uint sm = 0;
 PIO pio = pio0;
@@ -162,9 +155,6 @@ void subscription_callback_angle_change(const void *msgin_diy)
     // pwm_set_chan_level(slice_num, PWM_CHAN_A, _value * 62500);
 }
 
-// Wait for agent successful ping for 2 minutes.
-#define timeout_ms 1000
-#define attempts 120
 
 rcl_timer_t timer;
 rcl_node_t node;
@@ -269,38 +259,7 @@ int main()
     pio_add_program(pio, &quadrature_encoder_program);
     quadrature_encoder_program_init(pio, sm, PIN_AB, 0);
 
-    // 选择输出 pwm 的引脚 用作控制信号传入L298n 电机驱动并完成初始化
-    gpio_set_function(GPIO_motor_L_pwm_A, GPIO_FUNC_PWM);
-    uint slice_num_L_pwm_A = pwm_gpio_to_slice_num(GPIO_motor_L_pwm_A);
-    wrap = 62500; // 2khz
-    pwm_set_wrap(slice_num_L_pwm_A, wrap);
-    pwm_set_enabled(slice_num_L_pwm_A, true);
-
-    gpio_set_function(GPIO_motor_L_pwm_B, GPIO_FUNC_PWM);
-    uint slice_num_L_pwm_B = pwm_gpio_to_slice_num(GPIO_motor_L_pwm_B);
-    wrap = 62500; // 2khz
-    pwm_set_wrap(slice_num_L_pwm_B, wrap);
-    pwm_set_enabled(slice_num_L_pwm_B, true);
-
-    gpio_set_function(GPIO_motor_R_pwm_A, GPIO_FUNC_PWM);
-    uint slice_num_R_pwm_A = pwm_gpio_to_slice_num(GPIO_motor_R_pwm_A);
-    wrap = 62500; // 2khz
-    pwm_set_wrap(slice_num_R_pwm_A, wrap);
-    pwm_set_enabled(slice_num_R_pwm_A, true);
-
-    gpio_set_function(GPIO_motor_R_pwm_B, GPIO_FUNC_PWM);
-    uint slice_num_R_pwm_B = pwm_gpio_to_slice_num(GPIO_motor_R_pwm_B);
-    wrap = 62500; // 2khz
-    pwm_set_wrap(slice_num_R_pwm_B, wrap);
-    pwm_set_enabled(slice_num_R_pwm_B, true);
-
-    gpio_set_function(GPIO_servo_pwm, GPIO_FUNC_PWM);
-    uint slice_num_servo_pwm = pwm_gpio_to_slice_num(GPIO_servo_pwm);
-    wrap = 62500; // 2khz
-    pwm_set_wrap(slice_num_servo_pwm, wrap);
-    pwm_set_clkdiv(slice_num_servo_pwm, 40.0f);
-    pwm_set_enabled(slice_num_servo_pwm, true);
-
+    drv_pwm_init();
     motorA_gpio_init();
     setup_pwm(PWMA, 0.5);
 

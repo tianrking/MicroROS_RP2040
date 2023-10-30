@@ -19,6 +19,7 @@ add_executable(pico_main
     ${CMAKE_CURRENT_LIST_DIR}/drv/remote_ppm.c
     ${CMAKE_CURRENT_LIST_DIR}/drv/debug_module.c
     ${CMAKE_CURRENT_LIST_DIR}/drv/cooneo_motor_control.c
+    ${CMAKE_CURRENT_LIST_DIR}/drv/pwm_module.c
 
 )
 target_link_libraries(pico_main

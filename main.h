@@ -26,10 +26,7 @@
 #include "drv/remote_ppm.h"
 #include "drv/debug_module.h"
 #include "drv/cooneo_motor_control.h"
-
- // Wait for agent successful ping for 2 minutes.
-#define timeout_ms 1000
-#define attempts 120
+#include "drv/pwm_module.h"
 
 float moving_average(float new_value, float window[], int *index);
 int caculate(int now, int target);
@@ -46,5 +43,15 @@ void ppm_callback(uint gpio, uint32_t events);
 
 int gpio_motor_init(void);
 void motor_speed_set(int L, int R);
+
+// Wait for agent successful ping for 2 minutes.
+#define timeout_ms 1000
+#define attempts 120
+
+#define GPIO_motor_L_pwm_A 6
+#define GPIO_motor_L_pwm_B 7
+#define GPIO_motor_R_pwm_A 8
+#define GPIO_motor_R_pwm_B 9
+#define GPIO_servo_pwm 5
 
 #endif /* PICO_MOTOR_COMTROL_H */
