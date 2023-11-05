@@ -18,9 +18,10 @@ std_msgs__msg__Int32 msg;
 
 rcl_publisher_t publisher_move_x;
 std_msgs__msg__Float64 msg_move_x;
-
 rcl_publisher_t publisher_move_y;
 std_msgs__msg__Float64 msg_move_y;
+rcl_publisher_t publisher_move_switch;
+std_msgs__msg__Float64 msg_move_switch;
 
 rcl_publisher_t publisher_encoder;
 std_msgs__msg__Int32 msg_publisher_encoder;
@@ -52,6 +53,10 @@ float window_2[WINDOW_SIZE] = {0};
 int index_window_2 = 0;
 float window_3[WINDOW_SIZE] = {0};
 int index_window_3 = 0;
+float window_5[WINDOW_SIZE] = {0};
+int index_window_5 = 0;
+int twist_flag_temp;
+int twist_flag;
 
 #define PPM_PIN 22
 
@@ -259,11 +264,34 @@ void timer_callback(rcl_timer_t *timer, int64_t last_call_time)
     // msg_move_y.data = moving_average(duty_cycle, window_2, &index_window_2);
     // float filtered_duty_cycle_0 = moving_average(duty_cycle_0, window, &index);
     // msg_move_y.data = channel_values[2];
+
+    msg_move_switch.data = moving_average(channel_values[5], window_5, &index_window_5);
+    msg_move_switch.data = msg_move_switch.data > 1400 ? 1:0;
+
+    if((int)msg_move_switch.data == 1){
+        twist_flag_temp =1 ;
+    }
+    else  if((int)msg_move_switch.data == 0)
+    {
+        if(twist_flag_temp == 1)
+        {
+            twist_flag ++;
+            twist_flag_temp = 0;
+        }
+
+    }
+    else{
+        ;
+    }
+
+    msg_move_switch.data = twist_flag % 2; // 1 for nav2 0 for remote
+    ret = rcl_publish(&publisher_move_switch, &msg_move_switch, NULL);
+    
     msg_move_y.data = moving_average(channel_values[2], window_2, &index_window_2);
     ret = rcl_publish(&publisher_move_y, &msg_move_y, NULL);
 
     float _speed_temp = mapInputToOutput(channel_values[2], T_MOTOR);
-    if (_speed_temp > 0)
+    if (_speed_temp > 0 && (twist_flag % 2)==0)
     {
         motor_control(FORWARD);
         motor_set_speed(PWMA, _speed_temp);
@@ -271,9 +299,13 @@ void timer_callback(rcl_timer_t *timer, int64_t last_call_time)
     }
     else
     {
-        motor_control(BACKWARD);
-        motor_set_speed(PWMA, -_speed_temp);
-        motor_set_speed(PWMB, -_speed_temp);
+        if((twist_flag % 2))
+            ;
+        else{
+            motor_control(BACKWARD);
+            motor_set_speed(PWMA, -_speed_temp);
+            motor_set_speed(PWMB, -_speed_temp);
+        }
     }
 
     // high_time_copy = high_time_3;
@@ -286,7 +318,14 @@ void timer_callback(rcl_timer_t *timer, int64_t last_call_time)
     // msg_move_x.data = channel_values[0];
     msg_move_x.data = moving_average(channel_values[0], window_3, &index_window_3);
     msg_move_x.data = mapInputToOutput(msg_move_x.data, T_SERVO);
-    servo_set_angle((int)SERVO_PIN, msg_move_x.data);
+
+    if((twist_flag % 2)==0){
+        servo_set_angle((int)SERVO_PIN, msg_move_x.data);
+    }
+    else{
+        ; //nav
+    }
+
 
     ret = rcl_publish(&publisher_move_x, &msg_move_x, NULL);
 }
@@ -399,7 +438,7 @@ long map(long x, long in_min, long in_max, long out_min, long out_max) {
 
 void servo_init(uint gpio,int base_frequency)
 {
-       gpio_set_function(gpio, GPIO_FUNC_PWM);
+    gpio_set_function(gpio, GPIO_FUNC_PWM);
     uint slice = pwm_gpio_to_slice_num(gpio);
     uint channel = pwm_gpio_to_channel(gpio);
 
@@ -604,6 +643,12 @@ int main()
         &node,
         ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Float64),
         "pico_publisher_move_y");
+
+    rclc_publisher_init_default(
+        &publisher_move_switch,
+        &node,
+        ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Float64),
+        "pico_publisher_move_switch");
 
     rclc_publisher_init_default(
         &publisher_encoder,
