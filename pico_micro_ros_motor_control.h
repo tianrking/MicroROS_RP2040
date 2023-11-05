@@ -15,6 +15,9 @@
 #include <rcl/error_handling.h>
 #include <rclc/rclc.h>
 #include <rclc/executor.h>
+#include <rcl/error_handling.h>
+
+#include <geometry_msgs/msg/twist.h>
 #include <std_msgs/msg/int32.h>
 #include <std_msgs/msg/float64.h>
 #include <std_msgs/msg/string.h>
@@ -35,7 +38,7 @@ void gpio_2_callback(uint gpio, uint32_t events);
 void ppm_callback(uint gpio, uint32_t events);
 
 void subscription_callback_speed_change(const void *msgin_diy);
-
+void subscription_twist_callback(const void * msgin);
 void ppm_callback(uint gpio, uint32_t events);
 
 int gpio_motor_init(void);

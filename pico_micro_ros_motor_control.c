@@ -32,6 +32,9 @@ std_msgs__msg__Int32 msg_subscriber_speed_change;
 rcl_subscription_t subscriber_angle_change;
 std_msgs__msg__Int32 msg_subscriber_angle_change;
 
+rcl_subscription_t subscriber_twist;
+geometry_msgs__msg__Twist msg_twit;
+
 rcl_publisher_t publisher_encoder_move_x;
 std_msgs__msg__Int32 msg_publisher_move_x;
 rcl_publisher_t publisher_encoder_move_y;
@@ -308,6 +311,21 @@ void subscription_callback_angle_change(const void *msgin_diy)
     angle_value = (float)msg_diy->data;
     // pwm_set_chan_level(slice_num, PWM_CHAN_A, _value * 62500);
 }
+
+float linear_velocity ;
+float angular_velocity ;
+void subscription_twist_callback(const void * msgin) {
+    const geometry_msgs__msg__Twist * msg = (const geometry_msgs__msg__Twist *)msgin;
+
+    // Extract linear and angular velocities
+    linear_velocity = msg->linear.x;
+    angular_velocity = msg->angular.z;
+
+    // Control the car using the extracted velocities
+    // This is just a placeholder, replace with your car's driver function
+    // car_move(linear_velocity, angular_velocity);
+}
+
 
 /////////////////////////////cooneo motor control
 
@@ -604,6 +622,22 @@ int main()
         &node,
         ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Int32),
         "angle_change");
+    
+    ///    
+    rclc_subscription_init_default(
+        &subscriber_twist,
+        &node,
+        ROSIDL_GET_MSG_TYPE_SUPPORT(geometry_msgs, msg, Twist),
+        "/cmd_vel");
+        
+    // rclc_subscription_init_default(
+    //     &subscriber_speed_change,
+    //     &node,
+    //     ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Int32),
+    //     "speed_change");
+    ///    
+        
+        
 
     rclc_timer_init_default(
         &timer,
@@ -616,7 +650,9 @@ int main()
 
     rclc_executor_add_subscription(&executor, &subscriber_speed_change, &msg_subscriber_speed_change, &subscription_callback_speed_change, ON_NEW_DATA);
     rclc_executor_add_subscription(&executor, &subscriber_angle_change, &msg_subscriber_angle_change, &subscription_callback_angle_change, ON_NEW_DATA);
+    rclc_executor_add_subscription(&executor, &subscriber_twist, &msg_twit, &subscription_twist_callback, ON_NEW_DATA);
 
+        //rclc_wait_set_add_subscription(&wait_set, &subscriber_twist, NULL);
     gpio_put(LED_PIN, 1);
 
     msg.data = 0;
@@ -754,7 +790,21 @@ int main()
         // sleep_ms(1000);
         // motor_control(BACKWARD);
         // sleep_ms(1000);
+
+        //rcl_wait_set_t wait_set = rcl_get_zero_initialized_wait_set();
+        //rcl_wait_set_t wait_set = rcl_get_zero_initialized_wait_set();
+        // rclc_wait_set_init(&wait_set, 1, 0, 0, 0, 0, 0, &support.context, &allocator);
+
+        // // // Add our subscription to the wait set
+        // rclc_wait_set_add_subscription(&wait_set, &subscriber_twist, NULL);
+
+
+
         sleep_ms(20);
     }
+
+    // Clean up (This part of the code will never be reached in this example)
+    //rclc_subscription_fini(&subscriber, &node);
+    //rclc_node_fini(&node);
     return 0;
 }
