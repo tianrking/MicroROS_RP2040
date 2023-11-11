@@ -1,5 +1,9 @@
 #include "pico_micro_ros_motor_control.h"
 
+#define REMOTE_MAX 2000
+#define REMOTE_MIN 1000
+#define REMOTE_MID 1500
+
 int wrap;
 int GPIO_motor_L_pwm_A = 6;
 int GPIO_motor_L_pwm_B = 7;
@@ -290,12 +294,16 @@ void timer_callback(rcl_timer_t *timer, int64_t last_call_time)
     msg_move_y.data = moving_average(channel_values[2], window_2, &index_window_2);
     ret = rcl_publish(&publisher_move_y, &msg_move_y, NULL);
 
-    float _speed_temp = mapInputToOutput(channel_values[2], T_MOTOR);
+    float _speed_temp = mapInputToOutput(channel_values[2], T_MOTOR);  //for v
     if (_speed_temp > 0 && (twist_flag % 2)==0)
     {
-        motor_control(FORWARD);
-        motor_set_speed(PWMA, _speed_temp);
-        motor_set_speed(PWMB, _speed_temp);
+        if((twist_flag % 2))
+            ;
+        else{
+            motor_control(FORWARD);
+            motor_set_speed(PWMA, _speed_temp);
+            motor_set_speed(PWMB, _speed_temp);
+        }
     }
     else
     {
@@ -316,8 +324,8 @@ void timer_callback(rcl_timer_t *timer, int64_t last_call_time)
     // msg_move_x.data = moving_average(duty_cycle, window_3, &index_window_3);
 
     // msg_move_x.data = channel_values[0];
-    msg_move_x.data = moving_average(channel_values[0], window_3, &index_window_3);
-    msg_move_x.data = mapInputToOutput(msg_move_x.data, T_SERVO);
+    msg_move_x.data = moving_average(channel_values[0], window_3, &index_window_3);  /// for w
+    msg_move_x.data = mapInputToOutput(msg_move_x.data, T_SERVO);   /// for w
 
     if((twist_flag % 2)==0){
         servo_set_angle((int)SERVO_PIN, msg_move_x.data);
@@ -478,13 +486,18 @@ void servo_set_angle(uint gpio, int angle)
 }
 
 ////////////////////////////////////
+#define _RM_min 900
+#define _RM_max 1900
+#define _RM_mid 1400
+#define _RM_constrain_min 1000
+#define _RM_constrain_max 1800
 
 int constrainInput(int input)
 {
-    if (input < 900)
-        return 900;
-    if (input > 1900)
-        return 1900;
+    if (input < _RM_constrain_min )
+        return _RM_constrain_min;
+    if (input > _RM_constrain_max)
+        return _RM_constrain_max;
     return input;
 }
 
@@ -496,46 +509,46 @@ float mapInputToOutput(int input, CONTROL_TARGET _ct)
     switch (_ct)
     {
     case T_MOTOR:
-        if (input <= 1400)
+        if (input <= _RM_mid)
         {
-            output = (float)(input - 1400) / (1400 - 900);
+            output = (float)(input - _RM_mid) / (_RM_mid - _RM_min);
         }
         else
         {
-            output = (float)(input - 1400) / (1900 - 1400);
+            output = (float)(input - _RM_mid) / (_RM_max - _RM_mid);
         }
         break;
 
     case T_SERVO:
-        // if (input <= 1400)
+        // if (input <= _RM_mid)
         // {
-        //     output = (float)(input - 1400) / (1400 - 900) * 45;
+        //     output = (float)(input - _RM_mid) / (_RM_mid - 900) * 45;
         // }
         // else
         // {
-        //     output = (float)(input - 1400) / (1900 - 1400) * 45;
+        //     output = (float)(input - _RM_mid) / (1900 - _RM_mid) * 45;
         // }
         // 進行線性轉換
-        if (input <= 1400)
+        if (input <= _RM_mid)
         {
-            output = (float)(input - 1400) / (1400 - 900) * 50 + 50;
+            output = (float)(input - _RM_mid) / (_RM_mid - _RM_min) * 50 + 50;
         }
         else
         {
-            output = (float)(input - 1400) / (1900 - 1400) * 50 + 50;
+            output = (float)(input - _RM_mid) / (_RM_max - _RM_mid) * 50 + 50;
         }
 
         break;
 
     default:
         // None 或者其他未定義的 CONTROL_TARGET
-        if (input <= 1400)
+        if (input <= _RM_mid)
         {
-            output = (float)(input - 1400) / (1400 - 900);
+            output = (float)(input - _RM_mid) / (_RM_mid - _RM_min);
         }
         else
         {
-            output = (float)(input - 1400) / (1900 - 1400);
+            output = (float)(input - _RM_mid) / (_RM_min - _RM_mid);
         }
         break;
     }
