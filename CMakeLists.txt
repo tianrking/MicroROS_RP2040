@@ -14,19 +14,27 @@ link_directories(libmicroros)
 add_executable(pico_micro_ros_example
     pico_micro_ros_example.c
     pico_wifi_transport.c
-    librobot/motor.c
-    librobot/robot.c
-    librobot/sensor.c
+    ${CMAKE_CURRENT_LIST_DIR}/drv/remote_ppm.c
+    ${CMAKE_CURRENT_LIST_DIR}/drv/debug_module.c
+    ${CMAKE_CURRENT_LIST_DIR}/drv/cooneo_motor_control.c
+    ${CMAKE_CURRENT_LIST_DIR}/drv/pwm_module.c
+
 )
 target_link_libraries(pico_micro_ros_example
     pico_stdlib
-    hardware_pwm
     microros
+    hardware_pio
+    hardware_pwm
+    pico_multicore
+    hardware_adc
 )
 
+pico_generate_pio_header(pico_micro_ros_example $ENV{pico_examples_PATH}/pio/quadrature_encoder/quadrature_encoder.pio)
+
+
 target_include_directories(pico_micro_ros_example PUBLIC
-    libmicroros/include
-    librobot
+    $ENV{micro_ROS_SDK_PATH}/libmicroros/include
+    $ENV{micro_ROS_SDK_PATH}
     ${CMAKE_CURRENT_LIST_DIR}
     ${CMAKE_CURRENT_LIST_DIR}/..
 )
