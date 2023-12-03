@@ -80,7 +80,20 @@ static int index_window_8 = 0;
 static float window_9[WINDOW_SIZE] = {0};
 static int index_window_9 = 0;
 
+static lock_temp;
+static lock_rm = 1;
 bool repeating_timer_callback(struct repeating_timer *t) {
+
+
+    if(channel_values[5] > 1500 ){
+        lock_temp = 1;
+        //lock_rm = 1;
+    }
+    if(channel_values[5] < 1400 && lock_temp == 1){
+        lock_temp = 0;
+        lock_rm ++ ;
+    }
+
     //printf("Repeat at %lld\n", time_us_64());
     _w= moving_average(channel_values[0], window_8, &index_window_8);
     //float _wv = mapInputToOutput(channel_walues[0]);
@@ -130,7 +143,7 @@ bool repeating_timer_callback(struct repeating_timer *t) {
         _vRL = -_vRL; 
     }
 
-    if(_v = 0 && _w ==0){
+    if(_v = 0 && _w ==0 || lock_rm %2){
         motorA_stop();
         motorB_stop();
     }
